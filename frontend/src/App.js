@@ -12,6 +12,7 @@ import SignIn from './auth/SignIn';
 import SignUp from './auth/SignUp';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './Components/ProtectedRoute';
+import NewRuns from './Pages/Runs/NewRuns';
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
           <Route
             path="/runs"
             element={<ProtectedRoute element={<MainLayout><Runs /></MainLayout>} />}
+          />
+           <Route
+           path="/newruns/:procedureID"
+            element={<ProtectedRoute element={<MainLayout><NewRuns /></MainLayout>} />}
           />
           <Route
             path="/assets"

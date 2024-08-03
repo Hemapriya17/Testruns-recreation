@@ -1,10 +1,14 @@
 const Procedure = require('../models/Procedure');
 const User = require('../models/User');
+const Asset = require('../models/Asset');
 
 // Get all procedures
 exports.getProcedures = async (req, res) => {
   try {
-    const procedures = await Procedure.find().populate('createdBy', 'firstName lastName');
+    const procedures = await Procedure.find()
+      .populate('createdBy', 'firstName lastName')
+      .populate('asset', 'assetName'); // Populate asset details
+
     res.json(procedures);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -14,7 +18,7 @@ exports.getProcedures = async (req, res) => {
 // Create a new procedure
 exports.createProcedure = async (req, res) => {
   try {
-    const { userId, procedureName } = req.body;
+    const { userId, procedureName, assetId } = req.body;
 
     if (!userId || !procedureName) {
       return res.status(400).json({ message: "Required fields are missing" });
@@ -25,19 +29,22 @@ exports.createProcedure = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Get the latest Procedure ID
-    const lastProcedure = await Procedure.findOne().sort({ createdOn: -1 }).exec();
-    const lastId = lastProcedure ? parseInt(lastProcedure.procedureID.replace('PRO', '')) : 0;
-    const newId = `PRO${String(lastId + 1).padStart(2, '0')}`;
+    let asset = null;
+    if (assetId) {
+      asset = await Asset.findById(assetId);
+      if (!asset) {
+        return res.status(404).json({ message: "Asset not found" });
+      }
+    }
 
     // Create new procedure
     const procedure = new Procedure({
-      procedureID: newId,
       procedureName,
       createdOn: new Date(),
       department: 'Dept 1',
       laboratory: 'Lab 1',
-      createdBy: `${user.firstName} ${user.lastName}`
+      createdBy: `${user.firstName} ${user.lastName}`,
+      asset: asset ? asset._id : null // Set the asset reference
     });
 
     await procedure.save();
@@ -51,12 +58,18 @@ exports.createProcedure = async (req, res) => {
 exports.updateProcedure = async (req, res) => {
   try {
     const { id } = req.params;
-    const { procedureName, content, userId } = req.body;
+    const { procedureName, content, userId, assetId } = req.body;
 
-    // Find the procedure by ID and update it
+    if (assetId) {
+      const asset = await Asset.findById(assetId);
+      if (!asset) {
+        return res.status(404).json({ message: "Asset not found" });
+      }
+    }
+
     const updatedProcedure = await Procedure.findByIdAndUpdate(
       id,
-      { procedureName, content, userId },
+      { procedureName, content, userId, asset: assetId }, // Update asset reference
       { new: true }
     );
 
@@ -84,18 +97,16 @@ exports.deleteProcedure = async (req, res) => {
   }
 };
 
-// Generate the next Procedure ID
-exports.getNextProcedureID = async (req, res) => {
+// Get a procedure by ID
+exports.getProcedureById = async (req, res) => {
   try {
-    const lastProcedure = await Procedure.findOne().sort({ procedureID: -1 });
-    let nextID = 'PRO01';
-    if (lastProcedure) {
-      const lastID = lastProcedure.procedureID;
-      const num = parseInt(lastID.replace('PRO', ''), 10) + 1;
-      nextID = 'PRO' + num.toString().padStart(2, '0');
+    const procedure = await Procedure.findById(req.params.id)
+      .populate('asset', 'assetName'); // Populate asset details if needed
+    if (!procedure) {
+      return res.status(404).json({ message: "Procedure not found" });
     }
-    res.json({ nextID });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.json(procedure);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };

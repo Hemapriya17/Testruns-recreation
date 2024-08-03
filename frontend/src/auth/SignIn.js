@@ -1,3 +1,4 @@
+// src/components/SignIn.js
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -18,7 +19,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const defaultTheme = createTheme();
@@ -29,6 +30,7 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth(); // Access the login function from AuthContext
 
   const handleSubmit = async (event) => {
@@ -49,7 +51,8 @@ export default function SignIn() {
       const user = userCredential.user;
       console.log("Signed in user:", user);
       login(user); // Update user state in context
-      navigate("/dashboard");
+      const from = location.state?.from?.pathname || "/dashboard";
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error signing in:", error);
       setError("Failed to sign in. Please check your email and password.");
@@ -67,7 +70,8 @@ export default function SignIn() {
       const user = result.user;
       console.log("Google signed in user:", user);
       login(user); // Update user state in context
-      navigate("/dashboard");
+      const from = location.state?.from?.pathname || "/dashboard";
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Error signing in with Google:", error);
       setError("Failed to sign in with Google. Please try again.");
@@ -142,7 +146,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              // disabled={loading}
+              disabled={loading}
             >
               {loading ? "Logging In..." : "Log In"}
             </Button>
@@ -152,8 +156,9 @@ export default function SignIn() {
               color="secondary"
               onClick={handleGoogleSignIn}
               sx={{ mt: 1, mb: 2 }}
+              disabled={loading}
             >
-              Sign In with Google
+              {loading ? "Logging In with Google..." : "Sign In with Google"}
             </Button>
             <Grid container>
               <Grid item xs>

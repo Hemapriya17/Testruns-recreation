@@ -1,11 +1,11 @@
 {
   "name": "testruns-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "app.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",

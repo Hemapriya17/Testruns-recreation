@@ -19,11 +19,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = (user) => {
-    if (user) {
-      setCurrentUser(user);
-    } else {
-      setCurrentUser(null);
-    }
+    setCurrentUser(user);
   };
 
   const logout = async () => {

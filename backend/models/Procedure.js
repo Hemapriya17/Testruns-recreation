@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 
-const ProcedureSchema = new mongoose.Schema({
-  procedureID: { type: String, required: true, unique: true },
-  procedureName: { type: String, required: true },
-  department: { type: String, required: true },
-  laboratory: { type: String, required: true },
-  createdOn: { type: Date, default: Date.now, required: true },
-  createdBy: { type: String, required: true },
-  content: { type: String }
+const procedureSchema = new mongoose.Schema({
+  procedureName: String,
+  department: String,
+  laboratory: String,
+  content: String,
+  userId: mongoose.Schema.Types.ObjectId,
+  createdBy: String,
+  asset: { type: mongoose.Schema.Types.ObjectId, ref: 'Asset' }, // Add asset reference
+  createdOn: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Procedure', ProcedureSchema);
+module.exports = mongoose.model('Procedure', procedureSchema);

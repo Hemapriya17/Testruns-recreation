@@ -48,7 +48,7 @@ export default function SignUp() {
       });
 
       // Save user to MongoDB
-      await axios.post("http://localhost:8080/api/users", {
+      await axios.post("http://localhost:8000/api/users", {
         email,
         firstName,
         lastName,

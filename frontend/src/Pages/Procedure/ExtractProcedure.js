@@ -14,7 +14,7 @@ const ExtractProcedure = ({ onExtract }) => {
       const formData = new FormData();
       formData.append('file', file);
 
-      axios.post('http://localhost:5000/upload', formData)
+      axios.post('http://localhost:8000/upload', formData)
         .then(response => {
           if (response.data.text) {
             onExtract(response.data.text.join('\n'));

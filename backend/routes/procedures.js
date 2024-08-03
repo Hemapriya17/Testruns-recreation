@@ -7,6 +7,6 @@ router.get('/', procedureController.getProcedures);
 router.post('/', procedureController.createProcedure);
 router.put('/:id', procedureController.updateProcedure);
 router.delete('/:id', procedureController.deleteProcedure);
-router.get('/nextID', procedureController.getNextProcedureID);
+router.get('/:id', procedureController.getProcedureById);
 
 module.exports = router;
