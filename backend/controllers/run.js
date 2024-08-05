@@ -61,7 +61,7 @@ const getRunById = async (req, res) => {
 
 // Create a new run
 const createRun = async (req, res) => {
-  const { procedureID, procedureName, department, lab, dueDate, createdOn, assignedBy, objective, status } = req.body;
+  const { procedureID, procedureName, department, lab, dueDate, createdOn, assignedBy, objective, status, content, inputValues } = req.body;
 
   try {
     if (!procedureID || !procedureName || !department || !lab || !dueDate || !objective) {
@@ -83,7 +83,9 @@ const createRun = async (req, res) => {
       createdOn: createdOn || new Date(),
       assignedBy: assignedBy || 'Default User',
       objective,
-      status
+      status,
+      content, // Save the content
+      inputValues // Save the input values
     });
 
     const savedRun = await newRun.save();
@@ -94,47 +96,12 @@ const createRun = async (req, res) => {
   }
 };
 
+
 // Update an existing run
-// const updateRun = async (req, res) => {
-//   const { id } = req.params;
-//   const { procedureID, procedureName, department, lab, dueDate, createdOn, assignedBy, objective, status } = req.body;
-
-//   try {
-//     if (!mongoose.Types.ObjectId.isValid(id)) {
-//       return res.status(400).json({ message: 'Invalid Run ID format' });
-//     }
-
-//     const run = await Run.findById(id);
-//     if (!run) {
-//       return res.status(404).json({ message: 'Run not found' });
-//     }
-
-//     const procedure = await Procedure.findById(procedureID);
-//     if (!procedure) {
-//       return res.status(404).json({ message: 'Procedure not found' });
-//     }
-
-//     run.procedureID = procedureID;
-//     run.procedureName = procedureName;
-//     run.procedureContent = procedure.content;
-//     run.department = department;
-//     run.lab = lab;
-//     run.dueDate = dueDate;
-//     run.createdOn = createdOn;
-//     run.assignedBy = assignedBy;
-//     run.objective = objective;
-//     run.status = status;
-
-//     const updatedRun = await run.save();
-//     res.status(200).json(updatedRun);
-//   } catch (error) {
-//     console.error('Error updating run:', error.message);
-//     res.status(400).json({ message: error.message });
-//   }
-// };
+// Update an existing run
 const updateRun = async (req, res) => {
   const { id } = req.params;
-  const { status } = req.body;
+  const { status, content, inputValues } = req.body;
 
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -146,15 +113,18 @@ const updateRun = async (req, res) => {
       return res.status(404).json({ message: 'Run not found' });
     }
 
-    run.status = status;
+    if (status) run.status = status;
+    if (content) run.content = content;
+    if (inputValues) run.inputValues = inputValues;
 
     const updatedRun = await run.save();
     res.status(200).json(updatedRun);
   } catch (error) {
     console.error('Error updating run:', error.message);
-    res.status(500).json({ message: 'Failed to update run status', error: error.message });
+    res.status(500).json({ message: 'Failed to update run', error: error.message });
   }
 };
+
 
 
 // Delete a run

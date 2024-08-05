@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   Container,
@@ -11,6 +11,7 @@ import {
   Tab,
   Button,
   Snackbar,
+  TextField,
   Alert
 } from "@mui/material";
 import ChartRuns from "./ChartRuns";
@@ -19,6 +20,7 @@ import Remarks from "./Remarks";
 
 const NewRuns = () => {
   const { procedureID } = useParams();
+  const navigate = useNavigate();
   const [run, setRun] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,22 +30,18 @@ const NewRuns = () => {
   const [stopButtonDisabled, setStopButtonDisabled] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [resultContent, setResultContent] = useState('');
+  const [inputValues, setInputValues] = useState({}); // Add this state
+  const contentRef = useRef(null); // Reference for the content container
 
   useEffect(() => {
     const fetchRun = async () => {
       try {
-        const response = await axios.get(`/api/runs/${procedureID}`);
+        const response = await axios.get(`http://localhost:8000/api/runs/${procedureID}`);
         const fetchedRun = response.data;
         setRun(fetchedRun);
-        if (fetchedRun.status === "Started") {
-          setStartButtonDisabled(true);
-          setStopButtonDisabled(false);
-          setTabsEnabled(true);
-        } else if (fetchedRun.status === "Stopped") {
-          setStartButtonDisabled(true);
-          setStopButtonDisabled(true);
-          setTabsEnabled(true);
-        }
+        setInputValues(fetchedRun.inputValues || {}); // Initialize inputValues
+        // ... (rest of your logic)
       } catch (error) {
         console.error("Error fetching run:", error);
         setError("Failed to load run details.");
@@ -51,12 +49,25 @@ const NewRuns = () => {
         setLoading(false);
       }
     };
-
+  
     fetchRun();
   }, [procedureID]);
-
+  
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
+    if (newValue === "3") {
+      fetchPythonScriptOutput();
+    }
+  };
+
+  const fetchPythonScriptOutput = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/runPython");
+      setResultContent(response.data.output);
+    } catch (error) {
+      console.error("Error fetching Python script output:", error);
+      setError("Failed to fetch Python script output.");
+    }
   };
 
   const updateRunStatus = async (status, successMessage) => {
@@ -68,11 +79,11 @@ const NewRuns = () => {
       if (status === "Started") {
         setStartButtonDisabled(true);
         setStopButtonDisabled(false);
-        setTabsEnabled(true);
+        setTabsEnabled(false);
       } else if (status === "Stopped") {
         setStartButtonDisabled(true);
         setStopButtonDisabled(true);
-        setTabsEnabled(false);
+        setTabsEnabled(true);
       }
     } catch (error) {
       console.error("Error updating run status:", error);
@@ -93,6 +104,39 @@ const NewRuns = () => {
 
   const handleStop = () => {
     updateRunStatus("Stopped", "Run has been stopped");
+  };
+
+  const handleBack = () => {
+    navigate("/runs");
+  };
+
+  const handleSave = async () => {
+    // Extract updated content
+    const updatedContent = contentRef.current.innerHTML;
+
+    // Extract values from input fields
+    const extractInputValues = () => {
+      const inputs = contentRef.current.querySelectorAll('input[type="text"]');
+      const values = {};
+      inputs.forEach(input => {
+        values[input.id] = parseFloat(input.value) || 0; // Ensure the value is treated as a number
+      });
+      return values;
+    };
+
+    const updatedInputValues = extractInputValues();
+
+    // Construct the updated run object
+    const updatedRun = { ...run, content: updatedContent, inputValues: updatedInputValues };
+
+    try {
+      const response = await axios.put(`http://localhost:8000/api/runs/${procedureID}`, updatedRun);
+      setSnackbarMessage("Run has been saved");
+      setSnackbarOpen(true);
+    } catch (error) {
+      console.error("Error saving run:", error.response?.data || error.message);
+      setError("Failed to save run.");
+    }
   };
 
   if (loading) {
@@ -135,7 +179,7 @@ const NewRuns = () => {
           Stop
         </Button>
       </Box>
-      <Typography variant="body1">{run.objective}</Typography>
+      <Typography style={{ padding: "10px" }} variant="body1">{run.objective}</Typography>
       {run ? (
         <Paper style={{ padding: "15px" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -150,11 +194,33 @@ const NewRuns = () => {
               <Tab label="Remarks" value="4" disabled={!tabsEnabled} />
             </Tabs>
           </Box>
-          <Box sx={{ p: 3 }}>
+          <Box>
             {tabValue === "1" && (
-              <Box>
-                <div dangerouslySetInnerHTML={{ __html: run.content }} />
-              </Box>
+              <Box
+              ref={contentRef} // Reference for the content container
+              sx={{
+                height: '400px', // Adjust height as needed
+                overflowY: 'auto', // Enable vertical scrolling
+                padding: '16px',
+                borderRadius: '4px'
+              }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: run.content }} />
+              {/* Display input values here */}
+              {Object.entries(inputValues).map(([id, value]) => (
+                <TextField
+                  key={id}
+                  id={id}
+                  label={id}
+                  value={value}
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                  // InputProps={{ readOnly: true }}
+                />
+              ))}
+            </Box>
+            
             )}
             {tabValue === "2" && (
               <Box>
@@ -165,9 +231,7 @@ const NewRuns = () => {
             )}
             {tabValue === "3" && (
               <Box>
-                <Typography variant="body1">
-                  <Result />
-                </Typography>
+                <Result content={resultContent} />
               </Box>
             )}
             {tabValue === "4" && (
@@ -192,6 +256,10 @@ const NewRuns = () => {
           {snackbarMessage}
         </Alert>
       </Snackbar>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+        <Button variant="outlined" color="primary" onClick={handleBack}>Back</Button>
+        <Button variant="contained" color="secondary" onClick={handleSave}>Save</Button>
+      </Box>
     </Container>
   );
 };

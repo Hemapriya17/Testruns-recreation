@@ -10,6 +10,7 @@ import {
   IconButton,
 } from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from '@mui/icons-material/Edit';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -116,7 +117,7 @@ export default function Procedure() {
         .post("http://localhost:8000/api/procedures", formData)
         .then((response) => {
           const newProcedure = { ...response.data, id: response.data._id };
-          setRows((prevRows) => [newProcedure, ...prevRows]); // Add new procedure at the beginning
+          setRows((prevRows) => [newProcedure, ...prevRows]);
           navigate("/newprocedure", { state: { procedure: newProcedure } });
           handleClose();
         })
@@ -152,16 +153,16 @@ export default function Procedure() {
       width: 150,
       renderCell: (params) => (
         <>
-          <Button
-            variant="contained"
-            color="primary"
+         
+          <IconButton
             onClick={(e) => {
               e.stopPropagation();
               handleOpen(params.row);
             }}
           >
-            Edit
-          </Button>
+            <EditIcon color="primary" />
+          </IconButton>
+
           <IconButton
             onClick={(e) => {
               e.stopPropagation();
@@ -177,29 +178,31 @@ export default function Procedure() {
   ];
 
   return (
-    <>
-      <Box sx={{ height: 600, width: "100%" }}>
-        <Typography variant="h4" gutterBottom>
+    <div style={{ height: 600, width: "96%" }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 2,
+        }}
+      >
+        <Typography variant="h6" noWrap component="div">
           Procedures
         </Typography>
-        <Button
-          onClick={() => handleOpen()}
-          variant="contained"
-          color="primary"
-          sx={{ mb: 2 }}
-        >
+        <Button onClick={() => handleOpen()} variant="contained">
           Create Procedure
         </Button>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={10}
-          onRowClick={(params) =>
-            navigate("/newprocedure", { state: { procedure: params.row } })
-          }
-        />
       </Box>
-
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={10}
+        onRowClick={(params) =>
+          navigate("/newprocedure", { state: { procedure: params.row } })
+        }
+      />
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography variant="h6" gutterBottom>
@@ -281,6 +284,6 @@ export default function Procedure() {
           </Box>
         </Box>
       </Modal>
-    </>
+    </div>
   );
 }

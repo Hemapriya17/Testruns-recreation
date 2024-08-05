@@ -38,10 +38,18 @@ const runSchema = new mongoose.Schema({
     type: String,
     enum: ['Created', 'Started', 'Stopped', 'Completed', 'Submitted'],
     default: 'Created'
+  },
+  content: {
+    type: String // Store the HTML content
+  },
+  inputValues: {
+    type: Map,
+    of: Number // Store the table input values
   }
 });
 
 module.exports = mongoose.model('Run', runSchema);
+
 
 
 // const mongoose = require('mongoose');

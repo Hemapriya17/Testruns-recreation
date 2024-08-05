@@ -11,14 +11,14 @@ import { RxAvatar } from "react-icons/rx";
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Navbar({ toggleSidebar }) {
-  const { currentUser } = useAuth(); // Ensure to use `currentUser` as per your context definition
+  const { currentUser } = useAuth();
 
   const displayName = currentUser ? currentUser.displayName : 'Guest';
   const firstName = displayName.split(' ')[0];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ background: "White" }}>
+      <AppBar position="fixed" sx={{ background: "white", boxShadow: 'none', borderBottom: '1px solid #ccc' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -30,24 +30,25 @@ export default function Navbar({ toggleSidebar }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <h3 className="logo" style={{ color: "black" }}>
+            <h3 className="logo" style={{ color: "black", margin: 0 }}>
               Test <span style={{ background: "#f1c232" }}>RUNS</span>
             </h3>
           </Typography>
-          <IconButton>
+          <IconButton sx={{ color: "rgb(119, 114, 114)" }}>
             <FaQuestionCircle />
           </IconButton>
-          <IconButton>
+          <IconButton sx={{ color: "rgb(119, 114, 114)" }}>
             <BsBellFill />
           </IconButton>
-          <Typography sx={{ color: "black" }}>
+          <Typography sx={{ color: "black", marginLeft: 2, marginRight: 2 }}>
             Hi {firstName}
           </Typography>
-          <IconButton>
+          <IconButton sx={{ color: "rgb(119, 114, 114)" }}>
             <RxAvatar />
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Toolbar /> 
     </Box>
   );
 }

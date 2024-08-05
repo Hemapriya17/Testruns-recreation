@@ -14,7 +14,7 @@ const data = [
 
 const TableChart = () => {
   return (
-    <div style={{ width: '100%', height: 400 }}>
+    <div style={{ width: '100%', height: "350px" }}>
       <ResponsiveContainer>
         <LineChart
           data={data}
