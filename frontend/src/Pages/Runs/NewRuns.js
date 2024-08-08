@@ -11,7 +11,6 @@ import {
   Tab,
   Button,
   Snackbar,
-  TextField,
   Alert
 } from "@mui/material";
 import ChartRuns from "./ChartRuns";
@@ -30,9 +29,9 @@ const NewRuns = () => {
   const [stopButtonDisabled, setStopButtonDisabled] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [resultContent, setResultContent] = useState('');
-  const [inputValues, setInputValues] = useState({}); // Add this state
-  const contentRef = useRef(null); // Reference for the content container
+  const [inputValues, setInputValues] = useState({});
+  const [runData, setRunData] = useState(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const fetchRun = async () => {
@@ -40,8 +39,14 @@ const NewRuns = () => {
         const response = await axios.get(`http://localhost:8000/api/runs/${procedureID}`);
         const fetchedRun = response.data;
         setRun(fetchedRun);
-        setInputValues(fetchedRun.inputValues || {}); // Initialize inputValues
-        // ... (rest of your logic)
+        setInputValues(fetchedRun.inputValues || {});
+        setRunData(fetchedRun);  // Set runData here
+
+        if (contentRef.current) {
+          contentRef.current.innerHTML = fetchedRun.content;
+        }
+
+        updateButtonAndTabStates(fetchedRun.status);
       } catch (error) {
         console.error("Error fetching run:", error);
         setError("Failed to load run details.");
@@ -49,46 +54,57 @@ const NewRuns = () => {
         setLoading(false);
       }
     };
-  
     fetchRun();
   }, [procedureID]);
-  
-  const handleTabChange = (event, newValue) => {
-    setTabValue(newValue);
-    if (newValue === "3") {
-      fetchPythonScriptOutput();
+
+  useEffect(() => {
+    if (run && contentRef.current) {
+      const inputs = contentRef.current.querySelectorAll('input[type="text"]');
+      inputs.forEach(input => {
+        const value = inputValues[input.id];
+        if (value !== undefined) {
+          input.value = value;
+        }
+      });
+    }
+  }, [inputValues, tabValue, run]);
+
+  const updateButtonAndTabStates = (status) => {
+    if (status === "Started") {
+      setStartButtonDisabled(true);
+      setStopButtonDisabled(false);
+      setTabsEnabled(true);
+    } else if (status === "Stopped") {
+      setStartButtonDisabled(true);
+      setStopButtonDisabled(true);
+      setTabsEnabled(true);
     }
   };
 
-  const fetchPythonScriptOutput = async () => {
-    try {
-      const response = await axios.get("http://localhost:8000/runPython");
-      setResultContent(response.data.output);
-    } catch (error) {
-      console.error("Error fetching Python script output:", error);
-      setError("Failed to fetch Python script output.");
-    }
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
   };
 
   const updateRunStatus = async (status, successMessage) => {
     try {
-      const response = await axios.put(`/api/runs/${procedureID}`, { status });
-      setRun((prevRun) => ({ ...prevRun, status: response.data.status }));
+      const response = await axios.put(`http://localhost:8000/api/runs/${procedureID}`, { status });
+      const updatedRun = response.data;
+      setRun(updatedRun);
       setSnackbarMessage(successMessage);
       setSnackbarOpen(true);
-      if (status === "Started") {
-        setStartButtonDisabled(true);
-        setStopButtonDisabled(false);
-        setTabsEnabled(false);
-      } else if (status === "Stopped") {
-        setStartButtonDisabled(true);
-        setStopButtonDisabled(true);
-        setTabsEnabled(true);
-      }
+      updateButtonAndTabStates(updatedRun.status);
     } catch (error) {
       console.error("Error updating run status:", error);
       setError("Failed to update run status.");
     }
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setInputValues(prevValues => ({
+      ...prevValues,
+      [id]: value
+    }));
   };
 
   const handleSnackbarClose = (event, reason) => {
@@ -111,28 +127,33 @@ const NewRuns = () => {
   };
 
   const handleSave = async () => {
-    // Extract updated content
     const updatedContent = contentRef.current.innerHTML;
 
-    // Extract values from input fields
     const extractInputValues = () => {
       const inputs = contentRef.current.querySelectorAll('input[type="text"]');
       const values = {};
       inputs.forEach(input => {
-        values[input.id] = parseFloat(input.value) || 0; // Ensure the value is treated as a number
+        values[input.id] = parseFloat(input.value) || 0;
       });
       return values;
     };
 
     const updatedInputValues = extractInputValues();
 
-    // Construct the updated run object
-    const updatedRun = { ...run, content: updatedContent, inputValues: updatedInputValues };
+    const updatedRun = {
+      ...run,
+      content: updatedContent,
+      inputValues: updatedInputValues
+    };
 
     try {
       const response = await axios.put(`http://localhost:8000/api/runs/${procedureID}`, updatedRun);
-      setSnackbarMessage("Run has been saved");
+      const savedRun = response.data;
+
+      setSnackbarMessage("Run has been saved successfully");
       setSnackbarOpen(true);
+      setRun(savedRun);
+      setInputValues(savedRun.inputValues);
     } catch (error) {
       console.error("Error saving run:", error.response?.data || error.message);
       setError("Failed to save run.");
@@ -197,31 +218,17 @@ const NewRuns = () => {
           <Box>
             {tabValue === "1" && (
               <Box
-              ref={contentRef} // Reference for the content container
-              sx={{
-                height: '400px', // Adjust height as needed
-                overflowY: 'auto', // Enable vertical scrolling
-                padding: '16px',
-                borderRadius: '4px'
-              }}
-            >
-              <div dangerouslySetInnerHTML={{ __html: run.content }} />
-              {/* Display input values here */}
-              {Object.entries(inputValues).map(([id, value]) => (
-                <TextField
-                  key={id}
-                  id={id}
-                  label={id}
-                  value={value}
-                  variant="outlined"
-                  fullWidth
-                  margin="normal"
-                  // InputProps={{ readOnly: true }}
-                />
-              ))}
-            </Box>
-            
+                sx={{
+                  height: '400px',
+                  overflowY: 'auto',
+                  padding: '16px',
+                  borderRadius: '4px'
+                }}
+              >
+                <div ref={contentRef} dangerouslySetInnerHTML={{ __html: run.content }} />
+              </Box>
             )}
+
             {tabValue === "2" && (
               <Box>
                 <Typography variant="body1">
@@ -231,7 +238,7 @@ const NewRuns = () => {
             )}
             {tabValue === "3" && (
               <Box>
-                <Result content={resultContent} />
+                {runData ? <Result runData={runData} /> : <p>Loading...</p>}
               </Box>
             )}
             {tabValue === "4" && (

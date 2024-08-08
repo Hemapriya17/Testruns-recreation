@@ -1,31 +1,37 @@
-import sys, getopt
-from IS_302_1 import clause
+import argparse
+import json
+from IS_302_1 import Clause
 
-def main(argv, title):
-    argument = ''
-    usage = 'usage: script.py -f <sometext>'
+def main():
+    parser = argparse.ArgumentParser(description='Process some arguments.')
+    parser.add_argument('--foo', nargs='+', help='List of measurement values')
+    parser.add_argument('--title', help='Title of the measurement')
+    args = parser.parse_args()
+
+    argument = args.foo
+    title = args.title
+
+    result = {}
+
     try:
-        opts, args = getopt.getopt(argv, "hf:", ["foo="])
-    except getopt.GetoptError:
-        print(usage)
-        sys.exit(2)
-    
-    for opt, arg in opts:
-        if opt == '-h':
-            print(usage)
-            sys.exit()
-        elif opt in ("-f", "--foo"):
-            argument = arg.split()
-            print(f"Arguments received: {argument}")
-            if len(argument) >= 10:
-                if argument[-1] == "Vibrational_magnetometer_acet":
-                    # Placeholder for PHY_acet class/method call
-                    pass
-                elif argument[-2] == "IS_4250_C_10" and argument[-1] == "Input":
-                    clause(argument).power_Input()
-            else:
-                print("Not enough arguments provided.")
-                sys.exit(2)
+        if title == "IS_4250_C_10_Input":
+            if len(argument) < 6:  # Ensure there are at least 6 values
+                raise IndexError("Not enough arguments provided")
+                
+            numeric_values = [float(x) for x in argument]
+
+            result = Clause(numeric_values).power_Input()
+        else:
+            result = {"error": "Unknown title"}
+    except ValueError as e:
+        result = {"error": f"Invalid measurement value: {str(e)}"}
+    except IndexError as e:
+        result = {"error": f"Index error: {str(e)}"}
+    except Exception as e:
+        result = {"error": f"Error processing script: {str(e)}"}
+
+    # Output only JSON result
+    print(json.dumps(result))
 
 if __name__ == "__main__":
-    main(sys.argv[1:], sys.argv[2:])
+    main()

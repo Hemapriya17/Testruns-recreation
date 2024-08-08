@@ -1,39 +1,54 @@
 import React, { useEffect, useState } from 'react';
-import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios';
+import { Box, Paper } from '@mui/material';
+import { Editor } from '@tinymce/tinymce-react';
 
-const Result = () => {
+const Result = ({ runData }) => {
   const [editorContent, setEditorContent] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8000/runPython')
-      .then(response => {
-        if (response.data && response.data.output) {
-          setEditorContent(response.data.output);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+    if (runData && runData.inputValues && Object.keys(runData.inputValues).length > 0) {
+      const dataToSend = { ...runData.inputValues, title: runData.procedureName };
+
+      axios.post('http://localhost:8000/api/runPython', dataToSend)
+        .then(response => {
+          if (response.data && response.data.answer) {
+            const answer = response.data.answer[0];
+            // Format the calculated results
+            const content = `
+              <p><strong>Power deviation in watts:</strong> ${answer["Power deviation in watts"]}</p>
+              <p><strong>Power deviation in %:</strong> ${answer["Power deviation in %"]}</p>
+            `;
+            setEditorContent(content);
+          } else {
+            setEditorContent('<p>No results found.</p>');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          setEditorContent('<p>Error fetching data.</p>');
+        });
+    } else {
+      console.error('No input values provided.');
+      setEditorContent('<p>No input values provided.</p>');
+    }
+  }, [runData]);
 
   return (
-    <Editor
-      apiKey='q2yws6m7pph5gmrsgwrzp1w0i1rnrvs702bdhigr8tpm4qzf'
-      init={{
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name',
-        mergetags_list: [
-          { value: 'First.Name', title: 'First Name' },
-          { value: 'Email', title: 'Email' },
-        ],
-        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-      }}
-      value={editorContent}
-      onEditorChange={(content) => setEditorContent(content)}
-    />
+    <Box sx={{ padding: 2 }}>
+      <Paper sx={{ padding: 2 }}>
+        <Editor
+          apiKey="q2yws6m7pph5gmrsgwrzp1w0i1rnrvs702bdhigr8tpm4qzf"  // Replace with your TinyMCE API key
+          value={editorContent}
+          init={{
+            height: 500,
+            menubar: false,
+            plugins: 'advlist autolink lists link image charmap print preview anchor textcolor',
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+          }}
+        />
+      </Paper>
+    </Box>
   );
 };
 

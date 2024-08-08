@@ -1,59 +1,69 @@
-# import json
-
-# class clause:
-#     def __init__(self, arg):
-#         self.arg = arg
-        
-#     def power_Input(self):
-#         argument = self.arg[0:]
-#         def Power_deviation(measured):
-#             return measured - 500
-#         def Power_deviation_efficiency(measured):
-#             return ((measured - 500) / 500) * 100
-#         Power_deviation1 = Power_deviation(int(argument[2]))
-#         Power_deviation2 = Power_deviation(int(argument[4]))
-#         Power_deviation3 = Power_deviation(int(argument[6]))
-#         Power_deviationeff1 = Power_deviation_efficiency(float(argument[2]))
-#         Power_deviationeff2 = Power_deviation_efficiency(float(argument[4]))
-#         Power_deviationeff3 = Power_deviation_efficiency(float(argument[6]))
-#         print(f"Power Deviations: {Power_deviation1}, {Power_deviation2}, {Power_deviation3}")
-#         print(f"Power Deviations Efficiencies: {Power_deviationeff1}, {Power_deviationeff2}, {Power_deviationeff3}")
-#         print(json.dumps({"answer":[{"Power deviation in watts" : str(Power_deviation1)+" W"+","+str(Power_deviation2)+" W"+","+str(Power_deviation3)+" W","Power deviation in %" : str(Power_deviationeff1)+"%"+","+str(Power_deviationeff2)+"%"+","+str(Power_deviationeff3)+"%"}]}))
-
-
+import argparse
 import json
 
-class clause:
+class Clause:
     def __init__(self, arg):
         self.arg = arg
-        
+
     def power_Input(self):
-        argument = self.arg[0:]
+        # Extract the relevant arguments
+        argument = self.arg
         
+        # Define the calculation functions
         def Power_deviation(measured):
             return measured - 500
         
         def Power_deviation_efficiency(measured):
             return ((measured - 500) / 500) * 100
         
-        Power_deviation1 = Power_deviation(int(argument[2]))
-        Power_deviation2 = Power_deviation(int(argument[4]))
-        Power_deviation3 = Power_deviation(int(argument[6]))
+        # Print argument length for debugging
+        print(f"Arguments received: {argument}")
+        print(f"Number of arguments: {len(argument)}")
         
-        Power_deviationeff1 = Power_deviation_efficiency(float(argument[2]))
-        Power_deviationeff2 = Power_deviation_efficiency(float(argument[4]))
-        Power_deviationeff3 = Power_deviation_efficiency(float(argument[6]))
+        # Initialize variables
+        Power_deviation_values = []
+        Power_deviation_efficiency_values = []
+
+        # Check and compute for available arguments
+        if len(argument) >= 3:
+            Power_deviation_values.append(Power_deviation(float(argument[2])))
+            Power_deviation_efficiency_values.append(Power_deviation_efficiency(float(argument[2])))
+
+        if len(argument) >= 5:
+            Power_deviation_values.append(Power_deviation(float(argument[4])))
+            Power_deviation_efficiency_values.append(Power_deviation_efficiency(float(argument[4])))
+
+        if len(argument) >= 7:
+            Power_deviation_values.append(Power_deviation(float(argument[6])))
+            Power_deviation_efficiency_values.append(Power_deviation_efficiency(float(argument[6])))
         
+        if not Power_deviation_values:
+            return {"error": "Index error: Not enough arguments provided"}
+        
+        # Format and return the result
         result = {
-            "answer": [{
-                "Power deviation in watts": f"{Power_deviation1} W, {Power_deviation2} W, {Power_deviation3} W",
-                "Power deviation in %": f"{Power_deviationeff1}%, {Power_deviationeff2}%, {Power_deviationeff3}%"
-            }]
+            "answer": [
+                {
+                    "Power deviation in watts": ", ".join(f"{value:.3f} W" for value in Power_deviation_values),
+                    "Power deviation in %": ", ".join(f"{value:.3f}%" for value in Power_deviation_efficiency_values)
+                }
+            ]
         }
         
-        print(json.dumps(result))
+        return result
 
-# Test the function directly to ensure it's working as expected
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--foo', nargs='+', help='List of measurement values')
+    parser.add_argument('--title', help='Title of the measurement')
+    args = parser.parse_args()
+    
+    # Create Clause instance
+    clause = Clause(args.foo)
+    result = clause.power_Input()
+    
+    # Output result as JSON
+    print(json.dumps(result, indent=2))
+
 if __name__ == "__main__":
-    test_args = ["script.py", "--foo", "0", "0", "505", "0", "510", "0", "515", "IS_4250_C_10", "Input"]
-    clause(test_args).power_Input()
+    main()

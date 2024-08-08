@@ -189,15 +189,14 @@ export default function Runs() {
       .then(response => {
         fetchRuns(); // Refresh the list of runs
         handleClose(); // Close the form or modal
-        // Navigate to the new runs page with the RunsID
-        navigate(`/newruns/${response.data._id}`); // Use response data to get procedureID
+        // Navigate to the new runs page with the run ID
+        navigate(`/newruns/${response.data._id}`); // Use response data to get run ID
       })
       .catch(error => {
         console.error('Create failed:', error.response?.data || error);
       });
     }
   };
-  
 
   const handleDelete = () => {
     axios.delete(`http://localhost:8000/api/runs/${selectedRunId}`)
@@ -214,9 +213,8 @@ export default function Runs() {
   };
 
   const handleRowClick = (params) => {
-    console.log(params);
     if (params.field !== 'actions') {
-      navigate(`/newruns/${params.row._id}`);
+      navigate(`/newruns/${params.row.id}`);
     }
   };
 
@@ -259,22 +257,11 @@ export default function Runs() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="objective"
-                label="Test Objective"
-                value={formData.objective}
-                onChange={handleChange}
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
                 id="department"
                 label="Department"
                 value={formData.department}
+                onChange={handleChange}
                 fullWidth
-                InputLabelProps={{ shrink: true }}
-                disabled
               />
             </Grid>
             <Grid item xs={12}>
@@ -282,9 +269,8 @@ export default function Runs() {
                 id="lab"
                 label="Lab"
                 value={formData.lab}
+                onChange={handleChange}
                 fullWidth
-                InputLabelProps={{ shrink: true }}
-                disabled
               />
             </Grid>
             <Grid item xs={12}>
@@ -300,13 +286,11 @@ export default function Runs() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="createdOn"
-                label="Created On"
-                type="date"
-                value={formData.createdOn}
+                id="objective"
+                label="Objective"
+                value={formData.objective}
+                onChange={handleChange}
                 fullWidth
-                InputLabelProps={{ shrink: true }}
-                disabled
               />
             </Grid>
             <Grid item xs={12}>
@@ -319,43 +303,30 @@ export default function Runs() {
                 fullWidth
                 InputLabelProps={{ shrink: true }}
               >
-                {statuses.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
+                {statuses.map((status) => (
+                  <MenuItem key={status.value} value={status.value}>
+                    {status.label}
                   </MenuItem>
                 ))}
               </TextField>
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="assignedBy"
-                label="Assigned By"
-                value={formData.assignedBy}
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                disabled
-              />
-            </Grid>
-            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <Button onClick={handleClose} sx={{ mr: 1 }}>Cancel</Button>
-              <Button onClick={handleSubmit} variant="contained">
-                {editMode ? 'Save' : 'Create'}
-              </Button>
-            </Grid>
           </Grid>
+          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
+            <Button onClick={handleClose} color="primary" sx={{ mr: 1 }}>Cancel</Button>
+            <Button onClick={handleSubmit} color="primary" variant="contained">
+              {editMode ? 'Update' : 'Create'}
+            </Button>
+          </Box>
         </Box>
       </Modal>
       <Modal open={deleteOpen} onClose={handleDeleteClose}>
         <Box sx={style}>
           <Typography variant="h6" gutterBottom>
-            Confirm Delete
-          </Typography>
-          <Typography gutterBottom>
             Are you sure you want to delete this run?
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
-            <Button onClick={handleDeleteClose} sx={{ mr: 2 }}>Cancel</Button>
-            <Button onClick={handleDelete} variant="contained" color="error">Delete</Button>
+          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
+            <Button onClick={handleDeleteClose} color="primary" sx={{ mr: 1 }}>Cancel</Button>
+            <Button onClick={handleDelete} color="secondary" variant="contained">Delete</Button>
           </Box>
         </Box>
       </Modal>
@@ -363,7 +334,7 @@ export default function Runs() {
         rows={rows}
         columns={columns}
         pageSize={10}
-        rowsPerPageOptions={[5, 10, 20]}
+        rowsPerPageOptions={[10]}
         onRowClick={handleRowClick}
       />
     </div>

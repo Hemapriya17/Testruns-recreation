@@ -40,35 +40,11 @@ const runSchema = new mongoose.Schema({
     default: 'Created'
   },
   content: {
-    type: String // Store the HTML content
+    type: String
   },
   inputValues: {
-    type: Map,
-    of: Number // Store the table input values
+    type: mongoose.Schema.Types.Mixed
   }
 });
 
 module.exports = mongoose.model('Run', runSchema);
-
-
-
-// const mongoose = require('mongoose');
-
-// const runSchema = new mongoose.Schema({
-//   procedureID: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'Procedure',
-//     required: true
-//   },
-//   procedureName: String,
-//   department: String,
-//   lab: String,
-//   dueDate: Date,
-//   createdOn: Date,
-//   assignedBy: String,
-//   objective: String,
-// });
-
-// const Run = mongoose.model('Run', runSchema);
-
-// module.exports = Run;

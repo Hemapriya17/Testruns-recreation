@@ -5,12 +5,10 @@ const mongoose = require('mongoose');
 // Get all runs with populated procedure details
 const getRuns = async (req, res) => {
   try {
-    const runs = await Run.find()
-      .populate({
-        path: 'procedureID',
-        select: 'procedureName content'
-      })
-      .exec();
+    const runs = await Run.find().populate({
+      path: 'procedureID',
+      select: 'procedureName content'
+    }).exec();
     res.json(runs);
   } catch (error) {
     console.error('Error fetching runs:', error);
@@ -20,34 +18,23 @@ const getRuns = async (req, res) => {
 
 // Get a single run by ID
 const getRunById = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: 'Invalid Run ID format' });
+  }
+
   try {
-    const { id } = req.params;
-
-    // Validate the ID
-    if (!id) {
-      return res.status(400).json({ message: 'Run ID is required' });
-    }
-
-    // Check if ID is a valid ObjectId
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ message: 'Invalid Run ID format' });
-    }
-
-    // Fetch the run document
     const run = await Run.findById(id).exec();
-
     if (!run) {
       return res.status(404).json({ message: 'Run not found' });
     }
 
-    // Fetch the procedure details using the procedureID from the run document
     const procedure = await Procedure.findById(run.procedureID).exec();
-
     if (!procedure) {
       return res.status(404).json({ message: 'Procedure not found' });
     }
 
-    // Respond with both run and procedure details
     res.json({
       ...run.toObject(),
       procedureName: procedure.procedureName,
@@ -59,13 +46,14 @@ const getRunById = async (req, res) => {
   }
 };
 
+
 // Create a new run
 const createRun = async (req, res) => {
-  const { procedureID, procedureName, department, lab, dueDate, createdOn, assignedBy, objective, status, content, inputValues } = req.body;
+  const { procedureID, department, lab, dueDate, assignedBy, objective, status, content, inputValues } = req.body;
 
   try {
-    if (!procedureID || !procedureName || !department || !lab || !dueDate || !objective) {
-      return res.status(400).json({ message: 'All fields except "createdOn" and "assignedBy" are required' });
+    if (!procedureID || !department || !lab || !dueDate || !objective) {
+      return res.status(400).json({ message: 'All fields except "createdOn" are required' });
     }
 
     const procedure = await Procedure.findById(procedureID);
@@ -75,17 +63,15 @@ const createRun = async (req, res) => {
 
     const newRun = new Run({
       procedureID,
-      procedureName,
-      procedureContent: procedure.content,
+      procedureName: procedure.procedureName,
       department,
       lab,
       dueDate,
-      createdOn: createdOn || new Date(),
       assignedBy: assignedBy || 'Default User',
       objective,
-      status,
-      content, // Save the content
-      inputValues // Save the input values
+      status: status || 'Created',
+      content,
+      inputValues
     });
 
     const savedRun = await newRun.save();
@@ -96,8 +82,6 @@ const createRun = async (req, res) => {
   }
 };
 
-
-// Update an existing run
 // Update an existing run
 const updateRun = async (req, res) => {
   const { id } = req.params;
@@ -124,8 +108,6 @@ const updateRun = async (req, res) => {
     res.status(500).json({ message: 'Failed to update run', error: error.message });
   }
 };
-
-
 
 // Delete a run
 const deleteRun = async (req, res) => {
