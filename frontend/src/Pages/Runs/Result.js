@@ -35,20 +35,20 @@ const Result = ({ runData }) => {
   }, [runData]);
 
   return (
-    <Box sx={{ padding: 2 }}>
-      <Paper sx={{ padding: 2 }}>
+    // <Box sx={{ padding: 2 }}>
+      // <Paper sx={{ padding: 2 }}>
         <Editor
           apiKey="q2yws6m7pph5gmrsgwrzp1w0i1rnrvs702bdhigr8tpm4qzf"  // Replace with your TinyMCE API key
           value={editorContent}
           init={{
-            height: 500,
+            height: 450,
             menubar: false,
             plugins: 'advlist autolink lists link image charmap print preview anchor textcolor',
             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
           }}
         />
-      </Paper>
-    </Box>
+      // </Paper>
+    // </Box>
   );
 };
 

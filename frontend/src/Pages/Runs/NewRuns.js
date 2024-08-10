@@ -11,7 +11,7 @@ import {
   Tab,
   Button,
   Snackbar,
-  Alert
+  Alert,
 } from "@mui/material";
 import ChartRuns from "./ChartRuns";
 import Result from "./Result";
@@ -28,22 +28,27 @@ const NewRuns = () => {
   const [startButtonDisabled, setStartButtonDisabled] = useState(false);
   const [stopButtonDisabled, setStopButtonDisabled] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const [inputValues, setInputValues] = useState({});
   const [runData, setRunData] = useState(null);
+  const [tableHtml, setTableHtml] = useState(""); // Move here
+
   const contentRef = useRef(null);
 
   useEffect(() => {
     const fetchRun = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/runs/${procedureID}`);
+        const response = await axios.get(
+          `http://localhost:8000/api/runs/${procedureID}`
+        );
         const fetchedRun = response.data;
         setRun(fetchedRun);
         setInputValues(fetchedRun.inputValues || {});
-        setRunData(fetchedRun);  // Set runData here
+        setRunData(fetchedRun); // Set runData here
 
         if (contentRef.current) {
           contentRef.current.innerHTML = fetchedRun.content;
+          setTableHtml(fetchedRun.content); // Set tableHtml here
         }
 
         updateButtonAndTabStates(fetchedRun.status);
@@ -60,7 +65,7 @@ const NewRuns = () => {
   useEffect(() => {
     if (run && contentRef.current) {
       const inputs = contentRef.current.querySelectorAll('input[type="text"]');
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         const value = inputValues[input.id];
         if (value !== undefined) {
           input.value = value;
@@ -83,11 +88,18 @@ const NewRuns = () => {
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
+    if (newValue === "2" && contentRef.current) {
+      const tableHtml = contentRef.current.innerHTML;
+      setTableHtml(tableHtml); // Ensure tableHtml is set
+    }
   };
 
   const updateRunStatus = async (status, successMessage) => {
     try {
-      const response = await axios.put(`http://localhost:8000/api/runs/${procedureID}`, { status });
+      const response = await axios.put(
+        `http://localhost:8000/api/runs/${procedureID}`,
+        { status }
+      );
       const updatedRun = response.data;
       setRun(updatedRun);
       setSnackbarMessage(successMessage);
@@ -101,14 +113,14 @@ const NewRuns = () => {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
-    setInputValues(prevValues => ({
+    setInputValues((prevValues) => ({
       ...prevValues,
-      [id]: value
+      [id]: value,
     }));
   };
 
   const handleSnackbarClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setSnackbarOpen(false);
@@ -132,22 +144,25 @@ const NewRuns = () => {
     const extractInputValues = () => {
       const inputs = contentRef.current.querySelectorAll('input[type="text"]');
       const values = {};
-      inputs.forEach(input => {
+      inputs.forEach((input) => {
         values[input.id] = parseFloat(input.value) || 0;
       });
       return values;
     };
 
     const updatedInputValues = extractInputValues();
-
+   
     const updatedRun = {
       ...run,
       content: updatedContent,
-      inputValues: updatedInputValues
+      inputValues: updatedInputValues,
     };
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/runs/${procedureID}`, updatedRun);
+      const response = await axios.put(
+        `http://localhost:8000/api/runs/${procedureID}`,
+        updatedRun
+      );
       const savedRun = response.data;
 
       setSnackbarMessage("Run has been saved successfully");
@@ -200,7 +215,9 @@ const NewRuns = () => {
           Stop
         </Button>
       </Box>
-      <Typography style={{ padding: "10px" }} variant="body1">{run.objective}</Typography>
+      <Typography style={{ padding: "10px" }} variant="body1">
+        {run.objective}
+      </Typography>
       {run ? (
         <Paper style={{ padding: "15px" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -219,20 +236,23 @@ const NewRuns = () => {
             {tabValue === "1" && (
               <Box
                 sx={{
-                  height: '400px',
-                  overflowY: 'auto',
-                  padding: '16px',
-                  borderRadius: '4px'
+                  height: "400px",
+                  overflowY: "auto",
+                  padding: "16px",
+                  borderRadius: "4px",
                 }}
               >
-                <div ref={contentRef} dangerouslySetInnerHTML={{ __html: run.content }} />
+                <div
+                  ref={contentRef}
+                  dangerouslySetInnerHTML={{ __html: run.content }}
+                />
               </Box>
             )}
 
             {tabValue === "2" && (
               <Box>
                 <Typography variant="body1">
-                  <ChartRuns />
+                  <ChartRuns tableHtml={tableHtml} inputValues={inputValues} />
                 </Typography>
               </Box>
             )}
@@ -257,15 +277,19 @@ const NewRuns = () => {
         open={snackbarOpen}
         autoHideDuration={6000}
         onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert onClose={handleSnackbarClose} severity="success">
           {snackbarMessage}
         </Alert>
       </Snackbar>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-        <Button variant="outlined" color="primary" onClick={handleBack}>Back</Button>
-        <Button variant="contained" color="secondary" onClick={handleSave}>Save</Button>
+      <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
+        <Button variant="outlined" color="primary" onClick={handleBack}>
+          Back
+        </Button>
+        <Button variant="contained" color="secondary" onClick={handleSave}>
+          Save
+        </Button>
       </Box>
     </Container>
   );

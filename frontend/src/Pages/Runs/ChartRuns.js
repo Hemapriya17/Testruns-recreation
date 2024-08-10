@@ -1,41 +1,45 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Radio from '@mui/material/Radio';
-import TableChart from './Charts/TableChart'; 
-import ConnectedChart from './Charts/ConnectedChart'; 
+import TableChart from './Charts/TableChart';
+import ConnectedChart from './Charts/ConnectedChart';
 
-export default function RadioButtons() {
-  const [selectedValue, setSelectedValue] = React.useState('table');
+const ChartRuns = ({ tableHtml, inputValues }) => {
+  const [selectedChart, setSelectedChart] = useState('table');
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+  const handleChartChange = (event) => {
+    setSelectedChart(event.target.value);
   };
 
   return (
     <div>
-      <div>
+      <div style={{ marginBottom: '10px' }}>
         <Radio
-          checked={selectedValue === 'table'}
-          onChange={handleChange}
+          checked={selectedChart === 'table'}
+          onChange={handleChartChange}
           value="table"
-          name="radio-buttons"
+          name="chart-radio-buttons"
           inputProps={{ 'aria-label': 'Table Chart' }}
         />
         Table Chart
+
         <Radio
-          checked={selectedValue === 'connected'}
-          onChange={handleChange}
+          checked={selectedChart === 'connected'}
+          onChange={handleChartChange}
           value="connected"
-          name="radio-buttons"
+          name="chart-radio-buttons"
           inputProps={{ 'aria-label': 'Connected Chart' }}
         />
         Connected Chart
       </div>
-      <br/>
-      
+
+      <br />
+
       <div>
-        {selectedValue === 'table' && <TableChart />}
-        {selectedValue === 'connected' && <ConnectedChart />}
+        {selectedChart === 'table' && <TableChart tableHtml={tableHtml} inputValues={inputValues} />}
+        {selectedChart === 'connected' && <ConnectedChart />}
       </div>
     </div>
   );
-}
+};
+
+export default ChartRuns;
