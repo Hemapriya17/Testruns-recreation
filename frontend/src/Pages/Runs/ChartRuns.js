@@ -21,7 +21,6 @@ const ChartRuns = ({ tableHtml, inputValues }) => {
           inputProps={{ 'aria-label': 'Table Chart' }}
         />
         Table Chart
-
         <Radio
           checked={selectedChart === 'connected'}
           onChange={handleChartChange}

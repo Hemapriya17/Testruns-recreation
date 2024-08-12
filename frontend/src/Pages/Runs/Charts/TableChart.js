@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'react-apexcharts';
 
-// Helper functions for data extraction and conversion
 const extractTableData = (tableElement, inputValues) => {
   if (!tableElement) {
     console.error('Table element not found');
@@ -15,10 +14,8 @@ const extractTableData = (tableElement, inputValues) => {
   rows.forEach((row, rowIndex) => {
     const cells = row.querySelectorAll('td');
     if (rowIndex === 0) {
-      // Extract headers
       cells.forEach(cell => headers.push(cell.textContent.trim()));
     } else {
-      // Extract and map input values
       const rowData = {};
       cells.forEach((cell, cellIndex) => {
         const inputElement = cell.querySelector('input');
@@ -48,7 +45,6 @@ const convertTableDataToChartData = (headers, data) => {
   });
 };
 
-// TableChart component
 const TableChart = ({ tableHtml, inputValues }) => {
   const [tableElement, setTableElement] = useState(null);
   const [headers, setHeaders] = useState([]);
@@ -66,6 +62,7 @@ const TableChart = ({ tableHtml, inputValues }) => {
       const { headers, data } = extractTableData(tableElement, inputValues);
       setHeaders(headers);
       setData(convertTableDataToChartData(headers, data));
+
       if (headers.length > 0) {
         setSelectedXAxis(headers[0]);
         setSelectedYAxis(headers[1]);
@@ -77,13 +74,18 @@ const TableChart = ({ tableHtml, inputValues }) => {
     return <div>No valid data to display.</div>;
   }
 
-  // Prepare ApexCharts data
   const xAxisValues = data.map(d => d[selectedXAxis]);
   const yAxisValues = data.map(d => d[selectedYAxis]);
+
+  // Debugging log to check data structure
+  console.log('XAxis Values:', xAxisValues);
+  console.log('YAxis Values:', yAxisValues);
+
   const apexSeries = [{
     name: 'Input Values',
     data: yAxisValues
   }];
+
   const apexOptions = {
     chart: {
       type: 'line',
@@ -91,12 +93,12 @@ const TableChart = ({ tableHtml, inputValues }) => {
     xaxis: {
       categories: xAxisValues,
       title: {
-        text: selectedXAxis
+        text: selectedXAxis || 'X Axis'
       }
     },
     yaxis: {
       title: {
-        text: selectedYAxis
+        text: selectedYAxis || 'Y Axis'
       }
     },
     colors: ['#1f77b4'],

@@ -208,7 +208,7 @@ const NewRuns = () => {
         </Button>
         <Button
           variant="outlined"
-          color="secondary"
+          color="error"
           onClick={handleStop}
           disabled={stopButtonDisabled}
         >
