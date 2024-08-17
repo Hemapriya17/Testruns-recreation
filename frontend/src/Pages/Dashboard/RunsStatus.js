@@ -1,11 +1,6 @@
 import React from "react";
 import {
-  Card,
-  CardContent,
-  CardHeader,
   Box,
-  Stack,
-  Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Chart from "react-apexcharts";
@@ -37,15 +32,14 @@ const RunsStatus = ({ runs }) => {
     return acc;
   }, {});
 
-  const labels = Object.keys(statusCounts);
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  const labels = Object.keys(statusCounts).map(capitalize);
   const series = Object.values(statusCounts);
-  const colors = labels.map(
-    (label) =>
-      (
-        theme.palette[statusColorMapping[label]] || {
-          main: fallbackColors[label],
-        }
-      ).main
+  const colors = labels.map((label) =>
+    (theme.palette[statusColorMapping[label.toLowerCase()]] || {
+      main: fallbackColors[label.toLowerCase()],
+    }).main
   );
 
   const chartOptions = {
@@ -60,22 +54,20 @@ const RunsStatus = ({ runs }) => {
   };
 
   return (
-    // <Card>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        height="300px"
-      >
-        <Chart
-          options={chartOptions}
-          series={series}
-          type="pie"
-          width="100%"
-          height="100%"
-        />
-      </Box>
-    // </Card>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="300px"
+    >
+      <Chart
+        options={chartOptions}
+        series={series}
+        type="pie"
+        width="100%"
+        height="100%"
+      />
+    </Box>
   );
 };
 

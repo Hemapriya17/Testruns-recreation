@@ -257,8 +257,18 @@ export default function Runs() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                id="objective"
+                label="Objective"
+                value={formData.objective}
+                onChange={handleChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
                 id="department"
                 label="Department"
+                disabled
                 value={formData.department}
                 onChange={handleChange}
                 fullWidth
@@ -268,6 +278,7 @@ export default function Runs() {
               <TextField
                 id="lab"
                 label="Lab"
+                disabled
                 value={formData.lab}
                 onChange={handleChange}
                 fullWidth
@@ -284,19 +295,12 @@ export default function Runs() {
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="objective"
-                label="Objective"
-                value={formData.objective}
-                onChange={handleChange}
-                fullWidth
-              />
-            </Grid>
+          
             <Grid item xs={12}>
               <TextField
                 id="status"
                 label="Status"
+                disabled
                 select
                 value={formData.status}
                 onChange={handleChange}
@@ -312,7 +316,7 @@ export default function Runs() {
             </Grid>
           </Grid>
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-            <Button onClick={handleClose} color="primary" sx={{ mr: 1 }}>Cancel</Button>
+            <Button onClick={handleClose} color="primary" variant="outlined" sx={{ mr: 1 }}>Cancel</Button>
             <Button onClick={handleSubmit} color="primary" variant="contained">
               {editMode ? 'Update' : 'Create'}
             </Button>

@@ -31,7 +31,7 @@ const NewRuns = () => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [inputValues, setInputValues] = useState({});
   const [runData, setRunData] = useState(null);
-  const [tableHtml, setTableHtml] = useState(""); // Move here
+  const [tableHtml, setTableHtml] = useState(""); // State to hold the table HTML content
 
   const contentRef = useRef(null);
 
@@ -45,12 +45,14 @@ const NewRuns = () => {
         setRun(fetchedRun);
         setInputValues(fetchedRun.inputValues || {});
         setRunData(fetchedRun); // Set runData here
-
+        
+        // Set tableHtml here
+        setTableHtml(fetchedRun.content);
+        
         if (contentRef.current) {
           contentRef.current.innerHTML = fetchedRun.content;
-          setTableHtml(fetchedRun.content); // Set tableHtml here
         }
-
+    
         updateButtonAndTabStates(fetchedRun.status);
       } catch (error) {
         console.error("Error fetching run:", error);
@@ -58,7 +60,7 @@ const NewRuns = () => {
       } finally {
         setLoading(false);
       }
-    };
+    };    
     fetchRun();
   }, [procedureID]);
 
@@ -126,12 +128,26 @@ const NewRuns = () => {
     setSnackbarOpen(false);
   };
 
-  const handleStart = () => {
-    updateRunStatus("Started", "Run has been started");
+  // Function to handle starting the script
+  const handleStart = async () => {
+    try {
+      await axios.post(`http://localhost:8000/api/runs/${procedureID}/start`);
+      updateRunStatus("Started", "Run and script have been started");
+    } catch (error) {
+      console.error("Error starting the script:", error);
+      setError("Failed to start the script.");
+    }
   };
 
-  const handleStop = () => {
-    updateRunStatus("Stopped", "Run has been stopped");
+  // Function to handle stopping the script
+  const handleStop = async () => {
+    try {
+      await axios.post(`http://localhost:8000/api/runs/${procedureID}/stop`);
+      updateRunStatus("Stopped", "Run and script have been stopped");
+    } catch (error) {
+      console.error("Error stopping the script:", error);
+      setError("Failed to stop the script.");
+    }
   };
 
   const handleBack = () => {
@@ -216,7 +232,7 @@ const NewRuns = () => {
         </Button>
       </Box>
       <Typography style={{ padding: "10px" }} variant="body1">
-        {run.objective}
+       Runs Objective: {run.objective}
       </Typography>
       {run ? (
         <Paper style={{ padding: "15px" }}>
@@ -244,7 +260,7 @@ const NewRuns = () => {
               >
                 <div
                   ref={contentRef}
-                  dangerouslySetInnerHTML={{ __html: run.content }}
+                  dangerouslySetInnerHTML={{ __html: tableHtml }} // Use tableHtml here
                 />
               </Box>
             )}
@@ -264,33 +280,37 @@ const NewRuns = () => {
             {tabValue === "4" && (
               <Box>
                 <Typography variant="body1">
-                  <Remarks />
+                  <Remarks runData={run} />
                 </Typography>
               </Box>
             )}
           </Box>
         </Paper>
       ) : (
-        <Typography color="error">Run not found.</Typography>
+        <Typography>No run data available</Typography>
       )}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}
         onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-        <Alert onClose={handleSnackbarClose} severity="success">
+        <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: "100%" }}>
           {snackbarMessage}
         </Alert>
       </Snackbar>
-      <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
-        <Button variant="outlined" color="primary" onClick={handleBack}>
-          Back
-        </Button>
-        <Button variant="contained" color="secondary" onClick={handleSave}>
-          Save
-        </Button>
-      </Box>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+  <Button  sx={{ mt: 2 }} variant="outlined" color="secondary" onClick={handleBack}>
+    Back
+  </Button>
+  <Button
+    variant="contained"
+    color="primary"
+    onClick={handleSave}
+    sx={{ mt: 2 }}
+  >
+    Save
+  </Button>
+</div>
     </Container>
   );
 };

@@ -1,6 +1,10 @@
 const Run = require('../models/Run');
 const Procedure = require('../models/Procedure');
 const mongoose = require('mongoose');
+const { spawn } = require('child_process');
+const path = require('path');
+
+let pythonProcess = null;
 
 // Get all runs with populated procedure details
 const getRuns = async (req, res) => {
@@ -45,7 +49,6 @@ const getRunById = async (req, res) => {
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
-
 
 // Create a new run
 const createRun = async (req, res) => {
@@ -130,10 +133,95 @@ const deleteRun = async (req, res) => {
   }
 };
 
+// Function to start the run/chart and the Python simulation
+const startRun = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid Run ID format' });
+    }
+
+    const run = await Run.findById(id);
+    if (!run) {
+      return res.status(404).json({ message: 'Run not found' });
+    }
+
+    // Check if the simulation is already running
+    if (pythonProcess) {
+      return res.status(400).json({ message: 'Simulation is already running' });
+    }
+
+    // Update the script path to ensure it's correct
+    const scriptPath = path.join(__dirname, '..', 'routes', 'scripts', 'Simulations.py');
+
+    pythonProcess = spawn('python3', [scriptPath]);
+
+    pythonProcess.stdout.on('data', (data) => {
+      console.log(`Python Output: ${data}`);
+      // You can also process and save this data if needed
+    });
+
+    pythonProcess.stderr.on('data', (data) => {
+      console.error(`Python Error: ${data}`);
+    });
+
+    pythonProcess.on('close', (code) => {
+      console.log(`Python process exited with code ${code}`);
+      pythonProcess = null;
+    });
+
+    run.status = 'Started';
+    run.startedAt = new Date();
+    await run.save();
+
+    res.status(200).json({ message: 'Run and simulation started successfully', run });
+  } catch (error) {
+    console.error('Error starting run:', error);
+    res.status(500).json({ message: 'Server Error', error: error.message });
+  }
+};
+
+
+// Function to stop the run/chart and the Python simulation
+const stopRun = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: 'Invalid Run ID format' });
+    }
+
+    const run = await Run.findById(id);
+    if (!run) {
+      return res.status(404).json({ message: 'Run not found' });
+    }
+
+    // Stop the Python simulation script
+    if (pythonProcess) {
+      pythonProcess.kill('SIGINT'); // Gracefully stop the process
+      pythonProcess = null;
+    } else {
+      return res.status(400).json({ message: 'No simulation is currently running' });
+    }
+
+    run.status = 'Stopped';
+    run.stoppedAt = new Date();
+    await run.save();
+
+    res.status(200).json({ message: 'Run and simulation stopped successfully', run });
+  } catch (error) {
+    console.error('Error stopping run:', error);
+    res.status(500).json({ message: 'Server Error', error: error.message });
+  }
+};
+
 module.exports = {
   getRuns,
   getRunById,
   createRun,
   updateRun,
-  deleteRun
+  deleteRun,
+  startRun,
+  stopRun,
 };
