@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 // Get all users
 exports.getUsers = async (req, res) => {
@@ -10,11 +12,39 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-// Create a new user
+// Create a new user and send email with credentials
 exports.createUser = async (req, res) => {
   try {
     const user = new User(req.body);
+    
+    // Generate a random password if needed, or use req.body.password
+    const password = user.password || Math.random().toString(36).slice(-8);
+    user.password = password;
+
     await user.save();
+
+    // Set up nodemailer transport with Outlook
+    const transporter = nodemailer.createTransport({
+      host: 'smtp-mail.outlook.com',
+      port: 587,
+      secure: false, // Use TLS
+      auth: {
+        user: 'hema.learny@gmail.com', // Your Outlook email address
+        pass: 'Hemapriya5', // Your email password
+      },
+    });
+
+    // Set up email data, using firstName from the user object
+    const mailOptions = {
+      from: 'hema.learny@gmail.com', // Sender address
+      to: user.email, // List of receivers
+      subject: 'Welcome to Our Application', // Subject line
+      text: `Hello ${user.firstName},\n\nYour account has been created successfully.\n\nYour credentials are:\nEmail: ${user.email}\nPassword: ${password}\n\nPlease log in and change your password immediately.\n\nBest regards,\nHema PriyaDharshini`,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+
     res.status(201).json(user);
   } catch (error) {
     res.status(400).json({ message: error.message });

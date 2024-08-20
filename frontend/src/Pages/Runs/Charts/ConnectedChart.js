@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ApexCharts from 'react-apexcharts';
 import { InfluxDB } from '@influxdata/influxdb-client';
-import { Button, Snackbar } from '@mui/material';
+import { Snackbar, Select, MenuItem, OutlinedInput, Button } from '@mui/material';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
+
+const waveOptions = ['sawtooth_wave', 'sine_wave', 'square_wave', 'triangle_wave'];
 
 const ConnectedChart = () => {
   const [demoChartData, setDemoChartData] = useState({
@@ -24,6 +26,7 @@ const ConnectedChart = () => {
     triangle_wave: []
   });
 
+  const [selectedWaves, setSelectedWaves] = useState(['', '', '', '']);
   const [isSimulateRunning, setIsSimulateRunning] = useState(false);
   const [simulateStartTime, setSimulateStartTime] = useState(null);
   const [simulateStopTime, setSimulateStopTime] = useState(null);
@@ -70,7 +73,6 @@ const ConnectedChart = () => {
             newChartData[field] = [];
           }
 
-          // Convert UTC time to IST
           const localTime = dayjs.utc(o._time).tz('Asia/Kolkata').format();
           newChartData[field].push({ x: localTime, y: parseFloat(value) });
         },
@@ -90,8 +92,8 @@ const ConnectedChart = () => {
     };
 
     if (isSimulateRunning && showSimulateChart) {
-      fetchData(simulateStartTime); // Fetch data initially for Simulate chart
-      simulateIntervalId = setInterval(() => fetchData(simulateStartTime), 1000); // Update every second for Simulate chart
+      fetchData(simulateStartTime);
+      simulateIntervalId = setInterval(() => fetchData(simulateStartTime), 1000);
     }
 
     return () => {
@@ -110,20 +112,17 @@ const ConnectedChart = () => {
     }
   }, [showSimulateChart]);
 
-  const handleAddSimulateChart = () => {
-    setShowSimulateChart(true);
-    setSnackbarMessage('Simulate chart added');
-    setOpenSnackbar(true);
+  const handleWaveChange = (index, event) => {
+    const value = event.target.value;
+    setSelectedWaves((prevSelectedWaves) => {
+      const newSelectedWaves = [...prevSelectedWaves];
+      newSelectedWaves[index] = value;
+      return newSelectedWaves;
+    });
   };
 
-  const handleRemoveSimulateChart = () => {
-    setShowSimulateChart(false);
-    setSnackbarMessage('Simulate chart removed');
-    setOpenSnackbar(true);
-  };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
+  const handleClearSelection = () => {
+    setSelectedWaves(['', '', '', '']);
   };
 
   const apexOptions = {
@@ -141,7 +140,7 @@ const ConnectedChart = () => {
     },
     stroke: {
       width: [4, 4, 4, 4],
-      curve: 'smooth'
+      curve: 'straight'
     },
     colors: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'],
     dataLabels: { enabled: false },
@@ -156,31 +155,52 @@ const ConnectedChart = () => {
     }
   };
 
-  const simulateApexSeries = [
-    { name: 'Sawtooth Wave', data: simulateChartData.sawtooth_wave },
-    { name: 'Sine Wave', data: simulateChartData.sine_wave },
-    { name: 'Square Wave', data: simulateChartData.square_wave },
-    { name: 'Triangle Wave', data: simulateChartData.triangle_wave }
-  ];
+  const simulateApexSeries = selectedWaves
+    .filter((wave) => wave)
+    .map((wave) => ({
+      name: wave.replace('_', ' ').toUpperCase(),
+      data: simulateChartData[wave]
+    }));
 
   return (
-    <div>
-
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', marginRight: '20px' }}>
+        {selectedWaves.map((selectedWave, index) => (
+          <Select
+            key={index}
+            value={selectedWave}
+            onChange={(event) => handleWaveChange(index, event)}
+            input={<OutlinedInput />}
+            displayEmpty
+            style={{ marginBottom: '10px', width: '150px' }}
+          >
+            <MenuItem disabled value="">
+              <em>Select Wave</em>
+            </MenuItem>
+            {waveOptions.map((wave) => (
+              <MenuItem key={wave} value={wave} disabled={selectedWaves.includes(wave) && selectedWave !== wave}>
+                {wave.replace('_', ' ').toUpperCase()}
+              </MenuItem>
+            ))}
+          </Select>
+        ))}
+        <Button onClick={handleClearSelection} variant="contained" color="secondary">
+          Clear
+        </Button>
+      </div>
 
       {showSimulateChart && (
-        <div>
-          <div style={{ width: '100%', height: '400px', marginBottom: '20px' }}>
-            <ApexCharts
-              options={{ ...apexOptions, title: { text: 'Simulate', style: { fontSize: '20px', fontWeight: 'bold', color: '#263238' } } }}
-              series={simulateApexSeries}
-              type="line"
-              height={350}
-            />
-          </div>
+        <div style={{ flex: 1 }}>
+          <ApexCharts
+            options={{ ...apexOptions, title: { text: 'Simulate', style: { fontSize: '20px', fontWeight: 'bold', color: '#263238' } } }}
+            series={simulateApexSeries}
+            type="line"
+            height={350}
+          />
         </div>
       )}
 
-      <Snackbar open={openSnackbar} autoHideDuration={3000} onClose={handleCloseSnackbar} message={snackbarMessage} />
+      <Snackbar open={openSnackbar} autoHideDuration={3000} onClose={() => setOpenSnackbar(false)} message={snackbarMessage} />
     </div>
   );
 };

@@ -1,7 +1,6 @@
-// src/components/UserManagement.js
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Button, Typography, Box, TextField, MenuItem, Modal, IconButton, Grid } from '@mui/material';
+import { Button, Typography, Box, TextField, MenuItem, Modal, IconButton, Grid, Snackbar } from '@mui/material';
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -29,6 +28,8 @@ export default function UserManagement() {
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [rows, setRows] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);  // Snackbar open state
+  const [snackbarMessage, setSnackbarMessage] = useState('');  // Snackbar message state
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -47,12 +48,15 @@ export default function UserManagement() {
     { field: "dept", headerName: "Department", width: 150 },
     { field: "role", headerName: "Role", width: 100 },
     { field: "userStatus", headerName: "Status", width: 100 },
-    { field: "addDate", headerName: "Added On", width: 150, 
+    {
+      field: "addDate",
+      headerName: "Added On",
+      width: 150,
       valueFormatter: (params) => {
         const date = new Date(params.value);
-        return isNaN(date.getTime()) ? 'Invalid Date' : date.toLocaleString();
+        return isNaN(date.getTime()) ? 'Invalid Date' : date.toISOString().split('T')[0];
       }
-    },
+    },,
     {
       field: "actions",
       headerName: "Actions",
@@ -116,6 +120,8 @@ export default function UserManagement() {
 
   const handleDeleteClose = () => setDeleteOpen(false);
 
+  const handleSnackbarClose = () => setSnackbarOpen(false);  // Close Snackbar
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData(prevState => ({
@@ -131,6 +137,8 @@ export default function UserManagement() {
           const updatedUser = { ...response.data, id: response.data._id };
           setRows(rows.map(row => row.id === selectedUserId ? updatedUser : row));
           handleClose();
+          setSnackbarMessage('User has been updated successfully!!!');
+          setSnackbarOpen(true);
         })
         .catch(error => console.error(error));
     } else {
@@ -139,6 +147,8 @@ export default function UserManagement() {
           const newUser = { ...response.data, id: response.data._id };
           setRows([newUser, ...rows]);
           handleClose();
+          setSnackbarMessage('User has been created successfully!!!');
+          setSnackbarOpen(true);
         })
         .catch(error => console.error(error));
     }
@@ -149,6 +159,8 @@ export default function UserManagement() {
       .then(() => {
         setRows(rows.filter(row => row.id !== selectedUserId));
         handleDeleteClose();
+        setSnackbarMessage('User has been deleted successfully!!!');
+        setSnackbarOpen(true);
       })
       .catch(error => console.error(error));
   };
@@ -209,22 +221,24 @@ export default function UserManagement() {
         <Box sx={style}>
           <Typography variant="h6">Are you sure you want to delete the user?</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
-            <Button onClick={handleDeleteClose} sx={{ mr: 1 }}>Cancel</Button>
-            <Button onClick={handleDelete} variant='contained'>Delete</Button>
+            <Button onClick={handleDeleteClose} sx={{ mr: 2 }}>Cancel</Button>
+            <Button variant="contained" color="error" onClick={handleDelete}>Delete</Button>
           </Box>
         </Box>
       </Modal>
       <DataGrid
         rows={rows}
         columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
+        pageSize={5}
+        rowsPerPageOptions={[5, 10, 20]}
         onRowClick={(params) => handleOpen(params.row)}
+      />
+      <Snackbar
+        open={snackbarOpen}
+        onClose={handleSnackbarClose}
+        message={snackbarMessage}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}  // Positioning the Snackbar
       />
     </div>
   );

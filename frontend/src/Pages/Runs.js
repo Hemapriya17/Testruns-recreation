@@ -329,8 +329,8 @@ export default function Runs() {
             Are you sure you want to delete this run?
           </Typography>
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-            <Button onClick={handleDeleteClose} color="primary" sx={{ mr: 1 }}>Cancel</Button>
-            <Button onClick={handleDelete} color="secondary" variant="contained">Delete</Button>
+            <Button onClick={handleDeleteClose} color="primary" variant="outlined" sx={{ mr: 1 }}>Cancel</Button>
+            <Button onClick={handleDelete} color="error" variant="contained">Delete</Button>
           </Box>
         </Box>
       </Modal>
