@@ -71,7 +71,7 @@ export default function Runs() {
   }, []);
 
   const fetchRuns = () => {
-    axios.get('https://testruns-backends.vercel.app/api/runs')
+    axios.get('https://testruns-backend.onrender.com/api/runs')
       .then(response => {
         const runsWithId = response.data.map(run => ({ ...run, id: run._id }));
         const sortedRuns = runsWithId.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
@@ -81,7 +81,7 @@ export default function Runs() {
   };
 
   const fetchProcedures = () => {
-    axios.get('https://testruns-backends.vercel.app/api/procedures')
+    axios.get('https://testruns-backend.onrender.com/api/procedures')
       .then(response => {
         setProcedures(response.data);
       })

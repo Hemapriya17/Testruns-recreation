@@ -78,7 +78,7 @@ export default function Runs() {
   }, []);
 
   const fetchRuns = () => {
-    axios.get('https://testruns-backends.vercel.app/api/runs')
+    axios.get('https://testruns-backend.onrender.com/api/runs')
       .then(response => {
         const runsWithId = response.data.map(run => ({ ...run, id: run._id }));
         const sortedRuns = runsWithId.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
@@ -88,7 +88,7 @@ export default function Runs() {
   };
 
   const fetchProcedures = () => {
-    axios.get('https://testruns-backends.vercel.app/api/procedures')
+    axios.get('https://testruns-backend.onrender.com/api/procedures')
       .then(response => {
         setProcedures(response.data);
       })
@@ -171,7 +171,7 @@ export default function Runs() {
   const handleSubmit = () => {
     if (editMode) {
       // Update an existing run
-      axios.put(`https://testruns-backends.vercel.app/api/runs/${selectedRunId}`, formData)
+      axios.put(`https://testruns-backend.onrender.com/api/runs/${selectedRunId}`, formData)
         .then(response => {
           fetchRuns(); // Refresh the list of runs
           handleClose(); // Close the form or modal
@@ -181,7 +181,7 @@ export default function Runs() {
         });
     } else {
       // Create a new run
-      axios.post('https://testruns-backends.vercel.app/api/runs', {
+      axios.post('https://testruns-backend.onrender.com/api/runs', {
         ...formData,
         createdOn: new Date().toISOString().split('T')[0], // Use the current date
         assignedBy: currentUser ? currentUser.displayName || 'Unknown' : 'Unknown' // Use the current user's display name
@@ -199,7 +199,7 @@ export default function Runs() {
   };
 
   const handleDelete = () => {
-    axios.delete(`https://testruns-backends.vercel.app/api/runs/${selectedRunId}`)
+    axios.delete(`https://testruns-backend.onrender.com/api/runs/${selectedRunId}`)
       .then(() => {
         fetchRuns();
         handleDeleteClose();

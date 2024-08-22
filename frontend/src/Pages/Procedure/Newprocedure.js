@@ -21,7 +21,7 @@ const Newprocedure = () => {
 
   useEffect(() => {
     // Fetch assets for the dropdown
-    axios.get('https://testruns-backends.vercel.app/api/assets')
+    axios.get('https://testruns-backend.onrender.com/api/assets')
       .then(response => {
         setAssets(response.data);
       })
@@ -32,7 +32,7 @@ const Newprocedure = () => {
       setFormData(location.state.procedure);
     } else {
       // For new procedure, set default createdBy to current user ID (Replace with actual user name if available)
-      axios.get('https://testruns-backends.vercel.app/api/users/669b86da74088e9469ed9ac7') // Fetch user details if needed
+      axios.get('https://testruns-backend.onrender.com/api/users/669b86da74088e9469ed9ac7') // Fetch user details if needed
         .then(response => {
           setFormData(prevData => ({
             ...prevData,
@@ -60,8 +60,8 @@ const Newprocedure = () => {
     }
     
     const request = formData._id
-      ? axios.put(`https://testruns-backends.vercel.app/api/procedures/${formData._id}`, formData)
-      : axios.post('https://testruns-backends.vercel.app/api/procedures', formData);
+      ? axios.put(`https://testruns-backend.onrender.com/api/procedures/${formData._id}`, formData)
+      : axios.post('https://testruns-backend.onrender.com/api/procedures', formData);
   
     request
       .then(response => {

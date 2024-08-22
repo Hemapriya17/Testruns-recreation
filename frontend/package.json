@@ -43,7 +43,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://testruns-backends.vercel.app/",
+  "proxy": "https://testruns-backend.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",

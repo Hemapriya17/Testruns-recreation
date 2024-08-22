@@ -47,7 +47,7 @@ const NewRuns = () => {
     const fetchRun = async () => {
       try {
         const response = await axios.get(
-          `https://testruns-backends.vercel.app/api/runs/${procedureID}`
+          `https://testruns-backend.onrender.com/api/runs/${procedureID}`
         );
         const fetchedRun = response.data;
         setRun(fetchedRun);
@@ -107,7 +107,7 @@ const NewRuns = () => {
   const updateRunStatus = async (status, successMessage) => {
     try {
       const response = await axios.put(
-        `https://testruns-backends.vercel.app/api/runs/${procedureID}`,
+        `https://testruns-backend.onrender.com/api/runs/${procedureID}`,
         { status }
       );
       const updatedRun = response.data;
@@ -139,7 +139,7 @@ const NewRuns = () => {
   // Function to handle starting the script
   const handleStart = async () => {
     try {
-      await axios.post(`https://testruns-backends.vercel.app/api/runs/${procedureID}/start`);
+      await axios.post(`https://testruns-backend.onrender.com/api/runs/${procedureID}/start`);
       updateRunStatus("Started", "Run has been started!");
     } catch (error) {
       console.error("Error starting the script:", error);
@@ -150,7 +150,7 @@ const NewRuns = () => {
   // Function to handle stopping the script
   const handleStop = async () => {
     try {
-      await axios.post(`https://testruns-backends.vercel.app/api/runs/${procedureID}/stop`);
+      await axios.post(`https://testruns-backend.onrender.com/api/runs/${procedureID}/stop`);
       updateRunStatus("Stopped", "Run has been stopped!");
     } catch (error) {
       console.error("Error stopping the script:", error);
@@ -184,7 +184,7 @@ const NewRuns = () => {
 
     try {
       const response = await axios.put(
-        `https://testruns-backends.vercel.app/api/runs/${procedureID}`,
+        `https://testruns-backend.onrender.com/api/runs/${procedureID}`,
         updatedRun
       );
       const savedRun = response.data;

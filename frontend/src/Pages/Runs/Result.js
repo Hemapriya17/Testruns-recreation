@@ -17,7 +17,7 @@ const Result = ({ runData }) => {
       };
 
       axios
-        .post("https://testruns-backends.vercel.app/api/runPython", dataToSend)
+        .post("https://testruns-backend.onrender.com/api/runPython", dataToSend)
         .then((response) => {
           if (response.data && response.data.answer) {
             const answer = response.data.answer[0];
