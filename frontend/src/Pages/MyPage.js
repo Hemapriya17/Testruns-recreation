@@ -22,7 +22,7 @@ const MyPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/runs")
+      .get("https://testruns-backends.vercel.app//api/runs")
       .then((response) => {
         const dates = response.data.map((run) => run.dueDate);
         console.log("Fetched due dates:", dates); // Log due dates
