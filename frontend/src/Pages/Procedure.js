@@ -44,7 +44,7 @@ export default function Procedure() {
 
   useEffect(() => {
     axios
-      .get("https://testruns-backends.vercel.app//api/procedures")
+      .get("https://testruns-backends.vercel.app/api/procedures")
       .then((response) => {
         const proceduresWithId = response.data.map((procedure) => ({
           ...procedure,
@@ -100,7 +100,7 @@ export default function Procedure() {
   const handleSubmit = () => {
     if (editMode) {
       axios
-        .put(`https://testruns-backends.vercel.app//api/procedures/${formData.id}`, formData)
+        .put(`https://testruns-backends.vercel.app/api/procedures/${formData.id}`, formData)
         .then((response) => {
           const updatedProcedure = { ...response.data, id: response.data._id };
           setRows(
@@ -114,7 +114,7 @@ export default function Procedure() {
         .catch((error) => console.error("Error updating procedure:", error));
     } else {
       axios
-        .post("https://testruns-backends.vercel.app//api/procedures", formData)
+        .post("https://testruns-backends.vercel.app/api/procedures", formData)
         .then((response) => {
           const newProcedure = { ...response.data, id: response.data._id };
           setRows((prevRows) => [newProcedure, ...prevRows]); // Add the new procedure at the beginning of the rows array
@@ -133,7 +133,7 @@ export default function Procedure() {
   const handleDelete = () => {
     if (selectedProcedure) {
       axios
-        .delete(`https://testruns-backends.vercel.app//api/procedures/${selectedProcedure.id}`)
+        .delete(`https://testruns-backends.vercel.app/api/procedures/${selectedProcedure.id}`)
         .then(() => {
           setRows(rows.filter((row) => row.id !== selectedProcedure.id));
           handleDeleteClose();

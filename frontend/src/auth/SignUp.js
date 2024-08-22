@@ -48,7 +48,7 @@ export default function SignUp() {
       });
 
       // Save user to MongoDB
-      await axios.post("https://testruns-backends.vercel.app//api/users", {
+      await axios.post("https://testruns-backends.vercel.app/api/users", {
         email,
         firstName,
         lastName,

@@ -71,7 +71,7 @@ export default function Asset() {
   }, []);
 
   const fetchAssets = () => {
-    axios.get('https://testruns-backends.vercel.app//api/assets')
+    axios.get('https://testruns-backends.vercel.app/api/assets')
       .then(response => {
         const assetsWithId = response.data.map(asset => ({ ...asset, id: asset._id }));
         setRows(assetsWithId);
@@ -136,7 +136,7 @@ export default function Asset() {
     console.log("Form data before submission:", formData);
 
     if (editMode) {
-      axios.put(`https://testruns-backends.vercel.app//api/assets/${selectedAssetId}`, formData)
+      axios.put(`https://testruns-backends.vercel.app/api/assets/${selectedAssetId}`, formData)
         .then(response => {
           console.log('Update response:', response.data);
           fetchAssets(); 
@@ -144,7 +144,7 @@ export default function Asset() {
         })
         .catch(error => console.error('Update failed:', error.response?.data || error));
     } else {
-      axios.post('https://testruns-backends.vercel.app//api/assets', formData)
+      axios.post('https://testruns-backends.vercel.app/api/assets', formData)
         .then(response => {
           console.log('Create response:', response.data);
           fetchAssets(); 
@@ -155,7 +155,7 @@ export default function Asset() {
   };
 
   const handleDelete = () => {
-    axios.delete(`https://testruns-backends.vercel.app//api/assets/${selectedAssetId}`)
+    axios.delete(`https://testruns-backends.vercel.app/api/assets/${selectedAssetId}`)
       .then(() => {
         fetchAssets(); 
         handleDeleteClose();
