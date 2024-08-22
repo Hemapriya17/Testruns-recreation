@@ -153,7 +153,7 @@ const startRun = async (req, res) => {
     }
 
     // Update the script path to ensure it's correct
-    const scriptPath = path.join(__dirname, '..', 'routes', 'scripts', 'Simulations.py');
+    const scriptPath = path.join(__dirname, '..', 'api', 'scripts', 'Simulations.py');
 
     pythonProcess = spawn('python3', [scriptPath]);
 
