@@ -117,7 +117,7 @@ export default function Procedure() {
         .post("http://localhost:8000/api/procedures", formData)
         .then((response) => {
           const newProcedure = { ...response.data, id: response.data._id };
-          setRows((prevRows) => [newProcedure, ...prevRows]);
+          setRows((prevRows) => [newProcedure, ...prevRows]); // Add the new procedure at the beginning of the rows array
           navigate("/newprocedure", { state: { procedure: newProcedure } });
           handleClose();
         })
@@ -127,6 +127,8 @@ export default function Procedure() {
         });
     }
   };
+  
+  
 
   const handleDelete = () => {
     if (selectedProcedure) {

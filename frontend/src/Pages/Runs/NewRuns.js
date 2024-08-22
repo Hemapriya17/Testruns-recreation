@@ -35,6 +35,14 @@ const NewRuns = () => {
 
   const contentRef = useRef(null);
 
+  const [snackbarState, setSnackbarState] = useState({
+    open: false,
+    vertical: "bottom",
+    horizontal: "center",
+  });
+
+  const { vertical, horizontal, open } = snackbarState;
+
   useEffect(() => {
     const fetchRun = async () => {
       try {
@@ -45,14 +53,14 @@ const NewRuns = () => {
         setRun(fetchedRun);
         setInputValues(fetchedRun.inputValues || {});
         setRunData(fetchedRun); // Set runData here
-        
+
         // Set tableHtml here
         setTableHtml(fetchedRun.content);
-        
+
         if (contentRef.current) {
           contentRef.current.innerHTML = fetchedRun.content;
         }
-    
+
         updateButtonAndTabStates(fetchedRun.status);
       } catch (error) {
         console.error("Error fetching run:", error);
@@ -60,7 +68,7 @@ const NewRuns = () => {
       } finally {
         setLoading(false);
       }
-    };    
+    };
     fetchRun();
   }, [procedureID]);
 
@@ -105,7 +113,7 @@ const NewRuns = () => {
       const updatedRun = response.data;
       setRun(updatedRun);
       setSnackbarMessage(successMessage);
-      setSnackbarOpen(true);
+      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
       updateButtonAndTabStates(updatedRun.status);
     } catch (error) {
       console.error("Error updating run status:", error);
@@ -125,14 +133,14 @@ const NewRuns = () => {
     if (reason === "clickaway") {
       return;
     }
-    setSnackbarOpen(false);
+    setSnackbarState({ ...snackbarState, open: false });
   };
 
   // Function to handle starting the script
   const handleStart = async () => {
     try {
       await axios.post(`http://localhost:8000/api/runs/${procedureID}/start`);
-      updateRunStatus("Started", "Run and script have been started");
+      updateRunStatus("Started", "Run has been started!");
     } catch (error) {
       console.error("Error starting the script:", error);
       setError("Failed to start the script.");
@@ -143,7 +151,7 @@ const NewRuns = () => {
   const handleStop = async () => {
     try {
       await axios.post(`http://localhost:8000/api/runs/${procedureID}/stop`);
-      updateRunStatus("Stopped", "Run and script have been stopped");
+      updateRunStatus("Stopped", "Run has been stopped!");
     } catch (error) {
       console.error("Error stopping the script:", error);
       setError("Failed to stop the script.");
@@ -167,7 +175,7 @@ const NewRuns = () => {
     };
 
     const updatedInputValues = extractInputValues();
-   
+
     const updatedRun = {
       ...run,
       content: updatedContent,
@@ -182,7 +190,7 @@ const NewRuns = () => {
       const savedRun = response.data;
 
       setSnackbarMessage("Run has been saved successfully");
-      setSnackbarOpen(true);
+      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
       setRun(savedRun);
       setInputValues(savedRun.inputValues);
     } catch (error) {
@@ -231,9 +239,15 @@ const NewRuns = () => {
           Stop
         </Button>
       </Box>
-      <Typography style={{ padding: "10px" }} variant="body1">
-       Runs Objective: {run.objective}
-      </Typography>
+      <Box sx={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
+  <Typography variant="body1">
+    <b>Runs Objective:</b> {run.objective}
+  </Typography>
+  <Typography variant="body1">
+    <b>Status:</b> {run.status}
+  </Typography>
+</Box>
+
       {run ? (
         <Paper style={{ padding: "15px" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -268,15 +282,20 @@ const NewRuns = () => {
             {tabValue === "2" && (
               <Box>
                 <Typography variant="body1">
-                  <ChartRuns tableHtml={tableHtml} inputValues={inputValues} />
+                  <ChartRuns
+                    tableHtml={tableHtml} // Pass tableHtml as a prop
+                    inputValues={inputValues}
+                  />
                 </Typography>
               </Box>
             )}
+
             {tabValue === "3" && (
               <Box>
                 {runData ? <Result runData={runData} /> : <p>Loading...</p>}
               </Box>
             )}
+
             {tabValue === "4" && (
               <Box>
                 <Typography variant="body1">
@@ -290,11 +309,16 @@ const NewRuns = () => {
         <Typography>No run data available</Typography>
       )}
       <Snackbar
-        open={snackbarOpen}
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
         autoHideDuration={6000}
         onClose={handleSnackbarClose}
       >
-        <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: "100%" }}>
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
           {snackbarMessage}
         </Alert>
       </Snackbar>

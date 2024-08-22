@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ApexCharts from 'react-apexcharts';
 import { InfluxDB } from '@influxdata/influxdb-client';
-import { Snackbar, Select, MenuItem, OutlinedInput, Button, Box } from '@mui/material';
+import { Select, MenuItem, OutlinedInput, Button, Box } from '@mui/material';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
@@ -27,19 +27,16 @@ const ConnectedChart = () => {
     gaussian_wave: [],
     rectified_sine_wave: []
   });
-  const [isSimulateRunning, setIsSimulateRunning] = useState(false);
-  const [simulateStartTime, setSimulateStartTime] = useState(null);
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState('');
   const [charts, setCharts] = useState([{ id: 1, measurement: 'Simulate_connect', waves: ['', '', '', ''] }]);
 
   useEffect(() => {
     const influxDB = new InfluxDB({
-      url: 'http://localhost:8086',
-      token: 'WDDwXl5yivgQ3Wnh_4E1olNOf06XRWDbtblx8m6yEmLhFRBl7sR_9gy8ZGDwkcu4qb51hyML89jpanMD3ClnbA==',
+      url: "https://us-east-1-1.aws.cloud2.influxdata.com/",
+token: "5uChyvv8PHHOp_BF5Uhu0-z8IfE3ckVoCfJp5NHiP54T4AXbtyjDcWl8zW9deVRhW6Td6W0xYc95bXDWGq3Peg=="
     });
 
     const queryApi = influxDB.getQueryApi('Learny');
+    let intervalId = null;
 
     const fetchData = (startTime, measurement) => {
       let query = '';
@@ -102,35 +99,30 @@ const ConnectedChart = () => {
                 ...newChartData[key]
               ];
             });
-            console.log('Updated chart data:', updatedData); // Add this line
             return updatedData;
           });
         }
       });
     };
 
-    if (isSimulateRunning) {
+    if (charts.length > 0) {
+      const startTime = new Date();
       charts.forEach((chart) => {
-        fetchData(simulateStartTime, chart.measurement);
+        fetchData(startTime, chart.measurement);
       });
 
-      const intervalId = setInterval(() => {
+      intervalId = setInterval(() => {
         charts.forEach((chart) => {
-          fetchData(simulateStartTime, chart.measurement);
+          fetchData(startTime, chart.measurement);
         });
       }, 1000);
-
-      return () => clearInterval(intervalId);
     }
-  }, [isSimulateRunning, simulateStartTime, charts]);
 
-  useEffect(() => {
-    if (charts.length > 0) {
-      setIsSimulateRunning(true);
-      setSimulateStartTime(new Date());
-    } else {
-      setIsSimulateRunning(false);
-    }
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
   }, [charts]);
 
   const handleWaveChange = (index, waveIndex, event) => {
@@ -238,30 +230,29 @@ const ConnectedChart = () => {
             ))}
           </Select>
         ))}
-        {charts.length > 1 && (
-          <Button
-            variant="outlined"
-            color="error"
-            style={{ marginTop: '10px' }}
-            onClick={() => handleRemoveChart(index)}
-          >
-            Remove
-          </Button>
-        )}
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => handleRemoveChart(index)}
+          style={{ marginTop: '10px' }}
+        >
+          Remove Chart
+        </Button>
       </div>
     </div>
   );
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {charts.map((chart, index) => renderChart(chart, index))}
-
-      <Button onClick={handleAddChart} variant="contained" color="primary" style={{ marginTop: '20px' }}>
+    <Box>
+      {charts.map(renderChart)}
+      <Button
+        variant="contained"
+        onClick={handleAddChart}
+        style={{ marginTop: '20px' }}
+      >
         Add Chart
       </Button>
-
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)} message={snackbarMessage} />
-    </div>
+    </Box>
   );
 };
 

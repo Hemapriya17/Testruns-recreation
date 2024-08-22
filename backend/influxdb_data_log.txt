@@ -2729,3 +2729,697 @@ Timestamp: 2024-08-19T11:16:46.162Z, Sine: -6.63185981441168, Sawtooth: -7.69203
 Timestamp: 2024-08-19T11:16:47.167Z, Sine: -9.771057013557554, Sawtooth: -5.682434334953627, Square: -10.0, Triangle: -8.635131330092747
 Process interrupted by user.
 Process completed.
+Simulate_connect - Timestamp: 2024-08-22T05:17:11.052Z, Sine: -4.930712254696839, Sawtooth: -1.6412580550240274, Square: -10.0, Triangle: -3.282516110048055
+Demo_connect - Timestamp: 2024-08-22T05:17:11.052Z, Cosine: 8.699889462595626, Rectified Sine: 4.930712254696839, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:11.333Z, Sine: 6.149148059403263, Sawtooth: 2.1080961221339716, Square: 10.0, Triangle: 4.216192244267942
+Demo_connect - Timestamp: 2024-08-22T05:17:11.333Z, Cosine: 7.885935464073814, Rectified Sine: 6.149148059403263, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:12.346Z, Sine: 9.618839515662618, Sawtooth: 4.118325524435997, Square: 10.0, Triangle: 8.236651048871995
+Demo_connect - Timestamp: 2024-08-22T05:17:12.346Z, Cosine: 2.734579743201385, Rectified Sine: 9.618839515662618, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:13.349Z, Sine: 9.37806768684406, Sawtooth: 6.128531400530882, Square: 10.0, Triangle: 7.742937198938238
+Demo_connect - Timestamp: 2024-08-22T05:17:13.349Z, Cosine: -3.4715769415312265, Rectified Sine: 9.37806768684406, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:14.395Z, Sine: 5.519739196893497, Sawtooth: 8.138747901364477, Square: 10.0, Triangle: 3.7225041972710495
+Demo_connect - Timestamp: 2024-08-22T05:17:14.395Z, Cosine: -8.338613745598098, Rectified Sine: 5.519739196893497, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:15.364Z, Sine: -0.46766939133418595, Sawtooth: -9.851081891306306, Square: -10.0, Triangle: -0.2978362173873902
+Demo_connect - Timestamp: 2024-08-22T05:17:15.364Z, Cosine: -9.989058280959677, Rectified Sine: 0.46766939133418595, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:16.368Z, Sine: -6.2748879355557365, Sawtooth: -7.840828203887231, Square: -10.0, Triangle: -4.31834359222554
+Demo_connect - Timestamp: 2024-08-22T05:17:16.368Z, Cosine: -7.786255929278017, Rectified Sine: 6.2748879355557365, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:17.376Z, Sine: -9.654680767540999, Sawtooth: -5.838944533841053, Square: -10.0, Triangle: -8.322110932317898
+Demo_connect - Timestamp: 2024-08-22T05:17:17.376Z, Cosine: -2.6052138639416844, Rectified Sine: 9.654680767540999, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:18.373Z, Sine: -9.331890351374453, Sawtooth: -3.82986184440968, Square: -10.0, Triangle: -7.65972368881936
+Demo_connect - Timestamp: 2024-08-22T05:17:18.373Z, Cosine: 3.593858994162736, Rectified Sine: 9.331890351374453, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:19.372Z, Sine: -5.43307375013533, Sawtooth: -1.8282817383266134, Square: -10.0, Triangle: -3.656563476653228
+Demo_connect - Timestamp: 2024-08-22T05:17:19.372Z, Cosine: 8.395338565274805, Rectified Sine: 5.43307375013533, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:20.371Z, Sine: 0.5640389450332075, Sawtooth: 0.17963450657650176, Square: 10.0, Triangle: 0.35926901315300347
+Demo_connect - Timestamp: 2024-08-22T05:17:20.371Z, Cosine: 9.984080331632244, Rectified Sine: 0.5640389450332075, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:21.381Z, Sine: 6.349651545837603, Sawtooth: 2.1898555608695425, Square: 10.0, Triangle: 4.379711121739085
+Demo_connect - Timestamp: 2024-08-22T05:17:21.381Z, Cosine: 7.725407772178898, Rectified Sine: 6.349651545837603, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:22.383Z, Sine: 9.685831584146046, Sawtooth: 4.199999965261897, Square: 10.0, Triangle: 8.399999930523796
+Demo_connect - Timestamp: 2024-08-22T05:17:22.383Z, Cosine: 2.486898977352904, Rectified Sine: 9.685831584146046, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:23.390Z, Sine: 9.28819061846687, Sawtooth: 6.20825164834425, Square: 10.0, Triangle: 7.583496703311499
+Demo_connect - Timestamp: 2024-08-22T05:17:23.390Z, Cosine: -3.7053360218776366, Rectified Sine: 9.28819061846687, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:24.432Z, Sine: 5.332720037071738, Sawtooth: 8.209622295292771, Square: 10.0, Triangle: 3.58075540941446
+Demo_connect - Timestamp: 2024-08-22T05:17:24.432Z, Cosine: -8.45943833869682, Rectified Sine: 5.332720037071738, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:25.395Z, Sine: -0.6845006837961718, Sawtooth: -9.781946159976734, Square: -10.0, Triangle: -0.43610768004653444
+Demo_connect - Timestamp: 2024-08-22T05:17:25.395Z, Cosine: -9.97654543486284, Rectified Sine: 0.6845006837961718, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:26.403Z, Sine: -6.432624360833454, Sawtooth: -7.775804246438007, Square: -10.0, Triangle: -4.44839150712399
+Demo_connect - Timestamp: 2024-08-22T05:17:26.403Z, Cosine: -7.656457655627175, Rectified Sine: 6.432624360833454, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:27.401Z, Sine: -9.706151399615266, Sawtooth: -5.773563888735172, Square: -10.0, Triangle: -8.452872222529658
+Demo_connect - Timestamp: 2024-08-22T05:17:27.401Z, Cosine: -2.4063717517762315, Rectified Sine: 9.706151399615266, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:28.409Z, Sine: -9.254795077586628, Sawtooth: -3.763376226478073, Square: -10.0, Triangle: -7.526752452956146
+Demo_connect - Timestamp: 2024-08-22T05:17:28.409Z, Cosine: 3.787976778159854, Rectified Sine: 9.254795077586628, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:29.404Z, Sine: -5.253072568910669, Sawtooth: -1.7604961077229804, Square: -10.0, Triangle: -3.5209922154459607
+Demo_connect - Timestamp: 2024-08-22T05:17:29.404Z, Cosine: 8.509126194020057, Rectified Sine: 5.253072568910669, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:30.412Z, Sine: 0.7637671490411284, Sawtooth: 0.2433516211645304, Square: 10.0, Triangle: 0.4867032423290609
+Demo_connect - Timestamp: 2024-08-22T05:17:30.412Z, Cosine: 9.970790326852008, Rectified Sine: 0.7637671490411284, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:31.494Z, Sine: 6.4829256758794465, Sawtooth: 2.245166230409101, Square: 10.0, Triangle: 4.490332460818202
+Demo_connect - Timestamp: 2024-08-22T05:17:31.494Z, Cosine: 7.613913230463231, Rectified Sine: 6.4829256758794465, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:32.412Z, Sine: 9.72755832812056, Sawtooth: 4.255280278405145, Square: 10.0, Triangle: 8.510560556810292
+Demo_connect - Timestamp: 2024-08-22T05:17:32.412Z, Cosine: 2.3183202912911627, Rectified Sine: 9.72755832812056, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:33.413Z, Sine: 9.222854331442598, Sawtooth: 6.263193487668629, Square: 10.0, Triangle: 7.473613024662744
+Demo_connect - Timestamp: 2024-08-22T05:17:33.413Z, Cosine: -3.8650948217334227, Rectified Sine: 9.222854331442598, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:34.419Z, Sine: 5.179750995462241, Sawtooth: 8.26685983708818, Square: 10.0, Triangle: 3.4662803258236408
+Demo_connect - Timestamp: 2024-08-22T05:17:34.419Z, Cosine: -8.553956957163622, Rectified Sine: 5.179750995462241, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:35.428Z, Sine: -0.868333705075377, Sawtooth: -9.723252270068295, Square: -10.0, Triangle: -0.5534954598634108
+Demo_connect - Timestamp: 2024-08-22T05:17:35.428Z, Cosine: -9.962228494500117, Rectified Sine: 0.868333705075377, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:36.435Z, Sine: -6.56944909060547, Sawtooth: -7.718483983462648, Square: -10.0, Triangle: -4.563032033074705
+Demo_connect - Timestamp: 2024-08-22T05:17:36.435Z, Cosine: -7.539385826839143, Rectified Sine: 6.56944909060547, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:37.428Z, Sine: -9.747895792966002, Sawtooth: -5.716261839597601, Square: -10.0, Triangle: -8.567476320804799
+Demo_connect - Timestamp: 2024-08-22T05:17:37.428Z, Cosine: -2.231261439068873, Rectified Sine: 9.747895792966002, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:38.461Z, Sine: -9.185212789342769, Sawtooth: -3.706158416340265, Square: -10.0, Triangle: -7.41231683268053
+Demo_connect - Timestamp: 2024-08-22T05:17:38.461Z, Cosine: 3.9537154695923733, Rectified Sine: 9.185212789342769, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:39.444Z, Sine: -5.079631655605837, Sawtooth: -1.6960140119479106, Square: -10.0, Triangle: -3.3920280238958207
+Demo_connect - Timestamp: 2024-08-22T05:17:39.444Z, Cosine: 8.613787914928432, Rectified Sine: 5.079631655605837, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:40.507Z, Sine: 0.9709846661547203, Sawtooth: 0.3095617547996138, Square: 10.0, Triangle: 0.6191235095992276
+Demo_connect - Timestamp: 2024-08-22T05:17:40.507Z, Cosine: 9.952747800386204, Rectified Sine: 0.9709846661547203, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:41.440Z, Sine: 6.648666100824267, Sawtooth: 2.31511627206972, Square: 10.0, Triangle: 4.6302325441394405
+Demo_connect - Timestamp: 2024-08-22T05:17:41.440Z, Cosine: 7.469621080064922, Rectified Sine: 6.648666100824267, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:42.441Z, Sine: 9.774550110325244, Sawtooth: 4.322811674189672, Square: 10.0, Triangle: 8.645623348379344
+Demo_connect - Timestamp: 2024-08-22T05:17:42.441Z, Cosine: 2.1114379320123957, Rectified Sine: 9.774550110325244, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T05:17:43.448Z, Sine: 9.136531730046702, Sawtooth: 6.332490107898651, Square: 10.0, Triangle: 7.335019784202702
+Demo_connect - Timestamp: 2024-08-22T05:17:43.448Z, Cosine: -4.064946241446474, Rectified Sine: 9.136531730046702, Exp Decay: 0.0, Gaussian: 0.0
+Process interrupted by user.
+Process completed.
+Simulate_connect - Timestamp: 2024-08-22T06:12:59.937Z, Sine: -4.264069618167052, Sawtooth: -8.597791552745557, Square: -10.0, Triangle: -2.8044168945088894
+Demo_connect - Timestamp: 2024-08-22T06:12:59.937Z, Cosine: -9.045314272673155, Rectified Sine: 4.264069618167052, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:00.250Z, Sine: -0.2857519203077137, Sawtooth: -0.0909700442329105, Square: -10.0, Triangle: -0.181940088465821
+Demo_connect - Timestamp: 2024-08-22T06:13:00.250Z, Cosine: 9.995916458236355, Rectified Sine: 0.2857519203077137, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:01.267Z, Sine: 5.67041180697189, Sawtooth: 1.9191197186460844, Square: 10.0, Triangle: 3.838239437292169
+Demo_connect - Timestamp: 2024-08-22T06:13:01.267Z, Cosine: 8.236894435365418, Rectified Sine: 5.67041180697189, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:02.269Z, Sine: 9.43081844123864, Sawtooth: 3.9208736150980323, Square: 10.0, Triangle: 7.841747230196066
+Demo_connect - Timestamp: 2024-08-22T06:13:02.269Z, Cosine: 3.325607242052671, Rectified Sine: 9.43081844123864, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:03.259Z, Sine: 9.576726247979048, Sawtooth: 5.929436451242576, Square: 10.0, Triangle: 8.14112709751485
+Demo_connect - Timestamp: 2024-08-22T06:13:03.259Z, Cosine: -2.8785959027395873, Rectified Sine: 9.576726247979048, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:04.295Z, Sine: 6.040518046301338, Sawtooth: 7.935519928718405, Square: 10.0, Triangle: 4.128960142563194
+Demo_connect - Timestamp: 2024-08-22T06:13:04.295Z, Cosine: -7.9694505288826445, Rectified Sine: 6.040518046301338, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:05.269Z, Sine: 0.1707828279237107, Sawtooth: 9.945635494534264, Square: 10.0, Triangle: 0.10872901093147459
+Demo_connect - Timestamp: 2024-08-22T06:13:05.269Z, Cosine: -9.998541554931219, Rectified Sine: 0.1707828279237107, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:06.265Z, Sine: -5.754908658521919, Sawtooth: -8.04811027326066, Square: -10.0, Triangle: -3.9037794534786823
+Demo_connect - Timestamp: 2024-08-22T06:13:06.265Z, Cosine: -8.17808206929164, Rectified Sine: 5.754908658521919, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:07.307Z, Sine: -9.468686081936648, Sawtooth: -6.042275718234582, Square: -10.0, Triangle: -7.915448563530837
+Demo_connect - Timestamp: 2024-08-22T06:13:07.307Z, Cosine: -3.216206442649357, Rectified Sine: 9.468686081936648, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:08.351Z, Sine: -9.541279774773008, Sawtooth: -4.032138144031398, Square: -10.0, Triangle: -8.064276288062795
+Demo_connect - Timestamp: 2024-08-22T06:13:08.351Z, Cosine: 2.9939906912860548, Rectified Sine: 9.541279774773008, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:09.309Z, Sine: -5.934136924267021, Sawtooth: -2.0222016809537737, Square: -10.0, Triangle: -4.0444033619075475
+Demo_connect - Timestamp: 2024-08-22T06:13:09.309Z, Cosine: 8.048976268076006, Rectified Sine: 5.934136924267021, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:10.304Z, Sine: -0.03811976191120088, Sawtooth: -0.012133926462104703, Square: -10.0, Triangle: -0.024267852924209406
+Demo_connect - Timestamp: 2024-08-22T06:13:10.304Z, Cosine: 9.999927343923646, Rectified Sine: 0.03811976191120088, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:11.302Z, Sine: 5.872624985312531, Sawtooth: 1.9979436938583657, Square: 10.0, Triangle: 3.9958873877167314
+Demo_connect - Timestamp: 2024-08-22T06:13:11.302Z, Cosine: 8.093965392925954, Rectified Sine: 5.872624985312531, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:12.298Z, Sine: 9.518384229810739, Sawtooth: 4.008085821520997, Square: 10.0, Triangle: 8.016171643041996
+Demo_connect - Timestamp: 2024-08-22T06:13:12.298Z, Cosine: 3.0660009219976154, Rectified Sine: 9.518384229810739, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:13.307Z, Sine: 9.493809052014916, Sawtooth: 6.017118422898457, Square: 10.0, Triangle: 7.965763154203091
+Demo_connect - Timestamp: 2024-08-22T06:13:13.307Z, Cosine: -3.1412719850213007, Rectified Sine: 9.493809052014916, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:14.373Z, Sine: 5.810941054341972, Sawtooth: 8.02624816474411, Square: 10.0, Triangle: 3.9475036705117823
+Demo_connect - Timestamp: 2024-08-22T06:13:14.373Z, Cosine: -8.138363721471473, Rectified Sine: 5.810941054341972, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:15.313Z, Sine: -0.10599591360731833, Sawtooth: -9.966259820991224, Square: -10.0, Triangle: -0.0674803580175516
+Demo_connect - Timestamp: 2024-08-22T06:13:15.313Z, Cosine: -9.999438227535512, Rectified Sine: 0.10599591360731833, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:16.316Z, Sine: -5.988680501398164, Sawtooth: -7.9561738526617685, Square: -10.0, Triangle: -4.087652294676464
+Demo_connect - Timestamp: 2024-08-22T06:13:16.316Z, Cosine: -8.008477124408449, Rectified Sine: 5.988680501398164, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:17.342Z, Sine: -9.559690802706402, Sawtooth: -5.948092165398759, Square: -10.0, Triangle: -8.103815669202486
+Demo_connect - Timestamp: 2024-08-22T06:13:17.342Z, Cosine: -2.9346740460655276, Rectified Sine: 9.559690802706402, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:18.316Z, Sine: -9.451417482752989, Sawtooth: -3.9407663524038954, Square: -10.0, Triangle: -7.881532704807791
+Demo_connect - Timestamp: 2024-08-22T06:13:18.316Z, Cosine: 3.2666048990827115, Rectified Sine: 9.451417482752989, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:19.391Z, Sine: -5.708653368231004, Sawtooth: -1.933921688290564, Square: -10.0, Triangle: -3.8678433765811278
+Demo_connect - Timestamp: 2024-08-22T06:13:19.391Z, Cosine: 8.21043706031444, Rectified Sine: 5.708653368231004, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:20.329Z, Sine: 0.22457882846962762, Sawtooth: 0.07149167173669559, Square: 10.0, Triangle: 0.1429833434733912
+Demo_connect - Timestamp: 2024-08-22T06:13:20.329Z, Cosine: 9.997477899440598, Rectified Sine: 0.22457882846962762, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:21.337Z, Sine: 6.064864010002195, Sawtooth: 2.074215455050786, Square: 10.0, Triangle: 4.148430910101571
+Demo_connect - Timestamp: 2024-08-22T06:13:21.337Z, Cosine: 7.950938594919476, Rectified Sine: 6.064864010002195, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:22.338Z, Sine: 9.589109396746126, Sawtooth: 4.0843560648936, Square: 10.0, Triangle: 8.168712129787203
+Demo_connect - Timestamp: 2024-08-22T06:13:22.338Z, Cosine: 2.8370726069727485, Rectified Sine: 9.589109396746126, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:23.431Z, Sine: 9.418322419666527, Sawtooth: 6.09102390299842, Square: 10.0, Triangle: 7.817952194003161
+Demo_connect - Timestamp: 2024-08-22T06:13:23.431Z, Cosine: -3.360833646464349, Rectified Sine: 9.418322419666527, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:24.408Z, Sine: 5.617872679355848, Sawtooth: 8.10113946881428, Square: 10.0, Triangle: 3.7977210623714424
+Demo_connect - Timestamp: 2024-08-22T06:13:24.408Z, Cosine: -8.272817328972467, Rectified Sine: 5.617872679355848, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:25.347Z, Sine: -0.3494182475440041, Sawtooth: -9.888754072288757, Square: -10.0, Triangle: -0.22249185542248934
+Demo_connect - Timestamp: 2024-08-22T06:13:25.347Z, Cosine: -9.9938934799348, Rectified Sine: 0.3494182475440041, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:26.357Z, Sine: -6.157835346954953, Sawtooth: -7.888395811157213, Square: -10.0, Triangle: -4.223208377685574
+Demo_connect - Timestamp: 2024-08-22T06:13:26.357Z, Cosine: -7.8791537515009935, Rectified Sine: 6.157835346954953, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:27.345Z, Sine: -9.621811710631343, Sawtooth: -5.878208148900116, Square: -10.0, Triangle: -8.243583702199771
+Demo_connect - Timestamp: 2024-08-22T06:13:27.345Z, Cosine: -2.724103413080634, Rectified Sine: 9.621811710631343, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:28.355Z, Sine: -9.385245509850515, Sawtooth: -3.878068453822014, Square: -10.0, Triangle: -7.756136907644028
+Demo_connect - Timestamp: 2024-08-22T06:13:28.355Z, Cosine: 3.4521249571576558, Rectified Sine: 9.385245509850515, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:29.425Z, Sine: -5.560717063058464, Sawtooth: -1.8769201674764735, Square: -10.0, Triangle: -3.753840334952947
+Demo_connect - Timestamp: 2024-08-22T06:13:29.425Z, Cosine: 8.311343197378536, Rectified Sine: 5.560717063058464, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:30.448Z, Sine: 0.41821162277533575, Sawtooth: 0.13315972957372044, Square: 10.0, Triangle: 0.2663194591474409
+Demo_connect - Timestamp: 2024-08-22T06:13:30.448Z, Cosine: 9.991251124787908, Rectified Sine: 0.41821162277533575, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:31.362Z, Sine: 6.2359958549013825, Sawtooth: 2.143304133966075, Square: 10.0, Triangle: 4.286608267932151
+Demo_connect - Timestamp: 2024-08-22T06:13:31.362Z, Cosine: 7.817439203323092, Rectified Sine: 6.2359958549013825, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:32.367Z, Sine: 9.640670032224698, Sawtooth: 4.144104080663945, Square: 10.0, Triangle: 8.28820816132789
+Demo_connect - Timestamp: 2024-08-22T06:13:32.367Z, Cosine: 2.656592051814627, Rectified Sine: 9.640670032224698, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:33.369Z, Sine: 9.349712454046411, Sawtooth: 6.154250002876116, Square: 10.0, Triangle: 7.69149999424777
+Demo_connect - Timestamp: 2024-08-22T06:13:33.369Z, Cosine: -3.547235124241052, Rectified Sine: 9.349712454046411, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:34.374Z, Sine: 5.4525357115880535, Sawtooth: 8.164333694475848, Square: 10.0, Triangle: 3.6713326110483053
+Demo_connect - Timestamp: 2024-08-22T06:13:34.374Z, Cosine: -8.382711632512297, Rectified Sine: 5.4525357115880535, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:35.467Z, Sine: -0.5378301433706567, Sawtooth: -9.828720706393087, Square: -10.0, Triangle: -0.34255858721382626
+Demo_connect - Timestamp: 2024-08-22T06:13:35.467Z, Cosine: -9.985526462679967, Rectified Sine: 0.5378301433706567, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:36.375Z, Sine: -6.3265472641958596, Sawtooth: -7.819652436249965, Square: -10.0, Triangle: -4.360695127500074
+Demo_connect - Timestamp: 2024-08-22T06:13:36.375Z, Cosine: -7.744339850103163, Rectified Sine: 6.3265472641958596, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:37.412Z, Sine: -9.678685574937603, Sawtooth: -5.809095943777685, Square: -10.0, Triangle: -8.38180811244463
+Demo_connect - Timestamp: 2024-08-22T06:13:37.412Z, Cosine: -2.5145666707197782, Rectified Sine: 9.678685574937603, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:38.386Z, Sine: -9.302794425185308, Sawtooth: -3.804356495748533, Square: -10.0, Triangle: -7.608712991497066
+Demo_connect - Timestamp: 2024-08-22T06:13:38.386Z, Cosine: 3.6685168505461645, Rectified Sine: 9.302794425185308, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:39.397Z, Sine: -5.342928642265362, Sawtooth: -1.7942204393651637, Square: -10.0, Triangle: -3.5884408787303275
+Demo_connect - Timestamp: 2024-08-22T06:13:39.397Z, Cosine: 8.452994352515587, Rectified Sine: 5.342928642265362, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:40.399Z, Sine: 0.6652744582423781, Sawtooth: 0.21191995635374833, Square: 10.0, Triangle: 0.42383991270749666
+Demo_connect - Timestamp: 2024-08-22T06:13:40.399Z, Cosine: 9.9778459546743, Rectified Sine: 0.6652744582423781, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:41.403Z, Sine: 6.428288832418515, Sawtooth: 2.2223937276460792, Square: 10.0, Triangle: 4.4447874552921585
+Demo_connect - Timestamp: 2024-08-22T06:13:41.403Z, Cosine: 7.660098085991027, Rectified Sine: 6.428288832418515, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:42.406Z, Sine: 9.70496175146695, Sawtooth: 4.224864035050972, Square: 10.0, Triangle: 8.44972807010194
+Demo_connect - Timestamp: 2024-08-22T06:13:42.406Z, Cosine: 2.4111651545598307, Rectified Sine: 9.70496175146695, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:43.417Z, Sine: 9.264260083521279, Sawtooth: 6.228645738776506, Square: 10.0, Triangle: 7.542708522446992
+Demo_connect - Timestamp: 2024-08-22T06:13:43.417Z, Cosine: -3.764768931139642, Rectified Sine: 9.264260083521279, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:44.417Z, Sine: 5.262189707428988, Sawtooth: 8.236092218446705, Square: 10.0, Triangle: 3.527815563106591
+Demo_connect - Timestamp: 2024-08-22T06:13:44.417Z, Cosine: -8.503491017401524, Rectified Sine: 5.262189707428988, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:45.501Z, Sine: -0.7726208265619707, Sawtooth: -9.75382181322384, Square: -10.0, Triangle: -0.49235637355232087
+Demo_connect - Timestamp: 2024-08-22T06:13:45.501Z, Cosine: -9.970108176863613, Rectified Sine: 0.7726208265619707, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:46.424Z, Sine: -6.50687449309471, Sawtooth: -7.744808184594077, Square: -10.0, Triangle: -4.510383630811849
+Demo_connect - Timestamp: 2024-08-22T06:13:46.424Z, Cosine: -7.593456678688137, Rectified Sine: 6.50687449309471, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:47.920Z, Sine: -9.732992044325657, Sawtooth: -5.737222065500845, Square: -10.0, Triangle: -8.525555868998312
+Demo_connect - Timestamp: 2024-08-22T06:13:47.920Z, Cosine: -2.2954010248959675, Rectified Sine: 9.732992044325657, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:48.472Z, Sine: -9.215547392062483, Sawtooth: -3.7308023909358696, Square: -10.0, Triangle: -7.461604781871741
+Demo_connect - Timestamp: 2024-08-22T06:13:48.472Z, Cosine: 3.882484547895892, Rectified Sine: 9.215547392062483, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:49.425Z, Sine: -5.170265505846949, Sawtooth: -1.7296116056354944, Square: -10.0, Triangle: -3.459223211270989
+Demo_connect - Timestamp: 2024-08-22T06:13:49.425Z, Cosine: 8.559693604273997, Rectified Sine: 5.170265505846949, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:50.620Z, Sine: 0.8658243172169715, Sawtooth: 0.2759459472742431, Square: 10.0, Triangle: 0.5518918945484862
+Demo_connect - Timestamp: 2024-08-22T06:13:50.620Z, Cosine: 9.962446900822897, Rectified Sine: 0.8658243172169715, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:51.448Z, Sine: 6.580237430589744, Sawtooth: 2.286073655648627, Square: 10.0, Triangle: 4.572147311297254
+Demo_connect - Timestamp: 2024-08-22T06:13:51.448Z, Cosine: 7.529971803205221, Rectified Sine: 6.580237430589744, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:52.443Z, Sine: 9.75657413173543, Sawtooth: 4.29622564914006, Square: 10.0, Triangle: 8.592451298280118
+Demo_connect - Timestamp: 2024-08-22T06:13:52.443Z, Cosine: 2.1930027843007958, Rectified Sine: 9.75657413173543, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:53.455Z, Sine: 9.169595336155389, Sawtooth: 6.306357910973889, Square: 10.0, Triangle: 7.387284178052222
+Demo_connect - Timestamp: 2024-08-22T06:13:53.455Z, Cosine: -3.9898021719325074, Rectified Sine: 9.169595336155389, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:54.457Z, Sine: 5.056969132563339, Sawtooth: 8.312354113810324, Square: 10.0, Triangle: 3.3752917723793536
+Demo_connect - Timestamp: 2024-08-22T06:13:54.457Z, Cosine: -8.627112100367167, Rectified Sine: 5.056969132563339, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:55.462Z, Sine: -1.0112367769046824, Sawtooth: -9.677562194589944, Square: -10.0, Triangle: -0.6448756108201118
+Demo_connect - Timestamp: 2024-08-22T06:13:55.462Z, Cosine: -9.948738622611181, Rectified Sine: 1.0112367769046824, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:56.456Z, Sine: -6.68936440816435, Sawtooth: -7.667498234647814, Square: -10.0, Triangle: -4.6650035307043725
+Demo_connect - Timestamp: 2024-08-22T06:13:56.456Z, Cosine: -7.433196069981204, Rectified Sine: 6.68936440816435, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:57.455Z, Sine: -9.782429859289843, Sawtooth: -5.6652047532514365, Square: -10.0, Triangle: -8.669590493497132
+Demo_connect - Timestamp: 2024-08-22T06:13:57.455Z, Cosine: -2.0746243149241472, Rectified Sine: 9.782429859289843, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:58.464Z, Sine: -9.12696470811962, Sawtooth: -3.660038038944204, Square: -10.0, Triangle: -7.320076077888408
+Demo_connect - Timestamp: 2024-08-22T06:13:58.464Z, Cosine: 4.0863816778097135, Rectified Sine: 9.12696470811962, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:13:59.464Z, Sine: -4.964875646835944, Sawtooth: -1.6537716641806008, Square: -10.0, Triangle: -3.3075433283612017
+Demo_connect - Timestamp: 2024-08-22T06:13:59.464Z, Cosine: 8.68043834212624, Rectified Sine: 4.964875646835944, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:00.607Z, Sine: 1.0906795645879577, Sawtooth: 0.3478661190554571, Square: 10.0, Triangle: 0.6957322381109143
+Demo_connect - Timestamp: 2024-08-22T06:14:00.607Z, Cosine: 9.94034295622592, Rectified Sine: 1.0906795645879577, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:01.467Z, Sine: 6.726112902696723, Sawtooth: 2.3482737093310053, Square: 10.0, Triangle: 4.696547418662011
+Demo_connect - Timestamp: 2024-08-22T06:14:01.467Z, Cosine: 7.399959812064971, Rectified Sine: 6.726112902696723, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:02.469Z, Sine: 9.794459401901207, Sawtooth: 4.3535117611695675, Square: 10.0, Triangle: 8.707023522339135
+Demo_connect - Timestamp: 2024-08-22T06:14:02.469Z, Cosine: 2.0170684233582756, Rectified Sine: 9.794459401901207, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:03.484Z, Sine: 9.104267161271352, Sawtooth: 6.357534039335868, Square: 10.0, Triangle: 7.284931921328267
+Demo_connect - Timestamp: 2024-08-22T06:14:03.484Z, Cosine: -4.136703936251191, Rectified Sine: 9.104267161271352, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:04.549Z, Sine: 4.9281598432854965, Sawtooth: 8.359675738750692, Square: 10.0, Triangle: 3.28064852249862
+Demo_connect - Timestamp: 2024-08-22T06:14:04.549Z, Cosine: -8.70133556179902, Rectified Sine: 4.9281598432854965, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:05.476Z, Sine: -1.1591861729647406, Sawtooth: -9.630188204865942, Square: -10.0, Triangle: -0.7396235902681192
+Demo_connect - Timestamp: 2024-08-22T06:14:05.476Z, Cosine: -9.932587146177342, Rectified Sine: 1.1591861729647406, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:06.476Z, Sine: -6.779660142372981, Sawtooth: -7.62861644679186, Square: -10.0, Triangle: -4.742767106416281
+Demo_connect - Timestamp: 2024-08-22T06:14:06.476Z, Cosine: -7.350932481931743, Rectified Sine: 6.779660142372981, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:07.486Z, Sine: -9.808942355126733, Sawtooth: -5.623219782782573, Square: -10.0, Triangle: -8.75356043443486
+Demo_connect - Timestamp: 2024-08-22T06:14:07.486Z, Cosine: -1.9454176605039863, Rectified Sine: 9.808942355126733, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:08.484Z, Sine: -9.065722329061627, Sawtooth: -3.6131042169667125, Square: -10.0, Triangle: -7.226208433933425
+Demo_connect - Timestamp: 2024-08-22T06:14:08.484Z, Cosine: 4.220506918884679, Rectified Sine: 9.065722329061627, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:09.486Z, Sine: -4.830288938534435, Sawtooth: -1.6046339678309183, Square: -10.0, Triangle: -3.209267935661837
+Demo_connect - Timestamp: 2024-08-22T06:14:09.486Z, Cosine: 8.756044127930824, Rectified Sine: 4.830288938534435, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:10.489Z, Sine: 1.2587299344090135, Sawtooth: 0.40173182413060404, Square: 10.0, Triangle: 0.8034636482612081
+Demo_connect - Timestamp: 2024-08-22T06:14:10.489Z, Cosine: 9.920463646031001, Rectified Sine: 1.2587299344090135, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:11.496Z, Sine: 6.862380782210381, Sawtooth: 2.407391829877892, Square: 10.0, Triangle: 4.814783659755784
+Demo_connect - Timestamp: 2024-08-22T06:14:11.496Z, Cosine: 7.27376999910979, Rectified Sine: 6.862380782210381, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:12.493Z, Sine: 9.830886499004196, Sawtooth: 4.413769764397939, Square: 10.0, Triangle: 8.82753952879588
+Demo_connect - Timestamp: 2024-08-22T06:14:12.493Z, Cosine: 1.831302990686424, Rectified Sine: 9.830886499004196, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:13.516Z, Sine: 9.017299531616157, Sawtooth: 6.422977673964095, Square: 10.0, Triangle: 7.154044652071814
+Demo_connect - Timestamp: 2024-08-22T06:14:13.516Z, Cosine: -4.322997704962961, Rectified Sine: 9.017299531616157, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:14.532Z, Sine: 4.734923257029237, Sawtooth: 8.429931621104146, Square: 10.0, Triangle: 3.140136757791711
+Demo_connect - Timestamp: 2024-08-22T06:14:14.532Z, Cosine: -8.807979436286374, Rectified Sine: 4.734923257029237, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:15.514Z, Sine: -1.3744980417010106, Sawtooth: -9.561094213581297, Square: -10.0, Triangle: -0.8778115728374077
+Demo_connect - Timestamp: 2024-08-22T06:14:15.514Z, Cosine: -9.90508733597842, Rectified Sine: 1.3744980417010106, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:16.516Z, Sine: -6.943020539453046, Sawtooth: -7.557131889297712, Square: -10.0, Triangle: -4.885736221404579
+Demo_connect - Timestamp: 2024-08-22T06:14:16.516Z, Cosine: -7.196837207324696, Rectified Sine: 6.943020539453046, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:17.555Z, Sine: -9.852612432127971, Sawtooth: -5.547180248021932, Square: -10.0, Triangle: -8.905639503956138
+Demo_connect - Timestamp: 2024-08-22T06:14:17.555Z, Cosine: -1.7105637264590121, Rectified Sine: 9.852612432127971, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:18.581Z, Sine: -8.967250680837939, Sawtooth: -3.540604238015955, Square: -10.0, Triangle: -7.08120847603191
+Demo_connect - Timestamp: 2024-08-22T06:14:18.581Z, Cosine: 4.425880164104255, Rectified Sine: 8.967250680837939, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:19.601Z, Sine: -4.6248526869800415, Sawtooth: -1.530421888128211, Square: -10.0, Triangle: -3.060843776256422
+Demo_connect - Timestamp: 2024-08-22T06:14:19.601Z, Cosine: 8.86626965661058, Rectified Sine: 4.6248526869800415, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:20.536Z, Sine: 1.4828664870186314, Sawtooth: 0.4737582432989071, Square: 10.0, Triangle: 0.9475164865978142
+Demo_connect - Timestamp: 2024-08-22T06:14:20.536Z, Cosine: 9.889444220059943, Rectified Sine: 1.4828664870186314, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:21.538Z, Sine: 7.035145360070948, Sawtooth: 2.4838700145652277, Square: 10.0, Triangle: 4.967740029130455
+Demo_connect - Timestamp: 2024-08-22T06:14:21.538Z, Cosine: 7.106808690451166, Rectified Sine: 7.035145360070948, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:22.535Z, Sine: 9.871156272623283, Sawtooth: 4.488478171180334, Square: 10.0, Triangle: 8.976956342360669
+Demo_connect - Timestamp: 2024-08-22T06:14:22.535Z, Cosine: 1.600085573164762, Rectified Sine: 9.871156272623283, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:23.545Z, Sine: 8.922502997524205, Sawtooth: 6.491255837097875, Square: 10.0, Triangle: 7.0174883258042495
+Demo_connect - Timestamp: 2024-08-22T06:14:23.545Z, Cosine: -4.5154114163796395, Rectified Sine: 8.922502997524205, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:24.541Z, Sine: 4.536220882242042, Sawtooth: 8.501316002490467, Square: 10.0, Triangle: 2.9973679950190677
+Demo_connect - Timestamp: 2024-08-22T06:14:24.541Z, Cosine: -8.911941433128431, Rectified Sine: 4.536220882242042, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:25.554Z, Sine: -1.5998503803344684, Sawtooth: -9.488554012405427, Square: -10.0, Triangle: -1.022891975189147
+Demo_connect - Timestamp: 2024-08-22T06:14:25.554Z, Cosine: -9.871194393817987, Rectified Sine: 1.5998503803344684, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:26.556Z, Sine: -7.1190239705183656, Sawtooth: -7.478338270481741, Square: -10.0, Triangle: -5.04332345903652
+Demo_connect - Timestamp: 2024-08-22T06:14:26.556Z, Cosine: -7.022784184864642, Rectified Sine: 7.1190239705183656, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:27.557Z, Sine: -9.888051545992735, Sawtooth: -5.4767384327410715, Square: -10.0, Triangle: -9.046523134517859
+Demo_connect - Timestamp: 2024-08-22T06:14:27.557Z, Cosine: -1.4921248686992263, Rectified Sine: 9.888051545992735, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:28.614Z, Sine: -8.861892508066177, Sawtooth: -3.4665682254118524, Square: -10.0, Triangle: -6.9331364508237066
+Demo_connect - Timestamp: 2024-08-22T06:14:28.614Z, Cosine: 4.633234418360525, Rectified Sine: 8.861892508066177, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:29.639Z, Sine: -4.423329259605032, Sawtooth: -1.4584903326983805, Square: -10.0, Triangle: -2.916980665396761
+Demo_connect - Timestamp: 2024-08-22T06:14:29.639Z, Cosine: 8.968509255228653, Rectified Sine: 4.423329259605032, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:30.563Z, Sine: 1.7242923880909786, Sawtooth: 0.5516161261985856, Square: 10.0, Triangle: 1.1032322523971712
+Demo_connect - Timestamp: 2024-08-22T06:14:30.563Z, Cosine: 9.85021907169437, Rectified Sine: 1.7242923880909786, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:31.578Z, Sine: 7.1911421657208, Sawtooth: 2.5545220478905426, Square: 10.0, Triangle: 5.109044095781086
+Demo_connect - Timestamp: 2024-08-22T06:14:31.578Z, Cosine: 6.948918934078334, Rectified Sine: 7.1911421657208, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:32.579Z, Sine: 9.904007146863908, Sawtooth: 4.558599726480111, Square: 10.0, Triangle: 9.11719945296022
+Demo_connect - Timestamp: 2024-08-22T06:14:32.579Z, Cosine: 1.3822599013458545, Rectified Sine: 9.904007146863908, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:33.900Z, Sine: 8.816356593764258, Sawtooth: 6.564427451317018, Square: 10.0, Triangle: 6.871145097365967
+Demo_connect - Timestamp: 2024-08-22T06:14:33.900Z, Cosine: -4.7193067723543365, Rectified Sine: 8.816356593764258, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:34.656Z, Sine: 4.332366605887845, Sawtooth: 8.573714287513582, Square: 10.0, Triangle: 2.8525714249728376
+Demo_connect - Timestamp: 2024-08-22T06:14:34.656Z, Cosine: -9.012801983411586, Rectified Sine: 4.332366605887845, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:35.642Z, Sine: -1.81430504403727, Sawtooth: -9.419272570373563, Square: -10.0, Triangle: -1.1614548592528784
+Demo_connect - Timestamp: 2024-08-22T06:14:35.642Z, Cosine: -9.834037685873536, Rectified Sine: 1.81430504403727, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:36.597Z, Sine: -7.260600714319657, Sawtooth: -7.413494174680661, Square: -10.0, Triangle: -5.1730116506386805
+Demo_connect - Timestamp: 2024-08-22T06:14:36.597Z, Cosine: -6.876312766826484, Rectified Sine: 7.260600714319657, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:37.624Z, Sine: -9.919803276403114, Sawtooth: -5.403398340522403, Square: -10.0, Triangle: -9.193203318955193
+Demo_connect - Timestamp: 2024-08-22T06:14:37.624Z, Cosine: -1.263923635929812, Rectified Sine: 9.919803276403114, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:38.667Z, Sine: -8.763597223932095, Sawtooth: -3.400350502677692, Square: -10.0, Triangle: -6.800701005355383
+Demo_connect - Timestamp: 2024-08-22T06:14:38.667Z, Cosine: 4.816571778421835, Rectified Sine: 8.763597223932095, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:39.598Z, Sine: -4.236045617327515, Sawtooth: -1.3923538133243518, Square: -10.0, Triangle: -2.7847076266487036
+Demo_connect - Timestamp: 2024-08-22T06:14:39.598Z, Cosine: 9.058472140925332, Rectified Sine: 4.236045617327515, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:40.596Z, Sine: 1.928448121686572, Sawtooth: 0.6177139411673176, Square: 10.0, Triangle: 1.235427882334635
+Demo_connect - Timestamp: 2024-08-22T06:14:40.596Z, Cosine: 9.812292690394205, Rectified Sine: 1.928448121686572, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:41.617Z, Sine: 7.349172083941719, Sawtooth: 2.627790043667973, Square: 10.0, Triangle: 5.255580087335945
+Demo_connect - Timestamp: 2024-08-22T06:14:41.617Z, Cosine: 6.781568379114948, Rectified Sine: 7.349172083941719, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:42.604Z, Sine: 9.935354858655645, Sawtooth: 4.637867663988443, Square: 10.0, Triangle: 9.27573532797689
+Demo_connect - Timestamp: 2024-08-22T06:14:42.604Z, Cosine: 1.1352197287695893, Rectified Sine: 9.935354858655645, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:43.646Z, Sine: 8.682165218555395, Sawtooth: 6.652664186115484, Square: 10.0, Triangle: 6.694671627769033
+Demo_connect - Timestamp: 2024-08-22T06:14:43.646Z, Cosine: -4.96185520926467, Rectified Sine: 8.682165218555395, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:44.621Z, Sine: 4.078610221616382, Sawtooth: 8.662747877715217, Square: 10.0, Triangle: 2.6745042445695684
+Demo_connect - Timestamp: 2024-08-22T06:14:44.621Z, Cosine: -9.130440222690599, Rectified Sine: 4.078610221616382, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:45.616Z, Sine: -2.0689417484573887, Sawtooth: -9.336644179793582, Square: -10.0, Triangle: -1.3267116404128352
+Demo_connect - Timestamp: 2024-08-22T06:14:45.616Z, Cosine: -9.783633274070022, Rectified Sine: 2.0689417484573887, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:46.628Z, Sine: -7.428372370898508, Sawtooth: -7.33479617851307, Square: -10.0, Triangle: -5.330407642973861
+Demo_connect - Timestamp: 2024-08-22T06:14:46.628Z, Cosine: -6.694720600538284, Rectified Sine: 7.428372370898508, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:47.625Z, Sine: -9.945166235070545, Sawtooth: -5.333493833456251, Square: -10.0, Triangle: -9.3330123330875
+Demo_connect - Timestamp: 2024-08-22T06:14:47.625Z, Cosine: -1.045786095151768, Rectified Sine: 9.945166235070545, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:48.626Z, Sine: -8.65422699344324, Sawtooth: -3.3295003938664465, Square: -10.0, Triangle: -6.659000787732893
+Demo_connect - Timestamp: 2024-08-22T06:14:48.626Z, Cosine: 5.01042464726877, Rectified Sine: 8.65422699344324, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:49.634Z, Sine: -4.033911121090284, Sawtooth: -1.3216858428909732, Square: -10.0, Triangle: -2.6433716857819465
+Demo_connect - Timestamp: 2024-08-22T06:14:49.634Z, Cosine: 9.15027655686669, Rectified Sine: 4.033911121090284, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:50.635Z, Sine: 2.1459397301586924, Sawtooth: 0.6884282051050704, Square: 10.0, Triangle: 1.3768564102101408
+Demo_connect - Timestamp: 2024-08-22T06:14:50.635Z, Cosine: 9.767033463366777, Rectified Sine: 2.1459397301586924, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:51.636Z, Sine: 7.477433250996621, Sawtooth: 2.688626336246071, Square: 10.0, Triangle: 5.377252672492142
+Demo_connect - Timestamp: 2024-08-22T06:14:51.636Z, Cosine: 6.639878912818373, Rectified Sine: 7.477433250996621, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:52.638Z, Sine: 9.952812496202153, Sawtooth: 4.690650404625189, Square: 10.0, Triangle: 9.381300809250378
+Demo_connect - Timestamp: 2024-08-22T06:14:52.638Z, Cosine: 0.9703212949545537, Rectified Sine: 9.952812496202153, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:53.635Z, Sine: 8.61636572609511, Sawtooth: 6.694397957404873, Square: 10.0, Triangle: 6.611204085190256
+Demo_connect - Timestamp: 2024-08-22T06:14:53.635Z, Cosine: -5.075257793863629, Rectified Sine: 8.61636572609511, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:54.732Z, Sine: 3.9649521714572193, Sawtooth: 8.702263355344167, Square: 10.0, Triangle: 2.595473289311667
+Demo_connect - Timestamp: 2024-08-22T06:14:54.732Z, Cosine: -9.180367872697513, Rectified Sine: 3.9649521714572193, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:55.647Z, Sine: -2.2194454803099246, Sawtooth: -9.287596034813019, Square: -10.0, Triangle: -1.4248079303739647
+Demo_connect - Timestamp: 2024-08-22T06:14:55.647Z, Cosine: -9.750592892738977, Rectified Sine: 2.2194454803099246, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:56.648Z, Sine: -7.538225971001051, Sawtooth: -7.282077945218486, Square: -10.0, Triangle: -5.435844109563031
+Demo_connect - Timestamp: 2024-08-22T06:14:56.648Z, Cosine: -6.570779954474602, Rectified Sine: 7.538225971001051, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:57.652Z, Sine: -9.96292245852825, Sawtooth: -5.274192056711682, Square: -10.0, Triangle: -9.451615886576642
+Demo_connect - Timestamp: 2024-08-22T06:14:57.652Z, Cosine: -0.8603348681492612, Rectified Sine: 9.96292245852825, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:58.666Z, Sine: -8.549382391644084, Sawtooth: -3.264050687958958, Square: -10.0, Triangle: -6.528101375917916
+Demo_connect - Timestamp: 2024-08-22T06:14:58.666Z, Cosine: 5.187298017411962, Rectified Sine: 8.549382391644084, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:14:59.743Z, Sine: -3.846185947419372, Sawtooth: -1.2566702334507345, Square: -10.0, Triangle: -2.513340466901469
+Demo_connect - Timestamp: 2024-08-22T06:14:59.743Z, Cosine: 9.230755855176419, Rectified Sine: 3.846185947419372, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:00.665Z, Sine: 2.3450581562303845, Sawtooth: 0.7534718942118971, Square: 10.0, Triangle: 1.5069437884237942
+Demo_connect - Timestamp: 2024-08-22T06:15:00.665Z, Cosine: 9.721147167073305, Rectified Sine: 2.3450581562303845, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:01.673Z, Sine: 7.615899895606945, Sawtooth: 2.7558093923829277, Square: 10.0, Triangle: 5.511618784765854
+Demo_connect - Timestamp: 2024-08-22T06:15:01.673Z, Cosine: 6.480591699844554, Rectified Sine: 7.615899895606945, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:02.670Z, Sine: 9.971839197253727, Sawtooth: 4.761059586780014, Square: 10.0, Triangle: 9.522119173560032
+Demo_connect - Timestamp: 2024-08-22T06:15:02.670Z, Cosine: 0.7499486809869966, Rectified Sine: 9.971839197253727, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:03.676Z, Sine: 8.494254029071316, Sawtooth: 6.769487336960973, Square: 10.0, Triangle: 6.461025326078057
+Demo_connect - Timestamp: 2024-08-22T06:15:03.676Z, Cosine: -5.277087121661507, Rectified Sine: 8.494254029071316, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:04.738Z, Sine: 3.7406760664415275, Sawtooth: 8.779627946803789, Square: 10.0, Triangle: 2.440744106392424
+Demo_connect - Timestamp: 2024-08-22T06:15:04.738Z, Cosine: -9.27401437167053, Rectified Sine: 3.7406760664415275, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:05.696Z, Sine: -2.44408429053207, Sawtooth: -9.214062420567865, Square: -10.0, Triangle: -1.5718751588642697
+Demo_connect - Timestamp: 2024-08-22T06:15:05.696Z, Cosine: -9.696723775625165, Rectified Sine: 2.44408429053207, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:06.689Z, Sine: -7.697228913368948, Sawtooth: -7.203943819112375, Square: -10.0, Triangle: -5.59211236177525
+Demo_connect - Timestamp: 2024-08-22T06:15:06.689Z, Cosine: -6.383781563869261, Rectified Sine: 7.697228913368948, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:07.732Z, Sine: -9.98028814513372, Sawtooth: -5.199894220189395, Square: -10.0, Triangle: -9.600211559621215
+Demo_connect - Timestamp: 2024-08-22T06:15:07.732Z, Cosine: -0.6275735336224258, Rectified Sine: 9.98028814513372, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:08.703Z, Sine: -8.425937209556945, Sawtooth: -3.189724012860176, Square: -10.0, Triangle: -6.379448025720352
+Demo_connect - Timestamp: 2024-08-22T06:15:08.703Z, Cosine: 5.385497390269883, Rectified Sine: 8.425937209556945, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:09.708Z, Sine: -3.6242182028192294, Sawtooth: -1.180500166185957, Square: -10.0, Triangle: -2.361000332371914
+Demo_connect - Timestamp: 2024-08-22T06:15:09.708Z, Cosine: 9.320141759563196, Rectified Sine: 3.6242182028192294, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:10.702Z, Sine: 2.5557687767942965, Sawtooth: 0.8226539190458438, Square: 10.0, Triangle: 1.6453078380916877
+Demo_connect - Timestamp: 2024-08-22T06:15:10.702Z, Cosine: 9.667887357616626, Rectified Sine: 2.5557687767942965, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:11.696Z, Sine: 7.755056312423699, Sawtooth: 2.825049853279773, Square: 10.0, Triangle: 5.650099706559547
+Demo_connect - Timestamp: 2024-08-22T06:15:11.696Z, Cosine: 6.31340649658624, Rectified Sine: 7.755056312423699, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:12.734Z, Sine: 9.986363778143513, Sawtooth: 4.833750052117624, Square: 10.0, Triangle: 9.667500104235247
+Demo_connect - Timestamp: 2024-08-22T06:15:12.734Z, Cosine: 0.5220521914360993, Rectified Sine: 9.986363778143513, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:13.716Z, Sine: 8.368727453242144, Sawtooth: 6.843814012059754, Square: 10.0, Triangle: 6.312371975880493
+Demo_connect - Timestamp: 2024-08-22T06:15:13.716Z, Cosine: -5.473974864150479, Rectified Sine: 8.368727453242144, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:14.723Z, Sine: 3.529475682145674, Sawtooth: 8.851794005395124, Square: 10.0, Triangle: 2.2964119892097545
+Demo_connect - Timestamp: 2024-08-22T06:15:14.723Z, Cosine: -9.35643101877753, Rectified Sine: 3.529475682145674, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:15.714Z, Sine: -2.673286919344312, Sawtooth: -9.138590550418245, Square: -10.0, Triangle: -1.7228188991635107
+Demo_connect - Timestamp: 2024-08-22T06:15:15.714Z, Cosine: -9.63605401846952, Rectified Sine: 2.673286919344312, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:16.731Z, Sine: -7.8464976303737854, Sawtooth: -7.128427932188104, Square: -10.0, Triangle: -5.743144135623795
+Demo_connect - Timestamp: 2024-08-22T06:15:16.731Z, Cosine: -6.199393110340607, Rectified Sine: 7.8464976303737854, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:17.721Z, Sine: -9.992091232063373, Sawtooth: -5.1266042160246394, Square: -10.0, Triangle: -9.746791567950718
+Demo_connect - Timestamp: 2024-08-22T06:15:17.721Z, Cosine: -0.39763401529829484, Rectified Sine: 9.992091232063373, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:18.727Z, Sine: -8.3156944183271, Sawtooth: -3.1255720428949894, Square: -10.0, Triangle: -6.2511440857899805
+Demo_connect - Timestamp: 2024-08-22T06:15:18.727Z, Cosine: 5.554207985032926, Rectified Sine: 8.3156944183271, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:19.739Z, Sine: -3.45680771261893, Sawtooth: -1.1235198948492844, Square: -10.0, Triangle: -2.2470397896985688
+Demo_connect - Timestamp: 2024-08-22T06:15:19.739Z, Cosine: 9.383521750280025, Rectified Sine: 3.45680771261893, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:20.744Z, Sine: 2.744603594253035, Sawtooth: 0.8849920943314377, Square: 10.0, Triangle: 1.7699841886628755
+Demo_connect - Timestamp: 2024-08-22T06:15:20.744Z, Cosine: 9.615984146743031, Rectified Sine: 2.744603594253035, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:21.736Z, Sine: 7.8833538364867906, Sawtooth: 2.890567861078962, Square: 10.0, Triangle: 5.781135722157923
+Demo_connect - Timestamp: 2024-08-22T06:15:21.736Z, Cosine: 6.152457418686374, Rectified Sine: 7.8833538364867906, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:22.738Z, Sine: 9.994147868077864, Sawtooth: 4.8910961180298465, Square: 10.0, Triangle: 9.782192236059698
+Demo_connect - Timestamp: 2024-08-22T06:15:22.738Z, Cosine: 0.34206489295847603, Rectified Sine: 9.994147868077864, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:23.806Z, Sine: 8.27696312362616, Sawtooth: 6.896510236967014, Square: 10.0, Triangle: 6.206979526065974
+Demo_connect - Timestamp: 2024-08-22T06:15:23.806Z, Cosine: -5.611762775646585, Rectified Sine: 8.27696312362616, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:24.757Z, Sine: 3.3880932495772775, Sawtooth: 8.899758427027379, Square: 10.0, Triangle: 2.200483145945243
+Demo_connect - Timestamp: 2024-08-22T06:15:24.757Z, Cosine: -9.408550586151348, Rectified Sine: 3.3880932495772775, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:25.741Z, Sine: -2.7947181445619744, Sawtooth: -9.098406473160543, Square: -10.0, Triangle: -1.803187053678918
+Demo_connect - Timestamp: 2024-08-22T06:15:25.741Z, Cosine: -9.601538964793928, Rectified Sine: 2.7947181445619744, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:26.751Z, Sine: -7.924458445361722, Sawtooth: -7.088073859111057, Square: -10.0, Triangle: -5.823852281777887
+Demo_connect - Timestamp: 2024-08-22T06:15:26.751Z, Cosine: -6.099422788078827, Rectified Sine: 7.924458445361722, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:27.801Z, Sine: -9.997005053378526, Sawtooth: -5.077905928511561, Square: -10.0, Triangle: -9.844188142976872
+Demo_connect - Timestamp: 2024-08-22T06:15:27.801Z, Cosine: -0.2447242585527852, Rectified Sine: 9.997005053378526, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:28.752Z, Sine: -8.228362129254403, Sawtooth: -3.076095872726438, Square: -10.0, Triangle: -6.152191745452876
+Demo_connect - Timestamp: 2024-08-22T06:15:28.752Z, Cosine: 5.682785995429702, Rectified Sine: 8.228362129254403, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:29.762Z, Sine: -3.277092284280105, Sawtooth: -1.0627663234511333, Square: -10.0, Triangle: -2.1255326469022666
+Demo_connect - Timestamp: 2024-08-22T06:15:29.762Z, Cosine: 9.447786310047016, Rectified Sine: 3.277092284280105, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:30.763Z, Sine: 2.913787388712544, Sawtooth: 0.9411398414992767, Square: 10.0, Triangle: 1.8822796829985533
+Demo_connect - Timestamp: 2024-08-22T06:15:30.763Z, Cosine: 9.566077725660593, Rectified Sine: 2.913787388712544, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:31.775Z, Sine: 8.010602726403443, Sawtooth: 2.9573039192801365, Square: 10.0, Triangle: 5.914607838560272
+Demo_connect - Timestamp: 2024-08-22T06:15:31.775Z, Cosine: 5.9858369473063435, Rectified Sine: 8.010602726403443, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:32.777Z, Sine: 9.99947522813544, Sawtooth: 4.967389887609592, Square: 10.0, Triangle: 9.934779775219184
+Demo_connect - Timestamp: 2024-08-22T06:15:32.777Z, Cosine: 0.10244589745667293, Rectified Sine: 9.99947522813544, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:33.776Z, Sine: 8.146326387842214, Sawtooth: 6.9693858763221215, Square: 10.0, Triangle: 6.061228247355759
+Demo_connect - Timestamp: 2024-08-22T06:15:33.776Z, Cosine: -5.79977295958606, Rectified Sine: 8.146326387842214, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:34.775Z, Sine: 3.1646872171730847, Sawtooth: 8.975027668231622, Square: 10.0, Triangle: 2.0499446635367558
+Demo_connect - Timestamp: 2024-08-22T06:15:34.775Z, Cosine: -9.48602945480675, Rectified Sine: 3.1646872171730847, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:35.782Z, Sine: -3.034717347789066, Sawtooth: -9.018542032464696, Square: -10.0, Triangle: -1.9629159350706111
+Demo_connect - Timestamp: 2024-08-22T06:15:35.782Z, Cosine: -9.528404410971865, Rectified Sine: 3.034717347789066, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:36.784Z, Sine: -8.07469678466923, Sawtooth: -7.008364236036398, Square: -10.0, Triangle: -5.983271527927205
+Demo_connect - Timestamp: 2024-08-22T06:15:36.784Z, Cosine: -5.899090763469602, Rectified Sine: 8.07469678466923, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:37.785Z, Sine: -9.999967954971744, Sawtooth: -5.008058339688493, Square: -10.0, Triangle: -9.983883320622974
+Demo_connect - Timestamp: 2024-08-22T06:15:37.785Z, Cosine: -0.025315993723738446, Rectified Sine: 9.999967954971744, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:38.785Z, Sine: -8.100690119570217, Sawtooth: -3.005704145499491, Square: -10.0, Triangle: -6.011408290998982
+Demo_connect - Timestamp: 2024-08-22T06:15:38.785Z, Cosine: 5.8633454261792775, Rectified Sine: 8.100690119570217, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:39.792Z, Sine: -3.076979591287277, Sawtooth: -0.9955863029539083, Square: -10.0, Triangle: -1.9911726059078163
+Demo_connect - Timestamp: 2024-08-22T06:15:39.792Z, Cosine: 9.514840860193175, Rectified Sine: 3.076979591287277, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:40.792Z, Sine: 3.1240740114306838, Sawtooth: 1.0113539838078032, Square: 10.0, Triangle: 2.022707967615606
+Demo_connect - Timestamp: 2024-08-22T06:15:40.792Z, Cosine: 9.499482173839972, Rectified Sine: 3.1240740114306838, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:41.795Z, Sine: 8.114757502540238, Sawtooth: 3.013353767069872, Square: 10.0, Triangle: 6.026707534139744
+Demo_connect - Timestamp: 2024-08-22T06:15:41.795Z, Cosine: 5.843860939051076, Rectified Sine: 8.114757502540238, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:42.792Z, Sine: 9.999905202583042, Sawtooth: 5.013860015633431, Square: 10.0, Triangle: 9.9722799687331
+Demo_connect - Timestamp: 2024-08-22T06:15:42.792Z, Cosine: -0.043542385701913225, Rectified Sine: 9.999905202583042, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:43.803Z, Sine: 8.058213069680203, Sawtooth: 7.017241773837566, Square: 10.0, Triangle: 5.965516452324871
+Demo_connect - Timestamp: 2024-08-22T06:15:43.803Z, Cosine: -5.921587804266282, Rectified Sine: 8.058213069680203, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:44.816Z, Sine: 3.008333597583261, Sawtooth: 9.02735202728407, Square: 10.0, Triangle: 1.9452959454318612
+Demo_connect - Timestamp: 2024-08-22T06:15:44.816Z, Cosine: -9.536767217755278, Rectified Sine: 3.008333597583261, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:45.806Z, Sine: -3.2017533533793694, Sawtooth: -8.96258173604408, Square: -10.0, Triangle: -2.074836527911846
+Demo_connect - Timestamp: 2024-08-22T06:15:45.806Z, Cosine: -9.473583031996075, Rectified Sine: 3.2017533533793694, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:46.846Z, Sine: -8.177176990347757, Sawtooth: -6.95239027923744, Square: -10.0, Triangle: -6.0952194415251215
+Demo_connect - Timestamp: 2024-08-22T06:15:46.846Z, Cosine: -5.75619461697806, Rectified Sine: 8.177176990347757, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:47.813Z, Sine: -9.998621480459764, Sawtooth: -4.947146156119616, Square: -10.0, Triangle: -9.894292312239216
+Demo_connect - Timestamp: 2024-08-22T06:15:47.813Z, Cosine: 0.16603761769119507, Rectified Sine: 9.998621480459764, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:48.895Z, Sine: -7.983302051837785, Sawtooth: -2.942830179819005, Square: -10.0, Triangle: -5.88566035963801
+Demo_connect - Timestamp: 2024-08-22T06:15:48.895Z, Cosine: 6.022199627139788, Rectified Sine: 7.983302051837785, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:49.919Z, Sine: -2.8884251557050415, Sawtooth: -0.9327039892644364, Square: -10.0, Triangle: -1.8654079785288733
+Demo_connect - Timestamp: 2024-08-22T06:15:49.919Z, Cosine: 9.573766245312777, Rectified Sine: 2.8884251557050415, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:50.839Z, Sine: 3.296283235099619, Sawtooth: 1.069234322295102, Square: 10.0, Triangle: 2.138468644590204
+Demo_connect - Timestamp: 2024-08-22T06:15:50.839Z, Cosine: 9.44110781815361, Rectified Sine: 3.296283235099619, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:51.838Z, Sine: 8.234334974923964, Sawtooth: 3.0794439929395265, Square: 10.0, Triangle: 6.158887985879052
+Demo_connect - Timestamp: 2024-08-22T06:15:51.838Z, Cosine: 5.67412790838768, Rectified Sine: 8.234334974923964, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:52.832Z, Sine: 9.99667796341749, Sawtooth: 5.08205014521791, Square: 10.0, Triangle: 9.83589970956419
+Demo_connect - Timestamp: 2024-08-22T06:15:52.832Z, Cosine: -0.2577395889713828, Rectified Sine: 9.99667796341749, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:53.832Z, Sine: 7.922253701580329, Sawtooth: 7.089224176231217, Square: 10.0, Triangle: 5.821551647537567
+Demo_connect - Timestamp: 2024-08-22T06:15:53.832Z, Cosine: -6.102286152565837, Rectified Sine: 7.922253701580329, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:54.834Z, Sine: 2.8112150308131545, Sawtooth: 9.092936060245236, Square: 10.0, Triangle: 1.8141278795095304
+Demo_connect - Timestamp: 2024-08-22T06:15:54.834Z, Cosine: -9.596721838759848, Rectified Sine: 2.8112150308131545, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:55.842Z, Sine: -3.3962857131537834, Sawtooth: -8.896986319434296, Square: -10.0, Triangle: -2.2060273611314103
+Demo_connect - Timestamp: 2024-08-22T06:15:55.842Z, Cosine: -9.405596384845966, Rectified Sine: 3.3962857131537834, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:56.844Z, Sine: -8.293854164016315, Sawtooth: -6.886907940203917, Square: -10.0, Triangle: -6.226184119592167
+Demo_connect - Timestamp: 2024-08-22T06:15:56.844Z, Cosine: -5.5867685745902556, Rectified Sine: 8.293854164016315, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:57.906Z, Sine: -9.99250421776768, Sawtooth: -4.8767460808836836, Square: -10.0, Triangle: -9.753492161767364
+Demo_connect - Timestamp: 2024-08-22T06:15:57.906Z, Cosine: 0.3871168530239104, Rectified Sine: 9.99250421776768, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:58.932Z, Sine: -7.8372460977951866, Sawtooth: -2.8668263138240313, Square: -10.0, Triangle: -5.733652627648062
+Demo_connect - Timestamp: 2024-08-22T06:15:58.932Z, Cosine: 6.211084736388171, Rectified Sine: 7.8372460977951866, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:15:59.887Z, Sine: -2.6833380689092294, Sawtooth: -0.8647301490036742, Square: -10.0, Triangle: -1.7294602980073492
+Demo_connect - Timestamp: 2024-08-22T06:15:59.887Z, Cosine: 9.633259926314793, Rectified Sine: 2.6833380689092294, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:00.937Z, Sine: 3.511662100887152, Sawtooth: 1.1421479071455989, Square: 10.0, Triangle: 2.2842958142911973
+Demo_connect - Timestamp: 2024-08-22T06:16:00.937Z, Cosine: 9.36313138267283, Rectified Sine: 3.511662100887152, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:01.867Z, Sine: 8.36193501764839, Sawtooth: 3.152239946754317, Square: 10.0, Triangle: 6.304479893508634
+Demo_connect - Timestamp: 2024-08-22T06:16:01.867Z, Cosine: 5.484345244477742, Rectified Sine: 8.36193501764839, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:02.872Z, Sine: 9.988317820806923, Sawtooth: 5.153875453260652, Square: 10.0, Triangle: 9.692249093478704
+Demo_connect - Timestamp: 2024-08-22T06:16:02.872Z, Cosine: -0.4832257345701291, Rectified Sine: 9.988317820806923, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:03.862Z, Sine: 7.79173270432087, Sawtooth: 7.156392054169919, Square: 10.0, Triangle: 5.687215891660166
+Demo_connect - Timestamp: 2024-08-22T06:16:03.862Z, Cosine: -6.268085949029144, Rectified Sine: 7.79173270432087, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:04.872Z, Sine: 2.603496198740743, Sawtooth: 9.161621757999495, Square: 10.0, Triangle: 1.6767564840010116
+Demo_connect - Timestamp: 2024-08-22T06:16:04.872Z, Cosine: -9.65514409748205, Rectified Sine: 2.603496198740743, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:05.873Z, Sine: -3.5903171261793796, Sawtooth: -8.831069883933523, Square: -10.0, Triangle: -2.337860232132956
+Demo_connect - Timestamp: 2024-08-22T06:16:05.873Z, Cosine: -9.333253609190262, Rectified Sine: 3.5903171261793796, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:06.917Z, Sine: -8.400775054521484, Sawtooth: -6.825094171664599, Square: -10.0, Triangle: -6.349811656670805
+Demo_connect - Timestamp: 2024-08-22T06:16:06.917Z, Cosine: -5.4246639051032055, Rectified Sine: 8.400775054521484, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:07.942Z, Sine: -9.98430676239167, Sawtooth: -4.821647906118302, Square: -10.0, Triangle: -9.643295812236612
+Demo_connect - Timestamp: 2024-08-22T06:16:07.942Z, Cosine: 0.5600164948106388, Rectified Sine: 9.98430676239167, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:08.880Z, Sine: -7.740856336204109, Sawtooth: -2.817900353338619, Square: -10.0, Triangle: -5.635800706677237
+Demo_connect - Timestamp: 2024-08-22T06:16:08.880Z, Cosine: 6.330809046421214, Rectified Sine: 7.740856336204109, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:09.892Z, Sine: -2.529427542450411, Sawtooth: -0.8139843225594078, Square: -10.0, Triangle: -1.6279686451188153
+Demo_connect - Timestamp: 2024-08-22T06:16:09.892Z, Cosine: 9.674812468854023, Rectified Sine: 2.529427542450411, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:10.885Z, Sine: 3.644241445328399, Sawtooth: 1.187341548704553, Square: 10.0, Triangle: 2.3746830974091058
+Demo_connect - Timestamp: 2024-08-22T06:16:10.885Z, Cosine: 9.312330765611302, Rectified Sine: 3.644241445328399, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:11.891Z, Sine: 8.435908087164549, Sawtooth: 3.1956258649129414, Square: 10.0, Triangle: 6.391251729825881
+Demo_connect - Timestamp: 2024-08-22T06:16:11.891Z, Cosine: 5.369865430801014, Rectified Sine: 8.435908087164549, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:12.891Z, Sine: 9.979307928256201, Sawtooth: 5.204805694812509, Square: 10.0, Triangle: 9.590388610374985
+Demo_connect - Timestamp: 2024-08-22T06:16:12.891Z, Cosine: -0.6429722179402041, Rectified Sine: 9.979307928256201, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:13.890Z, Sine: 7.693913315221375, Sawtooth: 7.205596534591485, Square: 10.0, Triangle: 5.588806930817032
+Demo_connect - Timestamp: 2024-08-22T06:16:13.890Z, Cosine: -6.38777722669312, Rectified Sine: 7.693913315221375, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:14.896Z, Sine: 2.4515122198569363, Sawtooth: 9.211623852734137, Square: 10.0, Triangle: 1.5767522945317258
+Demo_connect - Timestamp: 2024-08-22T06:16:14.896Z, Cosine: -9.694848520523264, Rectified Sine: 2.4515122198569363, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:15.901Z, Sine: -3.739165282898116, Sawtooth: -8.780146472570836, Square: -10.0, Triangle: -2.43970705485833
+Demo_connect - Timestamp: 2024-08-22T06:16:15.901Z, Cosine: -9.274623603530737, Rectified Sine: 3.739165282898116, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:16.905Z, Sine: -8.479528065938336, Sawtooth: -6.778350077164053, Square: -10.0, Triangle: -6.443299845671898
+Demo_connect - Timestamp: 2024-08-22T06:16:16.905Z, Cosine: -5.300717289100039, Rectified Sine: 8.479528065938336, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:17.976Z, Sine: -9.975304070170736, Sawtooth: -4.776247841064434, Square: -10.0, Triangle: -9.55249568212887
+Demo_connect - Timestamp: 2024-08-22T06:16:17.976Z, Cosine: 0.7023593863793318, Rectified Sine: 9.975304070170736, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:18.906Z, Sine: -7.639123322966656, Sawtooth: -2.7672402837139307, Square: -10.0, Triangle: -5.534480567427862
+Demo_connect - Timestamp: 2024-08-22T06:16:18.906Z, Cosine: 6.453200357691281, Rectified Sine: 7.639123322966656, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:19.907Z, Sine: -2.377681023725443, Sawtooth: -0.7641582949233695, Square: -10.0, Triangle: -1.528316589846739
+Demo_connect - Timestamp: 2024-08-22T06:16:19.907Z, Cosine: 9.71321949455565, Rectified Sine: 2.377681023725443, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:20.917Z, Sine: 3.815238454952131, Sawtooth: 1.2460058411265877, Square: 10.0, Triangle: 2.4920116822531755
+Demo_connect - Timestamp: 2024-08-22T06:16:20.917Z, Cosine: 9.243589969911824, Rectified Sine: 3.815238454952131, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:21.971Z, Sine: 8.523110036033984, Sawtooth: 3.247995758559855, Square: 10.0, Triangle: 6.495991517119712
+Demo_connect - Timestamp: 2024-08-22T06:16:21.971Z, Cosine: 5.230353268533284, Rectified Sine: 8.523110036033984, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:22.914Z, Sine: 9.967235042031263, Sawtooth: 5.25774401198035, Square: 10.0, Triangle: 9.4845119760393
+Demo_connect - Timestamp: 2024-08-22T06:16:22.914Z, Cosine: -0.8088421458505015, Rectified Sine: 9.967235042031263, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:23.924Z, Sine: 7.573121695716374, Sawtooth: 7.265121430848942, Square: 10.0, Triangle: 5.469757138302118
+Demo_connect - Timestamp: 2024-08-22T06:16:23.924Z, Cosine: -6.530530436485994, Rectified Sine: 7.573121695716374, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:24.927Z, Sine: 2.2846740447151, Sawtooth: 9.266285654302546, Square: 10.0, Triangle: 1.4674286913949113
+Demo_connect - Timestamp: 2024-08-22T06:16:24.927Z, Cosine: -9.735515626272967, Rectified Sine: 2.2846740447151, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:25.935Z, Sine: -3.903788881727382, Sawtooth: -8.723440167710871, Square: -10.0, Triangle: -2.5531196645782592
+Demo_connect - Timestamp: 2024-08-22T06:16:25.935Z, Cosine: -9.206542910718532, Rectified Sine: 3.903788881727382, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:26.930Z, Sine: -8.582494582964543, Sawtooth: -6.715522404987939, Square: -10.0, Triangle: -6.568955190024121
+Demo_connect - Timestamp: 2024-08-22T06:16:26.930Z, Cosine: -5.132327613606158, Rectified Sine: 8.582494582964543, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:27.940Z, Sine: -9.958554487505658, Sawtooth: -4.710096143492249, Square: -10.0, Triangle: -9.420192286984499
+Demo_connect - Timestamp: 2024-08-22T06:16:27.940Z, Cosine: 0.9095012475972264, Rectified Sine: 9.958554487505658, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:29.056Z, Sine: -7.500770763943056, Sawtooth: -2.6998363847939113, Square: -10.0, Triangle: -5.3996727695878235
+Demo_connect - Timestamp: 2024-08-22T06:16:29.056Z, Cosine: 6.61350421083839, Rectified Sine: 7.500770763943056, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:29.956Z, Sine: -2.1497451525065623, Sawtooth: -0.6896684541944151, Square: -10.0, Triangle: -1.3793369083888303
+Demo_connect - Timestamp: 2024-08-22T06:16:29.956Z, Cosine: 9.766196587171208, Rectified Sine: 2.1497451525065623, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:30.983Z, Sine: 4.003009354377225, Sawtooth: 1.310944041756233, Square: 10.0, Triangle: 2.6218880835124665
+Demo_connect - Timestamp: 2024-08-22T06:16:30.983Z, Cosine: 9.163837411737969, Rectified Sine: 4.003009354377225, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:31.967Z, Sine: 8.640142052280813, Sawtooth: 3.3205739052311136, Square: 10.0, Triangle: 6.641147810462229
+Demo_connect - Timestamp: 2024-08-22T06:16:31.967Z, Cosine: 5.034674300926396, Rectified Sine: 8.640142052280813, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:32.952Z, Sine: 9.947764341751736, Sawtooth: 5.325490179268779, Square: 10.0, Triangle: 9.349019641462442
+Demo_connect - Timestamp: 2024-08-22T06:16:32.952Z, Cosine: -1.020776469640952, Rectified Sine: 9.947764341751736, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:34.053Z, Sine: 7.428768602279216, Sawtooth: 7.334607778555908, Square: 10.0, Triangle: 5.330784442888186
+Demo_connect - Timestamp: 2024-08-22T06:16:34.053Z, Cosine: -6.694280921338043, Rectified Sine: 7.428768602279216, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:34.967Z, Sine: 2.0325302106760255, Sawtooth: 9.348486019694537, Square: 10.0, Triangle: 1.3030279606109292
+Demo_connect - Timestamp: 2024-08-22T06:16:34.967Z, Cosine: -9.791262479511479, Rectified Sine: 2.0325302106760255, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:36.044Z, Sine: -4.525388171157853, Sawtooth: -8.505183951872043, Square: -10.0, Triangle: -2.989632096255918
+Demo_connect - Timestamp: 2024-08-22T06:16:36.044Z, Cosine: -8.917447050605043, Rectified Sine: 4.525388171157853, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:37.045Z, Sine: -8.904541993918855, Sawtooth: -6.503867946436881, Square: -10.0, Triangle: -6.992264107126237
+Demo_connect - Timestamp: 2024-08-22T06:16:37.045Z, Cosine: -4.55072871950588, Rectified Sine: 8.904541993918855, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:38.043Z, Sine: -9.873793969611524, Sawtooth: -4.493752380621023, Square: -10.0, Triangle: -8.987504761242047
+Demo_connect - Timestamp: 2024-08-22T06:16:38.043Z, Cosine: 1.5837274530875285, Rectified Sine: 9.873793969611524, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:39.051Z, Sine: -7.03454334580068, Sawtooth: -2.48360038712959, Square: -10.0, Triangle: -4.96720077425918
+Demo_connect - Timestamp: 2024-08-22T06:16:39.051Z, Cosine: 7.107404583675491, Rectified Sine: 7.03454334580068, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:40.051Z, Sine: -1.4952927541327865, Sawtooth: -0.47775824300443537, Square: -10.0, Triangle: -0.9555164860088707
+Demo_connect - Timestamp: 2024-08-22T06:16:40.051Z, Cosine: 9.887572987312812, Rectified Sine: 1.4952927541327865, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:41.065Z, Sine: 4.630065320894486, Sawtooth: 1.5322935743791706, Square: 10.0, Triangle: 3.064587148758341
+Demo_connect - Timestamp: 2024-08-22T06:16:41.065Z, Cosine: 8.863548675572908, Rectified Sine: 4.630065320894486, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:42.064Z, Sine: 8.962324985155815, Sawtooth: 3.5370656555343563, Square: 10.0, Triangle: 7.0741313110687125
+Demo_connect - Timestamp: 2024-08-22T06:16:42.064Z, Cosine: 4.435846126778048, Rectified Sine: 8.962324985155815, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:43.054Z, Sine: 9.854924209202522, Sawtooth: 5.542861506155138, Square: 10.0, Triangle: 8.914276987689727
+Demo_connect - Timestamp: 2024-08-22T06:16:43.054Z, Cosine: -1.6971943998475927, Rectified Sine: 9.854924209202522, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:44.077Z, Sine: 6.9683082329534995, Sawtooth: 7.545928316747542, Square: 10.0, Triangle: 4.908143366504915
+Demo_connect - Timestamp: 2024-08-22T06:16:44.077Z, Cosine: -7.172355287529507, Rectified Sine: 6.9683082329534995, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:45.074Z, Sine: 1.4035834232430355, Sawtooth: 9.551745416845742, Square: 10.0, Triangle: 0.8965091663085198
+Demo_connect - Timestamp: 2024-08-22T06:16:45.074Z, Cosine: -9.901007704976163, Rectified Sine: 1.4035834232430355, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:46.135Z, Sine: -4.710438678560705, Sawtooth: -8.438773466021305, Square: -10.0, Triangle: -3.1224530679573923
+Demo_connect - Timestamp: 2024-08-22T06:16:46.135Z, Cosine: -8.821097859989951, Rectified Sine: 4.710438678560705, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:47.081Z, Sine: -9.006053595929696, Sawtooth: -6.431235917162171, Square: -10.0, Triangle: -7.1375281656756595
+Demo_connect - Timestamp: 2024-08-22T06:16:47.081Z, Cosine: -4.346377644342676, Rectified Sine: 9.006053595929696, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:48.085Z, Sine: -9.838466333776921, Sawtooth: -4.42709449014035, Square: -10.0, Triangle: -8.8541889802807
+Demo_connect - Timestamp: 2024-08-22T06:16:48.085Z, Cosine: 1.790134128812173, Rectified Sine: 9.838466333776921, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:49.085Z, Sine: -6.885612930659837, Sawtooth: -2.4175739096921895, Square: -10.0, Triangle: -4.835147819384379
+Demo_connect - Timestamp: 2024-08-22T06:16:49.085Z, Cosine: 7.251781475549994, Rectified Sine: 6.885612930659837, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:50.088Z, Sine: -1.3018896235780477, Sawtooth: -0.4155839922589218, Square: -10.0, Triangle: -0.8311679845178436
+Demo_connect - Timestamp: 2024-08-22T06:16:50.088Z, Cosine: 9.914892001833394, Rectified Sine: 1.3018896235780477, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:51.153Z, Sine: 4.802454156252535, Sawtooth: 1.5945239844578598, Square: 10.0, Triangle: 3.1890479689157196
+Demo_connect - Timestamp: 2024-08-22T06:16:51.153Z, Cosine: 8.771341634954869, Rectified Sine: 4.802454156252535, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:52.129Z, Sine: 9.054440577974534, Sawtooth: 3.6046198186161167, Square: 10.0, Triangle: 7.209239637232233
+Demo_connect - Timestamp: 2024-08-22T06:16:52.129Z, Cosine: 4.2446561486094705, Rectified Sine: 9.054440577974534, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:53.094Z, Sine: 9.81889846474685, Sawtooth: 5.606713706706751, Square: 10.0, Triangle: 8.786572586586502
+Demo_connect - Timestamp: 2024-08-22T06:16:53.094Z, Cosine: -1.894527101677874, Rectified Sine: 9.81889846474685, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:54.126Z, Sine: 6.8148193726407005, Sawtooth: 7.613358018604427, Square: 10.0, Triangle: 4.7732839627911465
+Demo_connect - Timestamp: 2024-08-22T06:16:54.126Z, Cosine: -7.318349330161892, Rectified Sine: 6.8148193726407005, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:55.148Z, Sine: 1.1801785913101774, Sawtooth: 9.623459924041947, Square: 10.0, Triangle: 0.7530801519161081
+Demo_connect - Timestamp: 2024-08-22T06:16:55.148Z, Cosine: -9.930114727061975, Rectified Sine: 1.1801785913101774, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:56.113Z, Sine: -4.907112087491434, Sawtooth: -8.367370111887288, Square: -10.0, Triangle: -3.2652597762254247
+Demo_connect - Timestamp: 2024-08-22T06:16:56.113Z, Cosine: -8.713222765475209, Rectified Sine: 4.907112087491434, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:57.132Z, Sine: -9.093748244169511, Sawtooth: -6.365605590696632, Square: -10.0, Triangle: -7.2687888186067395
+Demo_connect - Timestamp: 2024-08-22T06:16:57.132Z, Cosine: -4.159776781470843, Rectified Sine: 9.093748244169511, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:58.126Z, Sine: -9.801292063493129, Sawtooth: -4.364384448999944, Square: -10.0, Triangle: -8.728768897999888
+Demo_connect - Timestamp: 2024-08-22T06:16:58.126Z, Cosine: 1.9836012417082727, Rectified Sine: 9.801292063493129, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:16:59.114Z, Sine: -6.7388811070916566, Sawtooth: -2.353770279374674, Square: -10.0, Triangle: -4.707540558749348
+Demo_connect - Timestamp: 2024-08-22T06:16:59.114Z, Cosine: 7.388334144073556, Rectified Sine: 6.7388811070916566, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:00.180Z, Sine: -1.0859198855618217, Sawtooth: -0.3463420135422606, Square: -10.0, Triangle: -0.6926840270845211
+Demo_connect - Timestamp: 2024-08-22T06:17:00.180Z, Cosine: 9.940864047060566, Rectified Sine: 1.0859198855618217, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:01.136Z, Sine: 4.992196880943012, Sawtooth: 1.6637993552104633, Square: 10.0, Triangle: 3.3275987104209266
+Demo_connect - Timestamp: 2024-08-22T06:17:01.136Z, Cosine: 8.664754485956475, Rectified Sine: 4.992196880943012, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:02.121Z, Sine: 9.137875235767916, Sawtooth: 3.668562329446756, Square: 10.0, Triangle: 7.337124658893512
+Demo_connect - Timestamp: 2024-08-22T06:17:02.121Z, Cosine: 4.061925180938153, Rectified Sine: 9.137875235767916, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:03.124Z, Sine: 9.779798385539383, Sawtooth: 5.669230225820672, Square: 10.0, Triangle: 8.661539548358657
+Demo_connect - Timestamp: 2024-08-22T06:17:03.124Z, Cosine: -2.0869938998955613, Rectified Sine: 9.779798385539383, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:04.160Z, Sine: 6.661585842535787, Sawtooth: 7.67937387130312, Square: 10.0, Triangle: 4.641252257393764
+Demo_connect - Timestamp: 2024-08-22T06:17:04.160Z, Cosine: -7.458101237079501, Rectified Sine: 6.661585842535787, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:05.134Z, Sine: 0.9739631709399988, Sawtooth: 9.689485642569439, Square: 10.0, Triangle: 0.6210287148611221
+Demo_connect - Timestamp: 2024-08-22T06:17:05.134Z, Cosine: -9.952456769142607, Rectified Sine: 0.9739631709399988, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:06.140Z, Sine: -5.08225146337122, Sawtooth: -8.303017789706448, Square: -10.0, Triangle: -3.3939644205871047
+Demo_connect - Timestamp: 2024-08-22T06:17:06.140Z, Cosine: -8.612242452640375, Rectified Sine: 5.08225146337122, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:07.231Z, Sine: -9.186458290260937, Sawtooth: -6.2928384754583355, Square: -10.0, Triangle: -7.414323049083331
+Demo_connect - Timestamp: 2024-08-22T06:17:07.231Z, Cosine: -3.9508206845282294, Rectified Sine: 9.186458290260937, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:08.154Z, Sine: -9.747174579110276, Sawtooth: -4.282710008174044, Square: -10.0, Triangle: -8.565420016348087
+Demo_connect - Timestamp: 2024-08-22T06:17:08.154Z, Cosine: 2.2344099275527824, Rectified Sine: 9.747174579110276, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:09.154Z, Sine: -6.55845602303018, Sawtooth: -2.2768777298776905, Square: -10.0, Triangle: -4.553755459755381
+Demo_connect - Timestamp: 2024-08-22T06:17:09.154Z, Cosine: 7.54895056242781, Rectified Sine: 6.55845602303018, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:10.262Z, Sine: -0.8679280827476885, Sawtooth: -0.27661812703415956, Square: -10.0, Triangle: -0.5532362540683191
+Demo_connect - Timestamp: 2024-08-22T06:17:10.262Z, Cosine: 9.962263841275131, Rectified Sine: 0.8679280827476885, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:11.231Z, Sine: 5.180717189854195, Sawtooth: 1.733499715511423, Square: 10.0, Triangle: 3.466999431022846
+Demo_connect - Timestamp: 2024-08-22T06:17:11.231Z, Cosine: 8.553371814597401, Rectified Sine: 5.180717189854195, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:12.176Z, Sine: 9.231060469899507, Sawtooth: 3.7435818892913404, Square: 10.0, Triangle: 7.487163778582681
+Demo_connect - Timestamp: 2024-08-22T06:17:12.176Z, Cosine: 3.845454797687614, Rectified Sine: 9.231060469899507, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:13.295Z, Sine: 9.727332339417499, Sawtooth: 5.745029945050454, Square: 10.0, Triangle: 8.509940109899096
+Demo_connect - Timestamp: 2024-08-22T06:17:13.295Z, Cosine: -2.3192683239596237, Rectified Sine: 9.727332339417499, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:14.213Z, Sine: 6.484962616884124, Sawtooth: 7.753982101977687, Square: 10.0, Triangle: 4.492035796044628
+Demo_connect - Timestamp: 2024-08-22T06:17:14.213Z, Cosine: -7.612178391079352, Rectified Sine: 6.484962616884124, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:15.173Z, Sine: 0.7403475882146662, Sawtooth: 9.76412422964032, Square: 10.0, Triangle: 0.471751540719364
+Demo_connect - Timestamp: 2024-08-22T06:17:15.173Z, Cosine: -9.972556615463496, Rectified Sine: 0.7403475882146662, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:16.239Z, Sine: -5.286515606412445, Sawtooth: -8.22697825494581, Square: -10.0, Triangle: -3.5460434901083837
+Demo_connect - Timestamp: 2024-08-22T06:17:16.239Z, Cosine: -8.488389290269247, Rectified Sine: 5.286515606412445, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:17.195Z, Sine: -9.278122154102332, Sawtooth: -6.216871796048844, Square: -10.0, Triangle: -7.566256407902315
+Demo_connect - Timestamp: 2024-08-22T06:17:17.195Z, Cosine: -3.7304757462762677, Rectified Sine: 9.278122154102332, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:18.188Z, Sine: -9.698415273240899, Sawtooth: -4.216268407017088, Square: -10.0, Triangle: -8.432536814034178
+Demo_connect - Timestamp: 2024-08-22T06:17:18.188Z, Cosine: 2.437363573160078, Rectified Sine: 9.698415273240899, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:19.211Z, Sine: -6.410879814223937, Sawtooth: -2.215166414175922, Square: -10.0, Triangle: -4.430332828351845
+Demo_connect - Timestamp: 2024-08-22T06:17:19.211Z, Cosine: 7.674673934935351, Rectified Sine: 6.410879814223937, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:20.207Z, Sine: -0.6710924715188983, Sawtooth: -0.21377603556980027, Square: -10.0, Triangle: -0.42755207113960064
+Demo_connect - Timestamp: 2024-08-22T06:17:20.207Z, Cosine: 9.977456333889448, Rectified Sine: 0.6710924715188983, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:21.257Z, Sine: 5.327176032877384, Sawtooth: 1.7882920495839687, Square: 10.0, Triangle: 3.5765840991679365
+Demo_connect - Timestamp: 2024-08-22T06:17:21.257Z, Cosine: 8.462930669380246, Rectified Sine: 5.327176032877384, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:22.228Z, Sine: 9.296103125625248, Sawtooth: 3.798563950840831, Square: 10.0, Triangle: 7.597127901681661
+Demo_connect - Timestamp: 2024-08-22T06:17:22.228Z, Cosine: 3.685439821478638, Rectified Sine: 9.296103125625248, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:23.215Z, Sine: 9.684049282529077, Sawtooth: 5.802278111584572, Square: 10.0, Triangle: 8.395443776830856
+Demo_connect - Timestamp: 2024-08-22T06:17:23.215Z, Cosine: -2.4938302856345427, Rectified Sine: 9.684049282529077, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:24.229Z, Sine: 6.347977541493223, Sawtooth: 7.810834117539945, Square: 10.0, Triangle: 4.378331764920111
+Demo_connect - Timestamp: 2024-08-22T06:17:24.229Z, Cosine: -7.726783362609416, Rectified Sine: 6.347977541493223, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:25.195Z, Sine: 0.5814821103807323, Sawtooth: 9.814804030922609, Square: 10.0, Triangle: 0.37039193815478416
+Demo_connect - Timestamp: 2024-08-22T06:17:25.195Z, Cosine: -9.983079612790192, Rectified Sine: 0.5814821103807323, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:26.275Z, Sine: -5.41440895481389, Sawtooth: -8.178789954890759, Square: -10.0, Triangle: -3.6424200902184847
+Demo_connect - Timestamp: 2024-08-22T06:17:26.275Z, Cosine: -8.4073881598289, Rectified Sine: 5.41440895481389, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:27.307Z, Sine: -9.333528328390715, Sawtooth: -6.168686531633424, Square: -10.0, Triangle: -7.662626936733156
+Demo_connect - Timestamp: 2024-08-22T06:17:27.307Z, Cosine: -3.589602894907464, Rectified Sine: 9.333528328390715, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:28.204Z, Sine: -9.65840213992408, Sawtooth: -4.165614408671662, Square: -10.0, Triangle: -8.331228817343327
+Demo_connect - Timestamp: 2024-08-22T06:17:28.204Z, Cosine: 2.5913834342894813, Rectified Sine: 9.65840213992408, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:29.221Z, Sine: -6.278722889311913, Sawtooth: -2.1607398746789266, Square: -10.0, Triangle: -4.321479749357853
+Demo_connect - Timestamp: 2024-08-22T06:17:29.221Z, Cosine: 7.783163809096573, Rectified Sine: 6.278722889311913, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:30.225Z, Sine: -0.4779557086346545, Sawtooth: -0.15219601128207785, Square: -10.0, Triangle: -0.3043920225641557
+Demo_connect - Timestamp: 2024-08-22T06:17:30.225Z, Cosine: 9.988571386368701, Rectified Sine: 0.4779557086346545, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:31.292Z, Sine: 5.496371117292752, Sawtooth: 1.8523400488917887, Square: 10.0, Triangle: 3.7046800977835774
+Demo_connect - Timestamp: 2024-08-22T06:17:31.292Z, Cosine: 8.354035225026887, Rectified Sine: 5.496371117292752, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:32.230Z, Sine: 9.368167764711323, Sawtooth: 3.8624260172212446, Square: 10.0, Triangle: 7.72485203444249
+Demo_connect - Timestamp: 2024-08-22T06:17:32.230Z, Cosine: 3.49820421534016, Rectified Sine: 9.368167764711323, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:33.220Z, Sine: 9.630137835434391, Sawtooth: 5.868426014607218, Square: 10.0, Triangle: 8.263147970785568
+Demo_connect - Timestamp: 2024-08-22T06:17:33.220Z, Cosine: -2.6945213434922004, Rectified Sine: 9.630137835434391, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:34.227Z, Sine: 6.203297378297439, Sawtooth: 7.869987906852498, Square: 10.0, Triangle: 4.260024186295006
+Demo_connect - Timestamp: 2024-08-22T06:17:34.227Z, Cosine: -7.843411351982511, Rectified Sine: 6.203297378297439, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:35.232Z, Sine: 0.37658175348523226, Sawtooth: 9.880101954848541, Square: 10.0, Triangle: 0.23979609030291874
+Demo_connect - Timestamp: 2024-08-22T06:17:35.232Z, Cosine: -9.992906793468153, Rectified Sine: 0.37658175348523226, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:36.243Z, Sine: -5.595468007408599, Sawtooth: -8.10975212293929, Square: -10.0, Triangle: -3.780495754121423
+Demo_connect - Timestamp: 2024-08-22T06:17:36.243Z, Cosine: -8.28798755899566, Rectified Sine: 5.595468007408599, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:37.240Z, Sine: -9.409071671006961, Sawtooth: -6.099751911429413, Square: -10.0, Triangle: -7.800496177141176
+Demo_connect - Timestamp: 2024-08-22T06:17:37.240Z, Cosine: -3.386645876062963, Rectified Sine: 9.409071671006961, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:38.248Z, Sine: -9.59805657799176, Sawtooth: -4.094448593338781, Square: -10.0, Triangle: -8.188897186677561
+Demo_connect - Timestamp: 2024-08-22T06:17:38.248Z, Cosine: 2.8066545789728155, Rectified Sine: 9.59805657799176, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:39.240Z, Sine: -6.108570262682025, Sawtooth: -2.091749854051648, Square: -10.0, Triangle: -4.183499708103295
+Demo_connect - Timestamp: 2024-08-22T06:17:39.240Z, Cosine: 7.9174092571924595, Rectified Sine: 6.108570262682025, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:40.240Z, Sine: -0.2848783910318299, Sawtooth: -0.0906918779851333, Square: -10.0, Triangle: -0.1813837559702666
+Demo_connect - Timestamp: 2024-08-22T06:17:40.240Z, Cosine: 9.99594139150101, Rectified Sine: 0.2848783910318299, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:41.250Z, Sine: 5.6745617054427075, Sawtooth: 1.9207237005027518, Square: 10.0, Triangle: 3.8414474010055044
+Demo_connect - Timestamp: 2024-08-22T06:17:41.250Z, Cosine: 8.234036036545088, Rectified Sine: 5.6745617054427075, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:42.255Z, Sine: 9.441963313218317, Sawtooth: 3.9315921049471285, Square: 10.0, Triangle: 7.863184209894257
+Demo_connect - Timestamp: 2024-08-22T06:17:42.255Z, Cosine: 3.2938319313285236, Rectified Sine: 9.441963313218317, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:43.252Z, Sine: 9.573067693455704, Sawtooth: 5.933473498263583, Square: 10.0, Triangle: 8.133053003472837
+Demo_connect - Timestamp: 2024-08-22T06:17:43.252Z, Cosine: -2.8907395137775223, Rectified Sine: 9.573067693455704, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:44.264Z, Sine: 6.020398952630329, Sawtooth: 7.943548082944422, Square: 10.0, Triangle: 4.112903834111156
+Demo_connect - Timestamp: 2024-08-22T06:17:44.264Z, Cosine: -7.98466007110933, Rectified Sine: 6.020398952630329, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:45.366Z, Sine: 0.15657132860598938, Sawtooth: 9.950159761716066, Square: 10.0, Triangle: 0.09968047656787099
+Demo_connect - Timestamp: 2024-08-22T06:17:45.366Z, Cosine: -9.998774195823133, Rectified Sine: 0.15657132860598938, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:46.270Z, Sine: -5.755808525673844, Sawtooth: -8.047760010571643, Square: -10.0, Triangle: -3.904479978856716
+Demo_connect - Timestamp: 2024-08-22T06:17:46.270Z, Cosine: -8.177448759593684, Rectified Sine: 5.755808525673844, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:47.284Z, Sine: -9.473367717970378, Sawtooth: -6.037632302197259, Square: -10.0, Triangle: -7.924735395605482
+Demo_connect - Timestamp: 2024-08-22T06:17:47.284Z, Cosine: -3.2023903697264493, Rectified Sine: 9.473367717970378, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:48.272Z, Sine: -9.544900039052093, Sawtooth: -4.035994518961201, Square: -10.0, Triangle: -8.071989037922403
+Demo_connect - Timestamp: 2024-08-22T06:17:48.272Z, Cosine: 2.982429084572398, Rectified Sine: 9.544900039052093, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:49.294Z, Sine: -5.968045888103903, Sawtooth: -2.03563246328012, Square: -10.0, Triangle: -4.07126492656024
+Demo_connect - Timestamp: 2024-08-22T06:17:49.294Z, Cosine: 8.023866167720277, Rectified Sine: 5.968045888103903, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:50.273Z, Sine: -0.1101688312968095, Sawtooth: -0.03506853756356973, Square: -10.0, Triangle: -0.07013707512713946
+Demo_connect - Timestamp: 2024-08-22T06:17:50.273Z, Cosine: 9.999393123015551, Rectified Sine: 0.1101688312968095, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:51.363Z, Sine: 5.794089701646286, Sawtooth: 1.9671657488600023, Square: 10.0, Triangle: 3.9343314977200055
+Demo_connect - Timestamp: 2024-08-22T06:17:51.363Z, Cosine: 8.150369594642715, Rectified Sine: 5.794089701646286, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:52.303Z, Sine: 9.488252629535056, Sawtooth: 3.9772661364777067, Square: 10.0, Triangle: 7.954532272955412
+Demo_connect - Timestamp: 2024-08-22T06:17:52.303Z, Cosine: 3.1580155221469504, Rectified Sine: 9.488252629535056, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:53.286Z, Sine: 9.522728672792027, Sawtooth: 5.9873938448520905, Square: 10.0, Triangle: 8.02521231029582
+Demo_connect - Timestamp: 2024-08-22T06:17:53.286Z, Cosine: -3.052480732844125, Rectified Sine: 9.522728672792027, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:54.292Z, Sine: 5.886713583814933, Sawtooth: 7.996512203049128, Square: 10.0, Triangle: 4.006975593901746
+Demo_connect - Timestamp: 2024-08-22T06:17:54.292Z, Cosine: -8.083724585989353, Rectified Sine: 5.886713583814933, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:55.286Z, Sine: 0.010122595676939785, Sawtooth: 9.99677787717192, Square: 10.0, Triangle: 0.006444245656159713
+Demo_connect - Timestamp: 2024-08-22T06:17:55.286Z, Cosine: -9.999994876651526, Rectified Sine: 0.010122595676939785, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:56.305Z, Sine: -5.887658985231317, Sawtooth: -7.996139919913615, Square: -10.0, Triangle: -4.007720160172772
+Demo_connect - Timestamp: 2024-08-22T06:17:56.305Z, Cosine: -8.083036043073479, Rectified Sine: 5.887658985231317, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:57.299Z, Sine: -9.523997476795058, Sawtooth: -5.986069888692223, Square: -10.0, Triangle: -8.027860222615557
+Demo_connect - Timestamp: 2024-08-22T06:17:57.299Z, Cosine: -3.048519650912781, Rectified Sine: 9.523997476795058, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:58.306Z, Sine: -9.486989547610625, Sawtooth: -3.9759937861915677, Square: -10.0, Triangle: -7.9519875723831355
+Demo_connect - Timestamp: 2024-08-22T06:17:58.306Z, Cosine: 3.1618079200872966, Rectified Sine: 9.486989547610625, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:17:59.299Z, Sine: -5.793041200705059, Sawtooth: -1.966756279139008, Square: -10.0, Triangle: -3.9335125582780175
+Demo_connect - Timestamp: 2024-08-22T06:17:59.299Z, Cosine: 8.151114871410762, Rectified Sine: 5.793041200705059, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:00.306Z, Sine: 0.11054920459838063, Sawtooth: 0.035189621519607826, Square: 10.0, Triangle: 0.07037924303921567
+Demo_connect - Timestamp: 2024-08-22T06:18:00.306Z, Cosine: 9.9993889249975, Rectified Sine: 0.11054920459838063, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:01.316Z, Sine: 5.992267416397453, Sawtooth: 2.0452520636419225, Square: 10.0, Triangle: 4.090504127283846
+Demo_connect - Timestamp: 2024-08-22T06:18:01.316Z, Cosine: 8.005793602784262, Rectified Sine: 5.992267416397453, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:02.444Z, Sine: 9.562828913851257, Sawtooth: 4.055317541403868, Square: 10.0, Triangle: 8.110635082807736
+Demo_connect - Timestamp: 2024-08-22T06:18:02.444Z, Cosine: 2.9244321097283796, Rectified Sine: 9.562828913851257, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:03.361Z, Sine: 9.445074273810706, Sawtooth: 6.065397438454063, Square: 10.0, Triangle: 7.869205123091877
+Demo_connect - Timestamp: 2024-08-22T06:18:03.361Z, Cosine: -3.284900601570641, Rectified Sine: 9.445074273810706, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:04.346Z, Sine: 5.692349889200514, Sawtooth: 8.072394643458857, Square: 10.0, Triangle: 3.8552107130822875
+Demo_connect - Timestamp: 2024-08-22T06:18:04.346Z, Cosine: -8.221748764035476, Rectified Sine: 5.692349889200514, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:05.336Z, Sine: -0.2568916169679304, Sawtooth: -9.918219862056569, Square: -10.0, Triangle: -0.1635602758868638
+Demo_connect - Timestamp: 2024-08-22T06:18:05.336Z, Cosine: -9.996699790287373, Rectified Sine: 0.2568916169679304, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:06.416Z, Sine: -6.101045537758689, Sawtooth: -7.911274262925503, Square: -10.0, Triangle: -4.177451474148994
+Demo_connect - Timestamp: 2024-08-22T06:18:06.416Z, Cosine: -7.923209157039512, Rectified Sine: 6.101045537758689, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:07.344Z, Sine: -9.59942131662661, Sawtooth: -5.904002332534093, Square: -10.0, Triangle: -8.191995334931816
+Demo_connect - Timestamp: 2024-08-22T06:18:07.344Z, Cosine: -2.8019832950777253, Rectified Sine: 9.59942131662661, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:08.337Z, Sine: -9.411851588940541, Sawtooth: -3.9028639120173536, Square: -10.0, Triangle: -7.805727824034705
+Demo_connect - Timestamp: 2024-08-22T06:18:08.337Z, Cosine: 3.3789124977953175, Rectified Sine: 9.411851588940541, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:09.343Z, Sine: -5.620050202946408, Sawtooth: -1.8996984431369357, Square: -10.0, Triangle: -3.7993968862738723
+Demo_connect - Timestamp: 2024-08-22T06:18:09.343Z, Cosine: 8.271338205898852, Rectified Sine: 5.620050202946408, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:10.352Z, Sine: 0.32558020970156226, Sawtooth: 0.10365371758079539, Square: 10.0, Triangle: 0.2073074351615907
+Demo_connect - Timestamp: 2024-08-22T06:18:10.352Z, Cosine: 9.994698471042069, Rectified Sine: 0.32558020970156226, Exp Decay: 0.0, Gaussian: 0.0
+Simulate_connect - Timestamp: 2024-08-22T06:18:11.434Z, Sine: 6.14100260555951, Sawtooth: 2.1048095930254136, Square: 10.0, Triangle: 4.209619186050826
+Demo_connect - Timestamp: 2024-08-22T06:18:11.434Z, Cosine: 7.892280215407414, Rectified Sine: 6.14100260555951, Exp Decay: 0.0, Gaussian: 0.0

@@ -10,8 +10,8 @@ logging.basicConfig(filename='influxdb_data_log.txt', level=logging.INFO,
                     format='%(message)s')
 
 # Set up InfluxDB connection
-url = "http://localhost:8086/"
-token = "WDDwXl5yivgQ3Wnh_4E1olNOf06XRWDbtblx8m6yEmLhFRBl7sR_9gy8ZGDwkcu4qb51hyML89jpanMD3ClnbA=="
+url = "https://us-east-1-1.aws.cloud2.influxdata.com/"
+token = "5uChyvv8PHHOp_BF5Uhu0-z8IfE3ckVoCfJp5NHiP54T4AXbtyjDcWl8zW9deVRhW6Td6W0xYc95bXDWGq3Peg=="
 org = "Learny"
 bucket = "Wave"
 client = InfluxDBClient(url=url, token=token, org=org)

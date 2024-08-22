@@ -19,7 +19,7 @@ app.use(cors({
 app.use(bodyParser.json()); // Parse JSON request bodies
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/testruns')
+mongoose.connect('mongodb+srv://Hemapriya:Hemapriya5@project.wlhsg.mongodb.net/testruns')
   .then(() => console.log('MongoDB connected'))
   .catch(error => console.error('MongoDB connection error:', error));
 
