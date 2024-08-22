@@ -6,8 +6,8 @@ from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 # Set up logging
-logging.basicConfig(filename='influxdb_data_log.txt', level=logging.INFO, 
-                    format='%(message)s')
+# logging.basicConfig(filename='influxdb_data_log.txt', level=logging.INFO, 
+#                     format='%(message)s')
 
 # Set up InfluxDB connection
 url = "https://us-east-1-1.aws.cloud2.influxdata.com/"
