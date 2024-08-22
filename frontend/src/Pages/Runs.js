@@ -5,6 +5,7 @@ import axios from 'axios';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import ApiUrl from '../ServerApi';
 
 const style = {
   position: "absolute",
@@ -78,7 +79,7 @@ export default function Runs() {
   }, []);
 
   const fetchRuns = () => {
-    axios.get('https://testruns-backend.onrender.com/api/runs')
+    axios.get(`${ApiUrl}/api/runs`)
       .then(response => {
         const runsWithId = response.data.map(run => ({ ...run, id: run._id }));
         const sortedRuns = runsWithId.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
@@ -88,7 +89,7 @@ export default function Runs() {
   };
 
   const fetchProcedures = () => {
-    axios.get('https://testruns-backend.onrender.com/api/procedures')
+    axios.get('${ApiUrl}/api/procedures')
       .then(response => {
         setProcedures(response.data);
       })
@@ -171,7 +172,7 @@ export default function Runs() {
   const handleSubmit = () => {
     if (editMode) {
       // Update an existing run
-      axios.put(`https://testruns-backend.onrender.com/api/runs/${selectedRunId}`, formData)
+      axios.put(`${ApiUrl}/api/runs/${selectedRunId}`, formData)
         .then(response => {
           fetchRuns(); // Refresh the list of runs
           handleClose(); // Close the form or modal
@@ -181,7 +182,7 @@ export default function Runs() {
         });
     } else {
       // Create a new run
-      axios.post('https://testruns-backend.onrender.com/api/runs', {
+      axios.post('${ApiUrl}/api/runs', {
         ...formData,
         createdOn: new Date().toISOString().split('T')[0], // Use the current date
         assignedBy: currentUser ? currentUser.displayName || 'Unknown' : 'Unknown' // Use the current user's display name
@@ -199,7 +200,7 @@ export default function Runs() {
   };
 
   const handleDelete = () => {
-    axios.delete(`https://testruns-backend.onrender.com/api/runs/${selectedRunId}`)
+    axios.delete(`${ApiUrl}/api/runs/${selectedRunId}`)
       .then(() => {
         fetchRuns();
         handleDeleteClose();

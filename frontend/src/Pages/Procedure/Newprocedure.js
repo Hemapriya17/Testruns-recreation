@@ -3,6 +3,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Typography, TextField, Grid, Button, Alert, Stack, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import axios from 'axios';
+import ApiUrl from '../../ServerApi';
 
 const Newprocedure = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const Newprocedure = () => {
 
   useEffect(() => {
     // Fetch assets for the dropdown
-    axios.get('https://testruns-backend.onrender.com/api/assets')
+    axios.get('${ApiUrl}/api/assets')
       .then(response => {
         setAssets(response.data);
       })
@@ -32,7 +33,7 @@ const Newprocedure = () => {
       setFormData(location.state.procedure);
     } else {
       // For new procedure, set default createdBy to current user ID (Replace with actual user name if available)
-      axios.get('https://testruns-backend.onrender.com/api/users/669b86da74088e9469ed9ac7') // Fetch user details if needed
+      axios.get('${ApiUrl}/api/users/669b86da74088e9469ed9ac7') // Fetch user details if needed
         .then(response => {
           setFormData(prevData => ({
             ...prevData,
@@ -60,8 +61,8 @@ const Newprocedure = () => {
     }
     
     const request = formData._id
-      ? axios.put(`https://testruns-backend.onrender.com/api/procedures/${formData._id}`, formData)
-      : axios.post('https://testruns-backend.onrender.com/api/procedures', formData);
+      ? axios.put(`${ApiUrl}/api/procedures/${formData._id}`, formData)
+      : axios.post('${ApiUrl}/api/procedures', formData);
   
     request
       .then(response => {

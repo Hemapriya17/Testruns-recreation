@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button, Typography, Box, TextField, MenuItem, Modal, IconButton, Grid } from '@mui/material';
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ApiUrl from '../ServerApi';
 
 const style = {
   position: "absolute",
@@ -71,7 +72,7 @@ export default function Asset() {
   }, []);
 
   const fetchAssets = () => {
-    axios.get('https://testruns-backend.onrender.com/api/assets')
+    axios.get(`${ApiUrl}/api/assets`)
       .then(response => {
         const assetsWithId = response.data.map(asset => ({ ...asset, id: asset._id }));
         setRows(assetsWithId);
@@ -136,7 +137,7 @@ export default function Asset() {
     console.log("Form data before submission:", formData);
 
     if (editMode) {
-      axios.put(`https://testruns-backend.onrender.com/api/assets/${selectedAssetId}`, formData)
+      axios.put(`${ApiUrl}/api/assets/${selectedAssetId}`, formData)
         .then(response => {
           console.log('Update response:', response.data);
           fetchAssets(); 
@@ -144,7 +145,7 @@ export default function Asset() {
         })
         .catch(error => console.error('Update failed:', error.response?.data || error));
     } else {
-      axios.post('https://testruns-backend.onrender.com/api/assets', formData)
+      axios.post(`${ApiUrl}/api/assets`, formData)
         .then(response => {
           console.log('Create response:', response.data);
           fetchAssets(); 
@@ -155,7 +156,7 @@ export default function Asset() {
   };
 
   const handleDelete = () => {
-    axios.delete(`https://testruns-backend.onrender.com/api/assets/${selectedAssetId}`)
+    axios.delete(`${ApiUrl}/api/assets/${selectedAssetId}`)
       .then(() => {
         fetchAssets(); 
         handleDeleteClose();

@@ -16,6 +16,7 @@ import {
 import ChartRuns from "./ChartRuns";
 import Result from "./Result";
 import Remarks from "./Remarks";
+import ApiUrl from '../../ServerApi';
 
 const NewRuns = () => {
   const { procedureID } = useParams();
@@ -47,7 +48,7 @@ const NewRuns = () => {
     const fetchRun = async () => {
       try {
         const response = await axios.get(
-          `https://testruns-backend.onrender.com/api/runs/${procedureID}`
+          `${ApiUrl}/api/runs/${procedureID}`
         );
         const fetchedRun = response.data;
         setRun(fetchedRun);
@@ -107,7 +108,7 @@ const NewRuns = () => {
   const updateRunStatus = async (status, successMessage) => {
     try {
       const response = await axios.put(
-        `https://testruns-backend.onrender.com/api/runs/${procedureID}`,
+        `${ApiUrl}/api/runs/${procedureID}`,
         { status }
       );
       const updatedRun = response.data;
@@ -139,7 +140,7 @@ const NewRuns = () => {
   // Function to handle starting the script
   const handleStart = async () => {
     try {
-      await axios.post(`https://testruns-backend.onrender.com/api/runs/${procedureID}/start`);
+      await axios.post(`${ApiUrl}/api/runs/${procedureID}/start`);
       updateRunStatus("Started", "Run has been started!");
     } catch (error) {
       console.error("Error starting the script:", error);
@@ -150,7 +151,7 @@ const NewRuns = () => {
   // Function to handle stopping the script
   const handleStop = async () => {
     try {
-      await axios.post(`https://testruns-backend.onrender.com/api/runs/${procedureID}/stop`);
+      await axios.post(`${ApiUrl}/api/runs/${procedureID}/stop`);
       updateRunStatus("Stopped", "Run has been stopped!");
     } catch (error) {
       console.error("Error stopping the script:", error);
@@ -184,7 +185,7 @@ const NewRuns = () => {
 
     try {
       const response = await axios.put(
-        `https://testruns-backend.onrender.com/api/runs/${procedureID}`,
+        `${ApiUrl}/api/runs/${procedureID}`,
         updatedRun
       );
       const savedRun = response.data;

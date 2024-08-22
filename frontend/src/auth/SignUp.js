@@ -19,6 +19,7 @@ import {
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
+import ApiUrl from '../ServerApi';
 
 const defaultTheme = createTheme();
 
@@ -48,7 +49,7 @@ export default function SignUp() {
       });
 
       // Save user to MongoDB
-      await axios.post("https://testruns-backend.onrender.com/api/users", {
+      await axios.post(`${ApiUrl}/api/users`, {
         email,
         firstName,
         lastName,

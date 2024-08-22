@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button, Typography, Box, TextField, MenuItem, Modal, IconButton, Grid, Snackbar } from '@mui/material';
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ApiUrl from '../../ServerApi';
 
 const style = {
   position: "absolute",
@@ -70,7 +71,7 @@ export default function UserManagement() {
   ];
 
   useEffect(() => {
-    axios.get('https://testruns-backend.onrender.com/api/users')
+    axios.get('${ApiUrl}/api/users')
       .then(response => {
         const usersWithId = response.data.map(user => ({ ...user, id: user._id }));
         setRows(usersWithId);
@@ -132,7 +133,7 @@ export default function UserManagement() {
 
   const handleSubmit = () => {
     if (editMode) {
-      axios.put(`https://testruns-backend.onrender.com/api/users/${selectedUserId}`, formData)
+      axios.put(`${ApiUrl}/api/users/${selectedUserId}`, formData)
         .then(response => {
           const updatedUser = { ...response.data, id: response.data._id };
           setRows(rows.map(row => row.id === selectedUserId ? updatedUser : row));
@@ -142,7 +143,7 @@ export default function UserManagement() {
         })
         .catch(error => console.error(error));
     } else {
-      axios.post('https://testruns-backend.onrender.com/api/users', formData)
+      axios.post('${ApiUrl}/api/users', formData)
         .then(response => {
           const newUser = { ...response.data, id: response.data._id };
           setRows([newUser, ...rows]);
@@ -155,7 +156,7 @@ export default function UserManagement() {
   };
 
   const handleDelete = () => {
-    axios.delete(`https://testruns-backend.onrender.com/api/users/${selectedUserId}`)
+    axios.delete(`${ApiUrl}/api/users/${selectedUserId}`)
       .then(() => {
         setRows(rows.filter(row => row.id !== selectedUserId));
         handleDeleteClose();

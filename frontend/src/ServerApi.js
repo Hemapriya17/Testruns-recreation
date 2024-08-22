@@ -1,4 +1,4 @@
-require("dotenv/config");
-// const ApiUrl =`http://18.221.90.180:8000`
-const ApiUrl =`https://testruns-backend.onrender.com/`
+// ServerApi.js
+// const ApiUrl =http://localhost:8000
+const ApiUrl = process.env.REACT_APP_API_URL || `https://testruns-backend.onrender.com`;
 export default ApiUrl;

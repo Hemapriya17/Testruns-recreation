@@ -7,6 +7,7 @@ import Runs from "./Dashboard/Runs";
 import MypageCalendar from "./Dashboard/Calendar";
 import RunsStatus from "./Dashboard/RunsStatus";
 import CreatedOnChart from "./Dashboard/CreatedOnChart"; // Updated import
+import ApiUrl from '../ServerApi';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -22,7 +23,7 @@ const MyPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://testruns-backend.onrender.com/api/runs")
+      .get(`${ApiUrl}/api/runs`)
       .then((response) => {
         const dates = response.data.map((run) => run.dueDate);
         console.log("Fetched due dates:", dates); // Log due dates
