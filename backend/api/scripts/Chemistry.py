@@ -31,4 +31,12 @@ class FirstYChemistry:
         Sample=round((Hard*1000/20),2)
         
         print(json.dumps({"TOTAL HARDNESS OF WATER BY EDTA METHOD":[{"1ml of EDTA":str(EDTA)+"mg of CaCO3","20ml of Hard water":str(Hard)+"mg of CaCO3","1000ml of Sample hard water contains":str(Sample)+"ppm"}]}))
-    
+        
+    def oxygen(self):
+        argument = self.arg[0:]
+         
+        Norm1 = round((float(argument[12])*float(argument[13])/float(argument[14])),4)
+        Norm2 = round((float(argument[25])*Norm1/float(argument[27])),3)
+        Amount= round((Norm2*8*1000),4)
+        
+        print(json.dumps({"ans":[{"Normality of Thio":str(Norm1),"Normality of Dissolved oxygen":str(Norm2),"Amount of Dissolved Oxygen in the given solution":str(Amount)}]}))

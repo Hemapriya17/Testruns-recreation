@@ -30,7 +30,7 @@ def main():
             result = chemistry_calc.Acetic_acid()  # Assume this method returns JSON result
 
         elif title == "Conductometric":
-            if len(argument) < 30:  # Ensure there are at least 15 values for Conductometric calculation
+            if len(argument) < 30:  
                 raise IndexError("Not enough arguments provided for Conductometric")
 
             chemistry_calc = FirstYChemistry(argument)
@@ -42,6 +42,13 @@ def main():
 
             chemistry_calc = FirstYChemistry(argument)
             result = chemistry_calc.EDTA()
+            
+        elif title == "Dissolved_Oxygen":
+            if len(argument) < 21:  # Ensure there are at least 15 values for Conductometric calculation
+                raise IndexError("Not enough arguments provided for Dissolved Oxygen")
+
+            chemistry_calc = FirstYChemistry(argument)
+            result = chemistry_calc.oxygen()
             
         else:
             result = {"error": "Unknown title"}
