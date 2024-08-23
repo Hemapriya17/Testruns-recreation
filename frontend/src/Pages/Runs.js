@@ -89,7 +89,7 @@ export default function Runs() {
   };
 
   const fetchProcedures = () => {
-    axios.get('${ApiUrl}/api/procedures')
+    axios.get(`${ApiUrl}/api/procedures`)
       .then(response => {
         setProcedures(response.data);
       })
@@ -182,7 +182,7 @@ export default function Runs() {
         });
     } else {
       // Create a new run
-      axios.post('${ApiUrl}/api/runs', {
+      axios.post(`${ApiUrl}/api/runs`, {
         ...formData,
         createdOn: new Date().toISOString().split('T')[0], // Use the current date
         assignedBy: currentUser ? currentUser.displayName || 'Unknown' : 'Unknown' // Use the current user's display name
