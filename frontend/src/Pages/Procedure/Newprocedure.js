@@ -22,7 +22,7 @@ const Newprocedure = () => {
 
   useEffect(() => {
     // Fetch assets for the dropdown
-    axios.get('${ApiUrl}/api/assets')
+    axios.get(`${ApiUrl}/api/assets`)
       .then(response => {
         setAssets(response.data);
       })
@@ -33,7 +33,7 @@ const Newprocedure = () => {
       setFormData(location.state.procedure);
     } else {
       // For new procedure, set default createdBy to current user ID (Replace with actual user name if available)
-      axios.get('${ApiUrl}/api/users/669b86da74088e9469ed9ac7') // Fetch user details if needed
+      axios.get(`${ApiUrl}/api/users/669b86da74088e9469ed9ac7`) // Fetch user details if needed
         .then(response => {
           setFormData(prevData => ({
             ...prevData,
@@ -62,7 +62,7 @@ const Newprocedure = () => {
     
     const request = formData._id
       ? axios.put(`${ApiUrl}/api/procedures/${formData._id}`, formData)
-      : axios.post('${ApiUrl}/api/procedures', formData);
+      : axios.post(`${ApiUrl}/api/procedures`, formData);
   
     request
       .then(response => {
@@ -154,6 +154,8 @@ const Newprocedure = () => {
           <Editor
             apiKey='q2yws6m7pph5gmrsgwrzp1w0i1rnrvs702bdhigr8tpm4qzf'
             init={{
+              selector: "textarea",
+              // height: 600,
               plugins: 'anchor autolink charmap codesample emoticons image code link lists media searchreplace table visualblocks wordcount',
               toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | code align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
               tinycomments_mode: 'embedded',

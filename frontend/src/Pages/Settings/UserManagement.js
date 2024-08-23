@@ -71,7 +71,7 @@ export default function UserManagement() {
   ];
 
   useEffect(() => {
-    axios.get('${ApiUrl}/api/users')
+    axios.get(`${ApiUrl}/api/users`)
       .then(response => {
         const usersWithId = response.data.map(user => ({ ...user, id: user._id }));
         setRows(usersWithId);
@@ -143,7 +143,7 @@ export default function UserManagement() {
         })
         .catch(error => console.error(error));
     } else {
-      axios.post('${ApiUrl}/api/users', formData)
+      axios.post(`${ApiUrl}/api/users`, formData)
         .then(response => {
           const newUser = { ...response.data, id: response.data._id };
           setRows([newUser, ...rows]);

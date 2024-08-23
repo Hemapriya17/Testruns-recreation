@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { Button, Typography, Box, TextField, MenuItem, Modal, IconButton, Grid } from '@mui/material';
+import { Typography } from '@mui/material';
 import axios from 'axios';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import ApiUrl from '../../ServerApi';
 
 const style = {
   position: "absolute",
@@ -71,7 +70,7 @@ export default function Runs() {
   }, []);
 
   const fetchRuns = () => {
-    axios.get('${ApiUrl}/api/runs')
+    axios.get(`${ApiUrl}/api/runs`)
       .then(response => {
         const runsWithId = response.data.map(run => ({ ...run, id: run._id }));
         const sortedRuns = runsWithId.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
@@ -81,7 +80,7 @@ export default function Runs() {
   };
 
   const fetchProcedures = () => {
-    axios.get('${ApiUrl}/api/procedures')
+    axios.get(`${ApiUrl}/api/procedures`)
       .then(response => {
         setProcedures(response.data);
       })

@@ -165,7 +165,7 @@ const NewRuns = () => {
 
   const handleSave = async () => {
     const updatedContent = contentRef.current.innerHTML;
-
+  
     const extractInputValues = () => {
       const inputs = contentRef.current.querySelectorAll('input[type="text"]');
       const values = {};
@@ -174,31 +174,49 @@ const NewRuns = () => {
       });
       return values;
     };
-
+  
     const updatedInputValues = extractInputValues();
-
+  
     const updatedRun = {
       ...run,
       content: updatedContent,
       inputValues: updatedInputValues,
     };
-
+  
     try {
+      // Save the updated run
       const response = await axios.put(
         `${ApiUrl}/api/runs/${procedureID}`,
         updatedRun
       );
       const savedRun = response.data;
-
-      setSnackbarMessage("Run has been saved successfully");
-      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
+  
+      // Prepare data for Python script
+      const dataForPython = {
+        ...updatedInputValues,
+        title: savedRun.procedureName || "Default Title" // Provide a default title if necessary
+      };
+  
+      // Run the Python script with the updated input values and title
+      const pythonResponse = await axios.post(
+        `${ApiUrl}/api/runPython`,
+        dataForPython
+      );
+      const results = pythonResponse.data;
+  
+      // Update the run data with the new results
       setRun(savedRun);
       setInputValues(savedRun.inputValues);
+      setRunData({ ...savedRun, results }); // Add results to the runData
+      setSnackbarMessage("Run has been saved and results updated successfully");
+      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
     } catch (error) {
-      console.error("Error saving run:", error.response?.data || error.message);
-      setError("Failed to save run.");
+      console.error("Error saving run or running script:", error.response?.data || error.message);
+      setError("Failed to save run or run the script.");
     }
   };
+  
+  
 
   if (loading) {
     return (

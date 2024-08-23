@@ -42,7 +42,7 @@ class Clause:
         
         # Format and return the result
         result = {
-            "answer": [
+            "Deviation": [
                 {
                     "Power deviation in watts": ", ".join(f"{value:.3f} W" for value in Power_deviation_values),
                     "Power deviation in %": ", ".join(f"{value:.3f}%" for value in Power_deviation_efficiency_values)

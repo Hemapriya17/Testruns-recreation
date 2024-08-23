@@ -1,6 +1,7 @@
 import argparse
 import json
 from IS_302_1 import Clause
+from Chemistry import FirstYChemistry  # Import the new Chemistry class
 
 def main():
     parser = argparse.ArgumentParser(description='Process some arguments.')
@@ -19,10 +20,32 @@ def main():
                 raise IndexError("Not enough arguments provided")
                 
             numeric_values = [float(x) for x in argument]
-
             result = Clause(numeric_values).power_Input()
+
+        elif title == "Acetic_Acid":
+            if len(argument) < 30:  # Ensure there are at least 18 values for the Chemistry calculation
+                raise IndexError("Not enough arguments provided for Acetic_Acid")
+
+            chemistry_calc = FirstYChemistry(argument)
+            result = chemistry_calc.Acetic_acid()  # Assume this method returns JSON result
+
+        elif title == "Conductometric":
+            if len(argument) < 30:  # Ensure there are at least 15 values for Conductometric calculation
+                raise IndexError("Not enough arguments provided for Conductometric")
+
+            chemistry_calc = FirstYChemistry(argument)
+            result = chemistry_calc.Conductometric()  # Call the Conductometric method
+        
+        elif title == "EDTA_Water":
+            if len(argument) < 21:  # Ensure there are at least 15 values for Conductometric calculation
+                raise IndexError("Not enough arguments provided for Conductometric")
+
+            chemistry_calc = FirstYChemistry(argument)
+            result = chemistry_calc.EDTA()
+            
         else:
             result = {"error": "Unknown title"}
+
     except ValueError as e:
         result = {"error": f"Invalid measurement value: {str(e)}"}
     except IndexError as e:
