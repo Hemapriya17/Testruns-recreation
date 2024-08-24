@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -15,11 +15,13 @@ import {
   Container,
   createTheme,
   ThemeProvider,
+  Link,
+  Alert, // Import Alert component from MUI for displaying error messages
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
-import ApiUrl from '../ServerApi';
+import ApiUrl from "../ServerApi";
 
 const defaultTheme = createTheme();
 
@@ -27,9 +29,12 @@ export default function SignUp() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const auth = getAuth();
+  const [error, setError] = useState(""); // State to store error message
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setError(""); // Reset error message on submit
+
     const data = new FormData(event.currentTarget);
     const email = data.get("email");
     const password = data.get("password");
@@ -53,10 +58,10 @@ export default function SignUp() {
         email,
         firstName,
         lastName,
-        institute: "Defalut Ins",
-        org: "Defalut Org",
-        dept: "Defalut Dept",
-        lab: "Defalut Lab",
+        institute: "Default Ins",
+        org: "Default Org",
+        dept: "Default Dept",
+        lab: "Default Lab",
         role: "Tester", // Default role
       });
 
@@ -66,11 +71,12 @@ export default function SignUp() {
       navigate("/dashboard");
     } catch (error) {
       console.error("Error signing up:", error);
+      if (error.code === "auth/email-already-in-use") {
+        setError("This email is already registered. Please use a different email.");
+      } else {
+        setError("Failed to sign up. Please try again.");
+      }
     }
-  };
-
-  const signin = () => {
-    navigate("/");
   };
 
   return (
@@ -91,6 +97,8 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
+          {/* Display error message if there's an error */}
+          {error && <Alert severity="error">{error}</Alert>}
           <Box
             component="form"
             noValidate
@@ -159,9 +167,9 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Typography sx={{ color: "blue" }} onClick={signin}>
-                  {"Already have an account? Sign in"}
-                </Typography>
+                <Link href="/" variant="body2">
+                  Already have an account? Sign in
+                </Link>
               </Grid>
             </Grid>
           </Box>

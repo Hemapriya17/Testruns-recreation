@@ -13,6 +13,7 @@ import SignUp from './auth/SignUp';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './Components/ProtectedRoute';
 import NewRuns from './Pages/Runs/NewRuns';
+import Forgot from "./auth/Fogot"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<Forgot />} />
           <Route
             path="/dashboard"
             element={<ProtectedRoute element={<MainLayout><MyPage /></MainLayout>} />}

@@ -1,15 +1,21 @@
-// src/components/SignIn.js
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -22,16 +28,20 @@ import {
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
+// Import Google logo (you need to have the Google logo in your project)
+import googleLogo from '../assets/GoogleLogo.png'; // Ensure to have this path correct
+
 const defaultTheme = createTheme();
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // Add state to toggle password visibility
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const { login } = useAuth(); // Access the login function from AuthContext
+  const { login } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,7 +60,7 @@ export default function SignIn() {
       );
       const user = userCredential.user;
       console.log("Signed in user:", user);
-      login(user); // Update user state in context
+      login(user);
       const from = location.state?.from?.pathname || "/dashboard";
       navigate(from, { replace: true });
     } catch (error) {
@@ -69,7 +79,7 @@ export default function SignIn() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log("Google signed in user:", user);
-      login(user); // Update user state in context
+      login(user);
       const from = location.state?.from?.pathname || "/dashboard";
       navigate(from, { replace: true });
     } catch (error) {
@@ -80,8 +90,10 @@ export default function SignIn() {
     }
   };
 
-  const signup = () => {
-    navigate("/signup");
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -125,18 +137,33 @@ export default function SignIn() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <TextField
+            <FormControl
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              variant="outlined"
+            >
+              <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </FormControl>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -155,24 +182,22 @@ export default function SignIn() {
               variant="contained"
               color="secondary"
               onClick={handleGoogleSignIn}
-              sx={{ mt: 1, mb: 2 }}
+              sx={{ mt: 1, mb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              startIcon={<img src={googleLogo} alt="Google logo" style={{ width: 20, height: 20 }} />}
               disabled={loading}
             >
               {loading ? "Logging In with Google..." : "Sign In with Google"}
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="/forgot-password" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Typography
-                  sx={{ color: "blue", cursor: "pointer" }}
-                  onClick={signup}
-                >
-                  {"Don't have an account? Sign Up"}
-                </Typography>
+                <Link href="/signup" variant="body2">
+                  Don't have an account? Sign Up
+                </Link>
               </Grid>
             </Grid>
           </Box>

@@ -60,7 +60,7 @@ const Result = ({ runData }) => {
 
   return (
     <Editor
-      apiKey={process.env.REACT_APP_TINYMCE_API_KEY} // Securely store your TinyMCE API key in environment variables
+      apiKey={process.env.REACT_APP_TINYMCE_API_KEY}
       value={editorContent}
       init={{
         height: 450,
