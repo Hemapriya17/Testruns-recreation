@@ -2,11 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const userRoutes = require('./api/user');
-const procedureRoutes = require('./api/procedures');
-const assetRoutes = require('./api/asset');
-const runRoutes = require('./api/run');
-const runPythonRoutes = require('./api/runScript');
+const userRoutes = require('./routes/user');
+const procedureRoutes = require('./routes/procedures');
+const assetRoutes = require('./routes/asset');
+const runRoutes = require('./routes/run');
+const runPythonRoutes = require('./routes/runScript');
 
 const app = express();
 
