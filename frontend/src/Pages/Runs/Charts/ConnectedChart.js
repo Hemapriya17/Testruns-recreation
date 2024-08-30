@@ -13,7 +13,7 @@ dayjs.extend(isSameOrBefore);
 
 const waveOptions = ['sawtooth_wave', 'sine_wave', 'square_wave', 'triangle_wave'];
 
-const ConnectedChart = () => {
+const ConnectedChart = ({ simulateStartTime, simulateStopTime }) => {
   const [simulateChartData, setSimulateChartData] = useState({
     sawtooth_wave: [],
     sine_wave: [],
@@ -23,15 +23,11 @@ const ConnectedChart = () => {
 
   const [selectedWaves, setSelectedWaves] = useState(['', '', '', '']);
   const [isSimulateRunning, setIsSimulateRunning] = useState(false);
-  const [simulateStartTime, setSimulateStartTime] = useState(null);
-  const [simulateStopTime, setSimulateStopTime] = useState(null);
+  const [chartType, setChartType] = useState('line'); // 'line' for real-time, 'area' for archived
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [showSimulateChart, setShowSimulateChart] = useState(true);
 
   useEffect(() => {
-    let simulateIntervalId;
-
     const influxDB = new InfluxDB({
       url: "https://us-east-1-1.aws.cloud2.influxdata.com/",
       token: "5uChyvv8PHHOp_BF5Uhu0-z8IfE3ckVoCfJp5NHiP54T4AXbtyjDcWl8zW9deVRhW6Td6W0xYc95bXDWGq3Peg=="
@@ -75,6 +71,8 @@ const ConnectedChart = () => {
         },
         error: (error) => {
           console.error('Error querying InfluxDB', error);
+          setSnackbarMessage('Error querying data.');
+          setOpenSnackbar(true);
         },
         complete: () => {
           setSimulateChartData((prevData) => {
@@ -88,30 +86,18 @@ const ConnectedChart = () => {
       });
     };
 
-    if (isSimulateRunning && showSimulateChart) {
-      // Fetch data in real-time while the simulation is running
-      fetchData(simulateStartTime, new Date());
-      simulateIntervalId = setInterval(() => fetchData(simulateStartTime, new Date()), 1000);
-    } else if (!isSimulateRunning && simulateStopTime) {
-      // Fetch archived data after the simulation is stopped
+    if (isSimulateRunning) {
+      // Real-time data fetching
+      const intervalId = setInterval(() => {
+        fetchData(dayjs().subtract(1, 'minute').toDate(), new Date()); // fetch last minute data
+      }, 10000); // update every 10 seconds
+
+      return () => clearInterval(intervalId);
+    } else if (simulateStartTime && simulateStopTime) {
+      // Archived data fetching
       fetchData(simulateStartTime, simulateStopTime);
     }
-
-    return () => {
-      clearInterval(simulateIntervalId);
-    };
-  }, [isSimulateRunning, simulateStartTime, simulateStopTime, showSimulateChart]);
-
-  useEffect(() => {
-    if (showSimulateChart) {
-      setIsSimulateRunning(true);
-      setSimulateStartTime(new Date());
-      setSimulateStopTime(null);
-    } else {
-      setIsSimulateRunning(false);
-      setSimulateStopTime(new Date());
-    }
-  }, [showSimulateChart]);
+  }, [simulateStartTime, simulateStopTime, isSimulateRunning]);
 
   const handleWaveChange = (index, event) => {
     const value = event.target.value;
@@ -126,16 +112,9 @@ const ConnectedChart = () => {
     setSelectedWaves(['', '', '', '']);
   };
 
-  const trimToLast12Seconds = (data) => {
-    const currentTime = dayjs();
-    return data.filter((point) =>
-      dayjs(point.x).isAfter(currentTime.subtract(12, 'seconds'))
-    );
-  };
-
   const apexOptions = {
     chart: {
-      type: 'line',
+      type: chartType,
       zoom: { enabled: true }
     },
     xaxis: {
@@ -149,6 +128,15 @@ const ConnectedChart = () => {
     stroke: {
       width: [4, 4, 4, 4],
       curve: 'smooth'
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.3,
+        stops: [0, 100]
+      }
     },
     colors: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'],
     dataLabels: { enabled: false },
@@ -167,7 +155,7 @@ const ConnectedChart = () => {
     .filter((wave) => wave)
     .map((wave) => ({
       name: wave.replace('_', ' ').toUpperCase(),
-      data: trimToLast12Seconds(simulateChartData[wave])
+      data: simulateChartData[wave]
     }));
 
   return (
@@ -186,7 +174,11 @@ const ConnectedChart = () => {
               <em>Select Wave</em>
             </MenuItem>
             {waveOptions.map((wave) => (
-              <MenuItem key={wave} value={wave} disabled={selectedWaves.includes(wave) && selectedWave !== wave}>
+              <MenuItem
+                key={wave}
+                value={wave}
+                disabled={selectedWaves.includes(wave) && selectedWave !== wave}
+              >
                 {wave.replace('_', ' ').toUpperCase()}
               </MenuItem>
             ))}
@@ -197,18 +189,27 @@ const ConnectedChart = () => {
         </Button>
       </div>
 
-      {showSimulateChart && (
-        <div style={{ flex: 1 }}>
-          <ApexCharts
-            options={{ ...apexOptions, title: { text: 'Simulate', style: { fontSize: '20px', fontWeight: 'bold', color: '#263238' } } }}
-            series={simulateApexSeries}
-            type="line"
-            height={350}
-          />
-        </div>
-      )}
+      <div style={{ flex: 1 }}>
+        <ApexCharts
+          options={{
+            ...apexOptions,
+            title: {
+              text: isSimulateRunning ? 'Real-time Chart' : 'Archived Chart',
+              style: { fontSize: '20px', fontWeight: 'bold', color: '#263238' }
+            }
+          }}
+          series={simulateApexSeries}
+          type={chartType}
+          height={350}
+        />
+      </div>
 
-      <Snackbar open={openSnackbar} autoHideDuration={3000} onClose={() => setOpenSnackbar(false)} message={snackbarMessage} />
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={() => setOpenSnackbar(false)}
+        message={snackbarMessage}
+      />
     </div>
   );
 };

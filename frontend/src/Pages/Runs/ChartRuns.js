@@ -3,7 +3,7 @@ import Radio from '@mui/material/Radio';
 import TableChart from './Charts/TableChart';
 import ConnectedChart from './Charts/ConnectedChart';
 
-const ChartRuns = ({ tableHtml, inputValues }) => {
+const ChartRuns = ({ tableHtml, inputValues, simulateStartTime, simulateStopTime, setSimulateStartTime, setSimulateStopTime }) => {
   const [selectedChart, setSelectedChart] = useState('table');
 
   const handleChartChange = (event) => {
@@ -34,8 +34,17 @@ const ChartRuns = ({ tableHtml, inputValues }) => {
       <br />
 
       <div>
-        {selectedChart === 'table' && <TableChart tableHtml={tableHtml} inputValues={inputValues} />}
-        {selectedChart === 'connected' && <ConnectedChart />}
+        {selectedChart === 'table' && (
+          <TableChart tableHtml={tableHtml} inputValues={inputValues} />
+        )}
+        {selectedChart === 'connected' && (
+          <ConnectedChart
+            simulateStartTime={simulateStartTime}
+            simulateStopTime={simulateStopTime}
+            setSimulateStartTime={setSimulateStartTime}
+            setSimulateStopTime={setSimulateStopTime}
+          />
+        )}
       </div>
     </div>
   );

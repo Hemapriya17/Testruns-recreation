@@ -12,8 +12,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://testruns-recreation.vercel.app', 
-  // origin:'http://localhost:3001',
+origin: 'https://testruns-recreation.vercel.app', 
+     //origin:'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

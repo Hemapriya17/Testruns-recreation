@@ -33,7 +33,8 @@ const NewRuns = () => {
   const [inputValues, setInputValues] = useState({});
   const [runData, setRunData] = useState(null);
   const [tableHtml, setTableHtml] = useState("");
-
+  const [simulateStartTime, setSimulateStartTime] = useState(null);
+  const [simulateStopTime, setSimulateStopTime] = useState(null);
   const contentRef = useRef(null);
 
   const [snackbarState, setSnackbarState] = useState({
@@ -140,6 +141,7 @@ const NewRuns = () => {
   const handleStart = async () => {
     try {
       await axios.post(`${ApiUrl}/api/runs/${procedureID}/start`);
+      setSimulateStartTime(new Date()); // Set start time when starting
       updateRunStatus("Started", "Run has been started!");
     } catch (error) {
       console.error("Error starting the script:", error);
@@ -150,6 +152,7 @@ const NewRuns = () => {
   const handleStop = async () => {
     try {
       await axios.post(`${ApiUrl}/api/runs/${procedureID}/stop`);
+      setSimulateStopTime(new Date()); // Set stop time when stopping
       updateRunStatus("Stopped", "Run has been stopped!");
     } catch (error) {
       console.error("Error stopping the script:", error);
@@ -290,6 +293,10 @@ const NewRuns = () => {
                   <ChartRuns
                     tableHtml={tableHtml}
                     inputValues={inputValues}
+                    simulateStartTime={simulateStartTime}
+                    simulateStopTime={simulateStopTime}
+                    setSimulateStartTime={setSimulateStartTime}
+                    setSimulateStopTime={setSimulateStopTime}
                   />
                 </Typography>
               </Box>
