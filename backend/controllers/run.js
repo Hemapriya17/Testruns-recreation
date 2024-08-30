@@ -147,19 +147,15 @@ const startRun = async (req, res) => {
       return res.status(404).json({ message: 'Run not found' });
     }
 
-    // Check if the simulation is already running
     if (pythonProcess) {
       return res.status(400).json({ message: 'Simulation is already running' });
     }
 
-    // Update the script path to ensure it's correct
     const scriptPath = path.join(__dirname, '..', 'routes', 'scripts', 'Simulations.py');
-
     pythonProcess = spawn('python3', [scriptPath]);
 
     pythonProcess.stdout.on('data', (data) => {
       console.log(`Python Output: ${data}`);
-      // You can also process and save this data if needed
     });
 
     pythonProcess.stderr.on('data', (data) => {
@@ -175,15 +171,17 @@ const startRun = async (req, res) => {
     run.startedAt = new Date();
     await run.save();
 
-    res.status(200).json({ message: 'Run and simulation started successfully', run });
+    res.status(200).json({
+      message: 'Run and simulation started successfully',
+      run,
+      startedAt: run.startedAt
+    });
   } catch (error) {
     console.error('Error starting run:', error);
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
 
-
-// Function to stop the run/chart and the Python simulation
 const stopRun = async (req, res) => {
   const { id } = req.params;
 
@@ -197,9 +195,8 @@ const stopRun = async (req, res) => {
       return res.status(404).json({ message: 'Run not found' });
     }
 
-    // Stop the Python simulation script
     if (pythonProcess) {
-      pythonProcess.kill('SIGINT'); // Gracefully stop the process
+      pythonProcess.kill('SIGINT');
       pythonProcess = null;
     } else {
       return res.status(400).json({ message: 'No simulation is currently running' });
@@ -209,12 +206,17 @@ const stopRun = async (req, res) => {
     run.stoppedAt = new Date();
     await run.save();
 
-    res.status(200).json({ message: 'Run and simulation stopped successfully', run });
+    res.status(200).json({
+      message: 'Run and simulation stopped successfully',
+      run,
+      stoppedAt: run.stoppedAt
+    });
   } catch (error) {
     console.error('Error stopping run:', error);
     res.status(500).json({ message: 'Server Error', error: error.message });
   }
 };
+
 
 module.exports = {
   getRuns,

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Typography, TextField, Grid, Button, Alert, Stack, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import axios from 'axios';
 import ApiUrl from '../../ServerApi';
+import { nanoid } from 'nanoid'; // Import nanoid for generating unique IDs
 
 const Newprocedure = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const Newprocedure = () => {
   });
   const [notification, setNotification] = useState({ message: '', severity: '' });
   const [assets, setAssets] = useState([]); // State for dropdown options
+  const [isDateButtonDisabled, setIsDateButtonDisabled] = useState(false); // State for button disable
 
   useEffect(() => {
     // Fetch assets for the dropdown
@@ -44,11 +46,15 @@ const Newprocedure = () => {
     }
   }, [location.state]);
 
-  const handleEditorChange = (content) => {
+  const handleEditorChange = (content, editor) => {
     setFormData(prevData => ({
       ...prevData,
       content: content || ''
     }));
+
+    // Check if the current node is a <time> element
+    const selectedNode = editor.selection.getNode();
+    setIsDateButtonDisabled(selectedNode.nodeName.toLowerCase() === 'time');
   };
 
   const handleSubmit = () => {
@@ -157,14 +163,50 @@ const Newprocedure = () => {
               selector: "textarea",
               // height: 600,
               plugins: 'anchor autolink charmap codesample emoticons image code link lists media searchreplace table visualblocks wordcount',
-              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | code align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | customInsertButton customDateButton code align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
               tinycomments_mode: 'embedded',
               tinycomments_author: 'Author name',
               mergetags_list: [
                 { value: 'First.Name', title: 'First Name' },
                 { value: 'Email', title: 'Email' },
               ],
-              ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+              setup: function (editor) {
+                editor.ui.registry.addButton("customInsertButton", {
+                  icon: "edit-block",
+                  tooltip: "Insert Input Element",
+                  onAction: function (_) {
+                    const value = nanoid(7);
+                    editor.insertContent(
+                      `&nbsp;<input type='text' id='value_${value}' name='value_${value}'>&nbsp;`
+                    );
+                  },
+                });
+
+                var toTimeHtml = function (date) {
+                  return (
+                    '<time datetime="' +
+                    date.toString() +
+                    '">' +
+                    date.toDateString() +
+                    "</time>"
+                  );
+                };
+
+                editor.ui.registry.addButton("customDateButton", {
+                  icon: "insert-time",
+                  tooltip: "Insert Current Date",
+                  onAction: function (_) {
+                    editor.insertContent(toTimeHtml(new Date()));
+                  },
+                  onSetup: function () {
+                    // Initial disable check
+                    setIsDateButtonDisabled(editor.selection.getNode().nodeName.toLowerCase() === 'time');
+                    editor.on('NodeChange', function (event) {
+                      setIsDateButtonDisabled(event.element.nodeName.toLowerCase() === 'time');
+                    });
+                  },
+                });
+              },
             }}
             value={formData.content || ''}
             onEditorChange={handleEditorChange}

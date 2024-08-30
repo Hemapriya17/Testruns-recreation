@@ -32,7 +32,7 @@ const NewRuns = () => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [inputValues, setInputValues] = useState({});
   const [runData, setRunData] = useState(null);
-  const [tableHtml, setTableHtml] = useState(""); // State to hold the table HTML content
+  const [tableHtml, setTableHtml] = useState("");
 
   const contentRef = useRef(null);
 
@@ -47,19 +47,15 @@ const NewRuns = () => {
   useEffect(() => {
     const fetchRun = async () => {
       try {
-        const response = await axios.get(
-          `${ApiUrl}/api/runs/${procedureID}`
-        );
+        const response = await axios.get(`${ApiUrl}/api/runs/${procedureID}`);
         const fetchedRun = response.data;
         setRun(fetchedRun);
         setInputValues(fetchedRun.inputValues || {});
-        setRunData(fetchedRun); // Set runData here
-
-        // Set tableHtml here
-        setTableHtml(fetchedRun.content);
+        setRunData(fetchedRun);
+        setTableHtml(fetchedRun.content || "");
 
         if (contentRef.current) {
-          contentRef.current.innerHTML = fetchedRun.content;
+          contentRef.current.innerHTML = fetchedRun.content || "";
         }
 
         updateButtonAndTabStates(fetchedRun.status);
@@ -86,35 +82,39 @@ const NewRuns = () => {
   }, [inputValues, tabValue, run]);
 
   const updateButtonAndTabStates = (status) => {
-    if (status === "Started") {
-      setStartButtonDisabled(true);
-      setStopButtonDisabled(false);
-      setTabsEnabled(true);
-    } else if (status === "Stopped") {
-      setStartButtonDisabled(true);
-      setStopButtonDisabled(true);
-      setTabsEnabled(true);
+    switch (status) {
+      case "Started":
+        setStartButtonDisabled(true);
+        setStopButtonDisabled(false);
+        setTabsEnabled(true);
+        break;
+      case "Stopped":
+        setStartButtonDisabled(true);
+        setStopButtonDisabled(true);
+        setTabsEnabled(true);
+        break;
+      default:
+        setStartButtonDisabled(false);
+        setStopButtonDisabled(true);
+        setTabsEnabled(false);
+        break;
     }
   };
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
     if (newValue === "2" && contentRef.current) {
-      const tableHtml = contentRef.current.innerHTML;
-      setTableHtml(tableHtml); // Ensure tableHtml is set
+      setTableHtml(contentRef.current.innerHTML);
     }
   };
 
   const updateRunStatus = async (status, successMessage) => {
     try {
-      const response = await axios.put(
-        `${ApiUrl}/api/runs/${procedureID}`,
-        { status }
-      );
+      const response = await axios.put(`${ApiUrl}/api/runs/${procedureID}`, { status });
       const updatedRun = response.data;
       setRun(updatedRun);
       setSnackbarMessage(successMessage);
-      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
+      setSnackbarState({ ...snackbarState, open: true });
       updateButtonAndTabStates(updatedRun.status);
     } catch (error) {
       console.error("Error updating run status:", error);
@@ -137,7 +137,6 @@ const NewRuns = () => {
     setSnackbarState({ ...snackbarState, open: false });
   };
 
-  // Function to handle starting the script
   const handleStart = async () => {
     try {
       await axios.post(`${ApiUrl}/api/runs/${procedureID}/start`);
@@ -148,7 +147,6 @@ const NewRuns = () => {
     }
   };
 
-  // Function to handle stopping the script
   const handleStop = async () => {
     try {
       await axios.post(`${ApiUrl}/api/runs/${procedureID}/stop`);
@@ -165,7 +163,7 @@ const NewRuns = () => {
 
   const handleSave = async () => {
     const updatedContent = contentRef.current.innerHTML;
-  
+
     const extractInputValues = () => {
       const inputs = contentRef.current.querySelectorAll('input[type="text"]');
       const values = {};
@@ -174,49 +172,37 @@ const NewRuns = () => {
       });
       return values;
     };
-  
+
     const updatedInputValues = extractInputValues();
-  
+
     const updatedRun = {
       ...run,
       content: updatedContent,
       inputValues: updatedInputValues,
     };
-  
+
     try {
-      // Save the updated run
-      const response = await axios.put(
-        `${ApiUrl}/api/runs/${procedureID}`,
-        updatedRun
-      );
+      const response = await axios.put(`${ApiUrl}/api/runs/${procedureID}`, updatedRun);
       const savedRun = response.data;
-  
-      // Prepare data for Python script
+
       const dataForPython = {
         ...updatedInputValues,
-        title: savedRun.procedureName || "Default Title" // Provide a default title if necessary
+        title: savedRun.procedureName || "Default Title",
       };
-  
-      // Run the Python script with the updated input values and title
-      const pythonResponse = await axios.post(
-        `${ApiUrl}/api/runPython`,
-        dataForPython
-      );
+
+      const pythonResponse = await axios.post(`${ApiUrl}/api/runPython`, dataForPython);
       const results = pythonResponse.data;
-  
-      // Update the run data with the new results
+
       setRun(savedRun);
       setInputValues(savedRun.inputValues);
-      setRunData({ ...savedRun, results }); // Add results to the runData
+      setRunData({ ...savedRun, results });
       setSnackbarMessage("Run has been saved and results updated successfully");
-      setSnackbarState({ ...snackbarState, open: true }); // Open the Snackbar
+      setSnackbarState({ ...snackbarState, open: true });
     } catch (error) {
       console.error("Error saving run or running script:", error.response?.data || error.message);
       setError("Failed to save run or run the script.");
     }
   };
-  
-  
 
   if (loading) {
     return (
@@ -259,13 +245,13 @@ const NewRuns = () => {
         </Button>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
-  <Typography variant="body1">
-    <b>Runs Objective:</b> {run.objective}
-  </Typography>
-  <Typography variant="body1">
-    <b>Status:</b> {run.status}
-  </Typography>
-</Box>
+        <Typography variant="body1">
+          <b>Runs Objective:</b> {run.objective}
+        </Typography>
+        <Typography variant="body1">
+          <b>Status:</b> {run.status}
+        </Typography>
+      </Box>
 
       {run ? (
         <Paper style={{ padding: "15px" }}>
@@ -293,7 +279,7 @@ const NewRuns = () => {
               >
                 <div
                   ref={contentRef}
-                  dangerouslySetInnerHTML={{ __html: tableHtml }} // Use tableHtml here
+                  dangerouslySetInnerHTML={{ __html: tableHtml }}
                 />
               </Box>
             )}
@@ -302,7 +288,7 @@ const NewRuns = () => {
               <Box>
                 <Typography variant="body1">
                   <ChartRuns
-                    tableHtml={tableHtml} // Pass tableHtml as a prop
+                    tableHtml={tableHtml}
                     inputValues={inputValues}
                   />
                 </Typography>
@@ -342,18 +328,18 @@ const NewRuns = () => {
         </Alert>
       </Snackbar>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <Button  sx={{ mt: 2 }} variant="outlined" color="secondary" onClick={handleBack}>
-    Back
-  </Button>
-  <Button
-    variant="contained"
-    color="primary"
-    onClick={handleSave}
-    sx={{ mt: 2 }}
-  >
-    Save
-  </Button>
-</div>
+        <Button sx={{ mt: 2 }} variant="outlined" color="secondary" onClick={handleBack}>
+          Back
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSave}
+          sx={{ mt: 2 }}
+        >
+          Save
+        </Button>
+      </div>
     </Container>
   );
 };
